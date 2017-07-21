@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taimeitech.pass.dao.appoint.StudentDao">
+	<!--one to many select-->
+	<!--result maps，id为主键映射，result其他基本数据 -->
+	<resultMap id="ResultMap" type="StudentBook">
+		<id column="student_id" property="studentId"/>
+		<result column="student_name" property="studentName"/>
+		<collection property="books" ofType="Book" column="student_id" select="selectBooks"/>
+	</resultMap>
+	<select id="getStudent" resultMap="ResultMap">
+		SELECT
+		student_id,
+		student_name
+		FROM
+		student
+		WHERE student_id = #{studentId}
+	</select>
+	<select id="selectBooks" resultType="Book">
+		<!--
+        SELECT book_id, book_name FROM book
+        WHERE book_id IN (
+          SELECT book_id FROM appoint
+          WHERE student_id = #{student_id}
+        )
+        -->
+		SELECT b.book_id, b.book_name FROM book b
+		INNER JOIN appoint a
+		ON b.book_id = a.book_id
+		WHERE a.student_id = #{student_id}
+	</select>
+
+</mapper>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.taimeitech.pass</groupId>
+	<artifactId>tmwf</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>tmwf</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.taimeitech.pom</groupId>
+		<artifactId>springboot-public-pom</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<properties>
+		<activiti.version>6.0.0</activiti.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- activit begin -->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>${activiti.version}</version>
+		</dependency>
+		<!-- activit end -->
+
+		<!--框架依赖-->
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-mysql</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-redis</artifactId>
+		</dependency>
+
+		<!--
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-mq</artifactId>
+		</dependency>
+		-->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

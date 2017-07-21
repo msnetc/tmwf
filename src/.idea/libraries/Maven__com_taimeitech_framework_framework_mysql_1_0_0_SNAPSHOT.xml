@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.taimeitech.framework:framework-mysql:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mysql/1.0.0-SNAPSHOT/framework-mysql-1.0.0-20170721.014219-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mysql/1.0.0-SNAPSHOT/framework-mysql-1.0.0-20170721.014219-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mysql/1.0.0-SNAPSHOT/framework-mysql-1.0.0-20170721.014219-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

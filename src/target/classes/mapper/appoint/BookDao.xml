@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taimeitech.pass.dao.appoint.BookDao">
+	<!-- 目的：为dao接口方法提供sql语句配置，parameterType可省略 -->
+	<select id="getBookById" resultType="Book">
+		SELECT book_id, book_name, book_number FROM book
+		WHERE book_id = #{bookId}
+	</select>
+	
+	<select id="listBook" resultType="Book">
+		SELECT book_id, book_name, book_number FROM book
+		ORDER BY book_id
+		LIMIT #{offset}, #{limit}
+	</select>
+	
+	<update id="updateBookNumber">
+		UPDATE book SET book_number = book_number - 1
+		WHERE book_id = #{bookId} AND book_number > 0
+	</update>
+</mapper>
