@@ -3,14 +3,14 @@ package com.taimeitech.pass.entity.workflow;
 import io.swagger.annotations.ApiModelProperty;
 
 public class CreatePIResponse {
-    @ApiModelProperty(value = "ProcessInstanceId")
-    public String ProcessInstanceId;
+    @ApiModelProperty(value = "processInstanceId")
+    public String processInstanceId;
 
     public String getProcessInstanceId() {
-        return ProcessInstanceId;
+        return processInstanceId;
     }
 
     public void setProcessInstanceId(String processInstanceId) {
-        ProcessInstanceId = processInstanceId;
+        this.processInstanceId = processInstanceId;
     }
 }
