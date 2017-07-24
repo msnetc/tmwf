@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Created by yanjie.miao on 2017/7/21.
  */
-public class ReadStartForm {
+public class ReadStartForm implements IReturn<ReadStartFormResponse>{
     @ApiModelProperty(value = "读取启动流程的表单字段")
     private String  processDefinitionName;
 
