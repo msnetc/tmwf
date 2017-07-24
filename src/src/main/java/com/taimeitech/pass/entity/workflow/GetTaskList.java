@@ -15,13 +15,13 @@ public class GetTaskList implements IReturn<GetTaskListResponse> {
     @ApiModelProperty(value = "pagesize")
       private int pageSize;
 
-    @ApiModelProperty(value = "taskName")
+    @ApiModelProperty(value = "任务名称")
      private String taskName;
 
-    @ApiModelProperty(value = "userId")
+    @ApiModelProperty(value = "用户id")
      private String userId;
 
-    @ApiModelProperty(value = "roleId")
+    @ApiModelProperty(value = "角色id")
     private String roleId;
 
 
