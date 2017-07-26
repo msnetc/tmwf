@@ -1,46 +1,21 @@
 package com.taimeitech.pass.entity.workflow;
 
+import com.taimeitech.pass.entity.PagerQuery;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Created by yanjie.miao on 2017/7/21.
  */
-public class GetTaskList implements IReturn<GetTaskListResponse> {
-
-
-    @ApiModelProperty(value = "pageIndex")
-    private int pageIndex;
-
-
-    @ApiModelProperty(value = "pagesize")
-      private int pageSize;
+public class GetTaskList extends PagerQuery implements IReturn<GetTaskListResponse> {
 
     @ApiModelProperty(value = "任务名称")
      private String taskName;
 
+    @ApiModelProperty(value = "processInstanceId")
+    private String processInstanceId;
+
     @ApiModelProperty(value = "用户id")
      private String userId;
-
-    @ApiModelProperty(value = "角色id")
-    private String roleId;
-
-
-    public int getPageIndex() {
-        return pageIndex;
-    }
-
-    public void setPageIndex(int pageIndex) {
-        this.pageIndex = pageIndex;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
     public String getTaskName() {
         return taskName;
     }
@@ -57,11 +32,11 @@ public class GetTaskList implements IReturn<GetTaskListResponse> {
         this.userId = userId;
     }
 
-    public String getRoleId() {
-        return roleId;
+    public String getProcessInstanceId() {
+        return processInstanceId;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
     }
 }

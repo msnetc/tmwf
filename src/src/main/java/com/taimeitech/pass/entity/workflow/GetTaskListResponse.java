@@ -9,6 +9,6 @@ import java.util.List;
 /**
  * Created by yanjie.miao on 2017/7/21.
  */
-public class GetTaskListResponse extends ActionResult<tmTask>{
+public class GetTaskListResponse extends ActionResult<List<tmTask>>{
 
 }
