@@ -1,16 +1,8 @@
 package com.taimeitech.pass.entity.workflow;
 
+import com.taimeitech.framework.common.dto.ActionResult;
 import io.swagger.annotations.ApiModelProperty;
 
-public class CreatePIResponse {
-    @ApiModelProperty(value = "processInstanceId")
-    public String processInstanceId;
+public class CreatePIResponse extends ActionResult<String>{
 
-    public String getProcessInstanceId() {
-        return processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
 }

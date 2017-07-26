@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Bean;
 @MapperScan("com.taimeitech.pass.dao")
 public class TaimeiBootApplication {
 
+    ///java -jar /usr/local/workflow/tmwf-1.0-SNAPSHOT.jar
     public static void main(String[] args) {
         SpringApplication.run(TaimeiBootApplication.class, args);
     }

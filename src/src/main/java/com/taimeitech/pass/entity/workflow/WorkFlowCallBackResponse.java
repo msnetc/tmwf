@@ -4,8 +4,8 @@ import com.taimeitech.pass.entity.ActionBaseResult;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Created by yanjie.miao on 2017/7/24.
+ * Created by yanjie.miao on 2017/7/25.
  */
-public class CompleteTaskResponse  extends ActionBaseResult {
+public class WorkFlowCallBackResponse  extends ActionBaseResult {
 
 }
