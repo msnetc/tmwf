@@ -11,14 +11,15 @@ public class CompleteTask {
     @ApiModelProperty(value = "用户id")
     private String userId;
 
-    @ApiModelProperty(value = "传给工作流的变量")
-    private Map<String, String> variables;
 
-    public Map<String, String> getVariables() {
+    @ApiModelProperty(value = "传给工作流的变量")
+    private Map<String, Object> variables;
+
+    public Map<String, Object> getVariables() {
         return variables;
     }
 
-    public void setVariables(Map<String, String> variables) {
+    public void setVariables(Map<String, Object> variables) {
         this.variables = variables;
     }
 

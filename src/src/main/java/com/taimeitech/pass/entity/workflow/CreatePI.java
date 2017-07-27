@@ -16,7 +16,7 @@ public class CreatePI  implements  IReturn<CreatePIResponse>{
     private String tenantId;
 
     @ApiModelProperty(value = "传给工作流的变量")
-    private Map<String, String> variables;
+    private Map<String, Object> variables;
 
     public String getProcessDefinitionKey() {
         return processDefinitionKey;
@@ -34,11 +34,11 @@ public class CreatePI  implements  IReturn<CreatePIResponse>{
         this.businessKey = businessKey;
     }
 
-    public Map<String, String> getVariables() {
+    public Map<String, Object> getVariables() {
         return variables;
     }
 
-    public void setVariables(Map<String, String> variables) {
+    public void setVariables(Map<String, Object> variables) {
         this.variables = variables;
     }
 
