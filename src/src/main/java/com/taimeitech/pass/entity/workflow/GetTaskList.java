@@ -3,9 +3,6 @@ package com.taimeitech.pass.entity.workflow;
 import com.taimeitech.pass.entity.PagerQuery;
 import io.swagger.annotations.ApiModelProperty;
 
-/**
- * Created by yanjie.miao on 2017/7/21.
- */
 public class GetTaskList extends PagerQuery implements IReturn<GetTaskListResponse> {
 
     @ApiModelProperty(value = "任务名称")
