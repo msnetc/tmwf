@@ -46,6 +46,7 @@ public class WfController {
         for (Task t : tasks) {
             tmTask task = new tmTask();
             BeanUtils.copyProperties(t, task);
+            task.setTaskId(t.getId());
             responseData.add(task);
         }
         response.setData(responseData);

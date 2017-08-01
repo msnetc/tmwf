@@ -1,11 +1,11 @@
-package com.taimeitech.pass.workflowExt;
+package com.taimeitech.pass.workflowExt.Listener;
 
 import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.TaskListener;
+import org.springframework.stereotype.Component;
 
-/**
- * Created by yanjie.miao on 2017/7/31.
- */
+
+@Component
 public class LawWorkerListener implements TaskListener {
     private static final long serialVersionUID = 1L;
 

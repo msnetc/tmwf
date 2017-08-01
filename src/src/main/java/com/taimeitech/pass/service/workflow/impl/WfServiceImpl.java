@@ -3,12 +3,13 @@ package com.taimeitech.pass.service.workflow.impl;
 import com.taimeitech.framework.util.StringUtil;
 import com.taimeitech.pass.entity.workflow.*;
 import com.taimeitech.pass.service.workflow.WfService;
-import org.activiti.engine.ProcessEngine;
-import org.activiti.engine.RuntimeService;
-import org.activiti.engine.TaskService;
+import org.activiti.engine.*;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricTaskInstanceQuery;
 import org.activiti.engine.history.HistoricVariableInstance;
+import org.activiti.engine.identity.User;
+import org.activiti.engine.identity.UserQuery;
+import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
@@ -16,7 +17,9 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
+
+import static org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers.data;
 
 @Service
 public class WfServiceImpl implements WfService {
@@ -28,14 +31,21 @@ public class WfServiceImpl implements WfService {
     private RuntimeService runtimeService;
 
     @Autowired
+    private IdentityService identityService;
+
+    @Autowired
     private TaskService taskService;
+
+    @Autowired
+    private RepositoryService repositoryService;
 
     @Override
     public List<Task> QueryTasks(GetTaskList data) {
         TaskQuery query = taskService.createTaskQuery();
 
-        if (StringUtil.isNotEmpty(data.getUserId())) {
-            query = query.taskCandidateUser(data.getUserId());
+        String userId = data.getUserId();
+        if (StringUtil.isNotEmpty(userId)) {
+             query = query.taskCandidateUser(userId);
         }
         if (StringUtils.isNotEmpty(data.getProcessInstanceId())) {
             query = query.processInstanceId(data.getProcessInstanceId());
@@ -49,7 +59,9 @@ public class WfServiceImpl implements WfService {
 
     @Override
     public ProcessInstance CreatePi(CreatePI data) {
-        ProcessInstance pi = runtimeService.startProcessInstanceByKey(data.getProcessDefinitionKey(), data.getBusinessKey(), data.getVariables());
+        Map<String, Object> variables = data.getVariables();
+        UpdateVariables(variables);
+        ProcessInstance pi = runtimeService.startProcessInstanceByKey(data.getProcessDefinitionKey(), data.getBusinessKey(), variables);
         return pi;
     }
 
@@ -80,6 +92,41 @@ public class WfServiceImpl implements WfService {
     @Override
     public List<HistoricVariableInstance> GetHistoryVariables() {
         return null;
+    }
+
+    private List<User> GetUsers(String groupId){
+        UserQuery query = identityService.createUserQuery();
+        if(StringUtil.isNotEmpty(groupId)){
+            query=query.memberOfGroup(groupId.trim());
+        }
+        List<User> users = query.list();
+        return users;
+    }
+
+    private List<String> GetUserIds(String groupId){
+        UserQuery query = identityService.createUserQuery();
+        if(StringUtil.isNotEmpty(groupId)){
+            query=query.memberOfGroup(groupId.trim());
+        }
+        List<User> users = query.list();
+        List<String> userIds = new ArrayList<String>();
+        for (User u:users) {
+            userIds.add(u.getId());
+        }
+        return userIds;
+    }
+
+    private void UpdateVariables( Map<String, Object> variables){
+         if(variables!=null){
+            for (Map.Entry<String, Object> entry:variables.entrySet()) {
+                if(entry.getKey().startsWith("group_")){
+                    String groupName = StringUtils.substringAfter(entry.getKey(), "group_");
+                    List<String> userIds=GetUserIds(groupName);
+                    variables.replace(entry.getKey(), userIds);
+                }
+            }
+        }
+
     }
 
 }
