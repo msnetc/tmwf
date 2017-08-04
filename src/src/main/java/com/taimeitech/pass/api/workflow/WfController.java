@@ -6,6 +6,7 @@ import com.taimeitech.pass.service.workflow.WfService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.activiti.engine.history.HistoricTaskInstance;
+import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
@@ -85,7 +86,18 @@ public class WfController {
         response.setSuccess(true);
         return response;
     }
+
+    @ApiOperation(value = "查询历史变量")
+    @RequestMapping(value = "History/HistoricVariable", method = RequestMethod.POST)
+    public GetHistoryVariablesResponse Post(@ApiParam("data") @RequestBody GetHistoryVariables data) {
+        GetHistoryVariablesResponse response = new GetHistoryVariablesResponse();
+        List<HistoricVariableInstance> dataList = wfService.GetHistoryVariables(data);
+        List<VariableModel> responseData = new ArrayList<>();
+        for (HistoricVariableInstance v:dataList) {
+            VariableModel item = new VariableModel();
+            BeanUtils.copyProperties(v, item);
+            responseData.add(item);
+        }
+        return response;
+    }
 }
-
-
-

@@ -7,6 +7,7 @@ import org.activiti.engine.*;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricTaskInstanceQuery;
 import org.activiti.engine.history.HistoricVariableInstance;
+import org.activiti.engine.history.HistoricVariableInstanceQuery;
 import org.activiti.engine.identity.User;
 import org.activiti.engine.identity.UserQuery;
 import org.activiti.engine.repository.DeploymentBuilder;
@@ -86,8 +87,21 @@ public class WfServiceImpl implements WfService {
     }
 
     @Override
-    public List<HistoricVariableInstance> GetHistoryVariables() {
-        return null;
+    public List<HistoricVariableInstance> GetHistoryVariables(GetHistoryVariables queryParam) {
+
+//创建一个历史的流程变量查询
+        HistoricVariableInstanceQuery query = processEngine.getHistoryService().createHistoricVariableInstanceQuery();
+        if (StringUtil.isNotEmpty(queryParam.getVaribleName())) {
+            query = query.variableNameLike(queryParam.getVaribleName());
+        }
+        if (StringUtils.isNotEmpty(queryParam.getTaskId())) {
+            query = query.variableNameLike(queryParam.getTaskId());
+        }
+        if (StringUtils.isNotEmpty(queryParam.getProcessInstanceId())) {
+            query = query.variableNameLike(queryParam.getProcessInstanceId());
+        }
+        List<HistoricVariableInstance> list = query.list();
+        return list;
     }
 
     private List<User> GetUsers(String groupId){

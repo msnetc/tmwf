@@ -1,9 +1,6 @@
 package com.taimeitech.pass.service.workflow;
 
-import com.taimeitech.pass.entity.workflow.CompleteTask;
-import com.taimeitech.pass.entity.workflow.CreatePI;
-import com.taimeitech.pass.entity.workflow.GetHistoryTask;
-import com.taimeitech.pass.entity.workflow.GetTaskList;
+import com.taimeitech.pass.entity.workflow.*;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricVariableInstance;
@@ -28,6 +25,6 @@ public interface WfService {
 
     List<Task> QueryTasks(GetTaskList data);
 
-    List<HistoricVariableInstance> GetHistoryVariables();
+    List<HistoricVariableInstance> GetHistoryVariables(GetHistoryVariables queryParam);
 
 }
