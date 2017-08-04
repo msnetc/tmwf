@@ -13,6 +13,7 @@ public class GetTaskList extends PagerQuery implements IReturn<GetTaskListRespon
 
     @ApiModelProperty(value = "用户id")
      private String userId;
+
     public String getTaskName() {
         return taskName;
     }
@@ -21,19 +22,19 @@ public class GetTaskList extends PagerQuery implements IReturn<GetTaskListRespon
         this.taskName = taskName;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getProcessInstanceId() {
         return processInstanceId;
     }
 
     public void setProcessInstanceId(String processInstanceId) {
         this.processInstanceId = processInstanceId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

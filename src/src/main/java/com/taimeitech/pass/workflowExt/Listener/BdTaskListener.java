@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class BdTaskListener implements TaskListener {
     private static final long serialVersionUID = 1L;
-
     @Override
     public void notify(DelegateTask delegateTask) {
         String approved = (String) delegateTask.getVariable("approvedBd");
@@ -16,5 +15,4 @@ public class BdTaskListener implements TaskListener {
             delegateTask.setVariable("approvedBdCounter", agreeCounter + 1);
         }
     }
-
 }

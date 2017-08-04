@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
-  <process id="QuotationInvoice0801" name="报检单审核" isExecutable="true">
+  <process id="QuotationInvoice0803" name="报检单审核" isExecutable="true">
     <startEvent id="startevent1" name="Start"></startEvent>
+
     <userTask id="usertask4" name="BD主管审核" activiti:assignee="${BdUser}">
+
       <extensionElements>
-        <activiti:taskListener event="complete" delegateExpression="${BdTaskListener}"></activiti:taskListener>
-      </extensionElements>
-      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_BD" activiti:elementVariable="BdUser"></multiInstanceLoopCharacteristics>
-    </userTask>
-    <exclusiveGateway id="sid_exGateWayBDMgr" name="exGateWayBDMgr主管审核"></exclusiveGateway>
+			<activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.BdTaskListener"/>
+      </extensionElements>  
+
+	<multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_ff8080815da08a12015da5c58051006c" 
+	activiti:elementVariable="BdUser">      			
+	</multiInstanceLoopCharacteristics>            
+	
+    </userTask>              
+
+    <exclusiveGateway id="sid_exGateWayBDMgr" name="exGateWayBDMgr主管审核"></exclusiveGateway>       
     <userTask id="sid_usertask6" name="财务审核" activiti:assignee="${financeUser}">
       <extensionElements>
-        <activiti:taskListener event="complete" delegateExpression="${FinanceUserListener}"></activiti:taskListener>
+        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.FinanceUserListener"></activiti:taskListener>
       </extensionElements>
-      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="financeUserList" activiti:elementVariable="financeUser"></multiInstanceLoopCharacteristics>
-    </userTask>
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_ff8080815da08a12015da5c5d4d4006e" activiti:elementVariable="financeUser"></multiInstanceLoopCharacteristics>
+    </userTask>    
+
     <sequenceFlow id="flow6" name="审核通过无合同" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask6">
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter = group_BD.size()}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter = group_ff8080815da08a12015da5c58051006c.size()}]]></conditionExpression>
     </sequenceFlow>
+        
     <userTask id="sid_usertask7" name="修改内容"></userTask>
     <sequenceFlow id="flow8" sourceRef="usertask4" targetRef="sid_exGateWayBDMgr"></sequenceFlow>
     <sequenceFlow id="flow9" sourceRef="sid_usertask7" targetRef="usertask4"></sequenceFlow>
     <userTask id="sid_usertask8" name="法务审核" activiti:assignee="${LawWorker}">
       <extensionElements>
-        <activiti:taskListener event="complete" delegateExpression="${LawWorkerListener}"></activiti:taskListener>
+        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.LawWorkerListener"></activiti:taskListener>
       </extensionElements>
-      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="LawWorkerList" activiti:elementVariable="LawWorker"></multiInstanceLoopCharacteristics>
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_ff8080815da08a12015da5c5b5ae006d" activiti:elementVariable="LawWorker"></multiInstanceLoopCharacteristics>
     </userTask>
     <sequenceFlow id="flow10" name="审核通过有合同" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask8">
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter < group_BD.size()}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter < group_ff8080815da08a12015da5c58051006c.size()}]]></conditionExpression>
     </sequenceFlow>
     <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
     <sequenceFlow id="flow11" sourceRef="sid_usertask6" targetRef="exclusivegateway2"></sequenceFlow>

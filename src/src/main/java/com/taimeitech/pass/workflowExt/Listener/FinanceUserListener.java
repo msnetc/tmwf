@@ -16,5 +16,4 @@ public class FinanceUserListener implements TaskListener {
             delegateTask.setVariable("approvedFinanceCounter", agreeCounter + 1);
         }
     }
-
 }

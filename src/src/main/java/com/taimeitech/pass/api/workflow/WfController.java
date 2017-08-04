@@ -1,5 +1,6 @@
 package com.taimeitech.pass.api.workflow;
 
+import com.taimeitech.framework.common.SystemContext;
 import com.taimeitech.pass.entity.workflow.*;
 import com.taimeitech.pass.service.workflow.WfService;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +27,7 @@ public class WfController {
     @ApiOperation(value = "创建pi，启动工作流", notes = "一般是创建表单后启动任务，把表单对应的id传给工作流引擎")
     @RequestMapping(value = "pi/createPI", method = RequestMethod.POST)
     public CreatePIResponse Post(@ApiParam("data") @RequestBody CreatePI data) {
+        SystemContext.getTenantId();
         CreatePIResponse response = new CreatePIResponse();
         ProcessInstance pi = wfService.CreatePi(data);
         if (pi != null) {

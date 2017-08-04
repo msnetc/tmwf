@@ -36,16 +36,12 @@ public class WfServiceImpl implements WfService {
     @Autowired
     private TaskService taskService;
 
-    @Autowired
-    private RepositoryService repositoryService;
-
     @Override
     public List<Task> QueryTasks(GetTaskList data) {
         TaskQuery query = taskService.createTaskQuery();
-
         String userId = data.getUserId();
         if (StringUtil.isNotEmpty(userId)) {
-             query = query.taskCandidateUser(userId);
+             query=query.taskAssignee(userId);
         }
         if (StringUtils.isNotEmpty(data.getProcessInstanceId())) {
             query = query.processInstanceId(data.getProcessInstanceId());
