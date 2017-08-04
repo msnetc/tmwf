@@ -9,7 +9,7 @@
 			<activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.BdTaskListener"/>
       </extensionElements>  
 
-	<multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_ff8080815da08a12015da5c58051006c" 
+	<multiInstanceLoopCharacteristics isSequential="false" activiti:collection="BdGroup" 
 	activiti:elementVariable="BdUser">      			
 	</multiInstanceLoopCharacteristics>            
 	
@@ -20,30 +20,34 @@
       <extensionElements>
         <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.FinanceUserListener"></activiti:taskListener>
       </extensionElements>
-      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_ff8080815da08a12015da5c5d4d4006e" activiti:elementVariable="financeUser"></multiInstanceLoopCharacteristics>
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="FinanceGroup" activiti:elementVariable="financeUser"></multiInstanceLoopCharacteristics>
     </userTask>    
 
     <sequenceFlow id="flow6" name="审核通过无合同" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask6">
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter = group_ff8080815da08a12015da5c58051006c.size()}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == true}]]></conditionExpression>
     </sequenceFlow>
         
-    <userTask id="sid_usertask7" name="修改内容"></userTask>
+    <userTask id="sid_usertask7" name="修改内容" activiti:candidateUsers="${CreateUserId}">
+      
+    </userTask>
     <sequenceFlow id="flow8" sourceRef="usertask4" targetRef="sid_exGateWayBDMgr"></sequenceFlow>
     <sequenceFlow id="flow9" sourceRef="sid_usertask7" targetRef="usertask4"></sequenceFlow>
     <userTask id="sid_usertask8" name="法务审核" activiti:assignee="${LawWorker}">
       <extensionElements>
         <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.LawWorkerListener"></activiti:taskListener>
       </extensionElements>
-      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="group_ff8080815da08a12015da5c5b5ae006d" activiti:elementVariable="LawWorker"></multiInstanceLoopCharacteristics>
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="LawGroup" activiti:elementVariable="LawWorker"></multiInstanceLoopCharacteristics>
     </userTask>
     <sequenceFlow id="flow10" name="审核通过有合同" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask8">
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter < group_ff8080815da08a12015da5c58051006c.size()}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == false}]]></conditionExpression>
     </sequenceFlow>
     <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
     <sequenceFlow id="flow11" sourceRef="sid_usertask6" targetRef="exclusivegateway2"></sequenceFlow>
     <endEvent id="endevent2" name="End">
 	</endEvent>
-    <userTask id="usertask9" name="修改内容"></userTask>
+    <userTask id="usertask9" name="修改内容">
+      
+    </userTask>
     <sequenceFlow id="flow13" sourceRef="exclusivegateway2" targetRef="usertask9"></sequenceFlow>
     <exclusiveGateway id="exclusivegateway3" name="Exclusive Gateway"></exclusiveGateway>
     <sequenceFlow id="flow14" sourceRef="sid_usertask8" targetRef="exclusivegateway3"></sequenceFlow>
@@ -66,7 +70,9 @@
     <userTask id="usertask11" name="修改内容"></userTask>
     <sequenceFlow id="flow24" sourceRef="exclusivegateway3" targetRef="usertask11"></sequenceFlow>
     <sequenceFlow id="flow25" sourceRef="usertask11" targetRef="sid_usertask8"></sequenceFlow>
-    <sequenceFlow id="flow26" name="驳回" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask7"></sequenceFlow>
+    <sequenceFlow id="flow26" name="驳回" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask7">
+        <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter < BdGroup.size()}]]></conditionExpression>
+    </sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_myProcess">
     <bpmndi:BPMNPlane bpmnElement="myProcess" id="BPMNPlane_myProcess">

@@ -74,7 +74,7 @@ public class WfServiceImpl implements WfService {
     public List<HistoricTaskInstance> QueryHistoryTasks(GetHistoryTask data){
         HistoricTaskInstanceQuery taskHistoryQuery = processEngine.getHistoryService().createHistoricTaskInstanceQuery(); // 创建历史任务实例查询
         if (StringUtil.isNotEmpty(data.getUserId())) {
-            taskHistoryQuery = taskHistoryQuery.taskCandidateUser(data.getUserId());
+            taskHistoryQuery = taskHistoryQuery.taskAssignee(data.getUserId());
         }
         if (StringUtils.isNotEmpty(data.getProcessInstanceId())) {
             taskHistoryQuery = taskHistoryQuery.processInstanceId(data.getProcessInstanceId());

@@ -28,7 +28,6 @@ public class WfController {
     @ApiOperation(value = "创建pi，启动工作流", notes = "一般是创建表单后启动任务，把表单对应的id传给工作流引擎")
     @RequestMapping(value = "pi/createPI", method = RequestMethod.POST)
     public CreatePIResponse Post(@ApiParam("data") @RequestBody CreatePI data) {
-        SystemContext.getTenantId();
         CreatePIResponse response = new CreatePIResponse();
         ProcessInstance pi = wfService.CreatePi(data);
         if (pi != null) {
@@ -50,6 +49,7 @@ public class WfController {
             tmTask task = new tmTask();
             BeanUtils.copyProperties(t, task);
             task.setTaskId(t.getId());
+            task.setAssignee(t.getAssignee());
             responseData.add(task);
         }
         response.setData(responseData);
@@ -69,14 +69,15 @@ public class WfController {
     @RequestMapping(value = "historyTask/queryHistoryTask", method = RequestMethod.POST)
     public GetHistoryTaskResponse Post(@ApiParam("data") @RequestBody GetHistoryTask data) {
         List<HistoricTaskInstance> tasks = wfService.QueryHistoryTasks(data);
-        List<tmTask> responseData = new ArrayList<tmTask>();
-        GetTaskListResponse response = new GetTaskListResponse();
+        List<HistoryTask> responseData = new ArrayList<>();
+        GetHistoryTaskResponse response = new GetHistoryTaskResponse();
         for (HistoricTaskInstance t : tasks) {
-            tmTask task = new tmTask();
+            HistoryTask task = new HistoryTask();
             BeanUtils.copyProperties(t, task);
             responseData.add(task);
         }
-        return new GetHistoryTaskResponse();
+        response.setData(responseData);
+        return  response;
     }
 
     @ApiOperation(value = "工作流回调接口")
