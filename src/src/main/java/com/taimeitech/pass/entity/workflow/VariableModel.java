@@ -3,6 +3,8 @@ package com.taimeitech.pass.entity.workflow;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 
+import java.util.Date;
+
 /**
  * Created by yanjie.miao on 2017/8/4.
  */
@@ -24,9 +26,9 @@ public class VariableModel {
     private String taskId;
 
     @ApiModelProperty(value = "createTime")
-    private DateTime createTime;
+    private Date createTime;
     @ApiModelProperty(value = "lastUpdatedTime")
-    private DateTime lastUpdatedTime;
+    private Date lastUpdatedTime;
 
     public String getVariableName() {
         return variableName;
@@ -68,19 +70,19 @@ public class VariableModel {
         this.taskId = taskId;
     }
 
-    public DateTime getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(DateTime createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public DateTime getLastUpdatedTime() {
+    public Date getLastUpdatedTime() {
         return lastUpdatedTime;
     }
 
-    public void setLastUpdatedTime(DateTime lastUpdatedTime) {
+    public void setLastUpdatedTime(Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
 }

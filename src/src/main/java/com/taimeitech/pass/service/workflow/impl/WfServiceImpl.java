@@ -95,10 +95,10 @@ public class WfServiceImpl implements WfService {
             query = query.variableNameLike(queryParam.getVaribleName());
         }
         if (StringUtils.isNotEmpty(queryParam.getTaskId())) {
-            query = query.variableNameLike(queryParam.getTaskId());
+            query = query.taskId(queryParam.getTaskId());
         }
         if (StringUtils.isNotEmpty(queryParam.getProcessInstanceId())) {
-            query = query.variableNameLike(queryParam.getProcessInstanceId());
+            query = query.processInstanceId(queryParam.getProcessInstanceId());
         }
         List<HistoricVariableInstance> list = query.list();
         return list;

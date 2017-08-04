@@ -96,9 +96,16 @@ public class WfController {
         List<VariableModel> responseData = new ArrayList<>();
         for (HistoricVariableInstance v:dataList) {
             VariableModel item = new VariableModel();
-            BeanUtils.copyProperties(v, item);
+            item.setCreateTime(v.getCreateTime());
+            item.setLastUpdatedTime(v.getLastUpdatedTime());
+            item.setProcessInstanceId(v.getProcessInstanceId());
+            item.setTaskId(v.getTaskId());
+            item.setVariableName(v.getVariableName());
+            item.setVariableTypeName(v.getVariableTypeName());
+            item.setVariableValue(v.getValue());
             responseData.add(item);
         }
+        response.setData(responseData);
         return response;
     }
 }

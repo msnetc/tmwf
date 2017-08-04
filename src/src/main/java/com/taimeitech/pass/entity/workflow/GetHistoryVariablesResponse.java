@@ -6,11 +6,12 @@ import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by yanjie.miao on 2017/7/21.
  */
-public class GetHistoryVariablesResponse extends ActionResult<VariableModel>{
+public class GetHistoryVariablesResponse extends ActionResult<List<VariableModel>> {
 
 }
