@@ -41,9 +41,14 @@
         <activiti:executionListener event="take" expression="${execution.setVariable('approvedBdCounter', 0)}"></activiti:executionListener>
         <activiti:executionListener event="take" expression="${execution.setVariable('approvedFinanceCounter', 0)}"></activiti:executionListener>
         <activiti:executionListener event="take" expression="${execution.setVariable('approvedLawCounter', 0)}"></activiti:executionListener>
+          <activiti:executionListener event="take" expression="${execution.setVariable('endTaskUrl', 'http://localhost:3022')}"></activiti:executionListener>
       </extensionElements>
     </sequenceFlow>
-    <userTask id="usertask10" name="BD主管提交者知会"></userTask>
+    <userTask id="usertask10" name="BD主管提交者知会">
+	   <extensionElements>
+        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"></activiti:taskListener>
+      </extensionElements>
+    </userTask>
     <sequenceFlow id="flow26" name="BD主管驳回" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask7">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter < BdGroup.size()}]]></conditionExpression>
     </sequenceFlow>
