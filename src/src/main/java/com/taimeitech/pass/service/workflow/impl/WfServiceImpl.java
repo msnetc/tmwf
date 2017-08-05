@@ -24,7 +24,6 @@ import static org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers.data;
 
 @Service
 public class WfServiceImpl implements WfService {
-
     @Autowired
     private ProcessEngine processEngine;
 
@@ -57,7 +56,6 @@ public class WfServiceImpl implements WfService {
     @Override
     public ProcessInstance CreatePi(CreatePI data) {
         Map<String, Object> variables = data.getVariables();
-        UpdateVariables(variables);
         ProcessInstance pi = runtimeService.startProcessInstanceByKey(data.getProcessDefinitionKey(), data.getBusinessKey(), variables);
         return pi;
     }
@@ -124,19 +122,6 @@ public class WfServiceImpl implements WfService {
             userIds.add(u.getId());
         }
         return userIds;
-    }
-
-    private void UpdateVariables( Map<String, Object> variables){
-         if(variables!=null){
-            for (Map.Entry<String, Object> entry:variables.entrySet()) {
-                if(entry.getKey().startsWith("group_")){
-                    String groupName = StringUtils.substringAfter(entry.getKey(), "group_");
-                    List<String> userIds=GetUserIds(groupName);
-                    variables.replace(entry.getKey(), userIds);
-                }
-            }
-        }
-
     }
 
 }
