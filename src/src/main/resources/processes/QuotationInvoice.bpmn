@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
-  <process id="QuotationInvoice0803" name="报检单审核" isExecutable="true">
+  <process id="QuotationInvoice0807" name="报检单审核" isExecutable="true">
     <startEvent id="startevent1" name="Start"></startEvent>
     <userTask id="usertask4" name="BD主管审核" activiti:assignee="${BdUser}">
       <extensionElements>
@@ -31,6 +31,7 @@
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == false}]]></conditionExpression>
     </sequenceFlow>
     <endEvent id="endevent2" name="End"></endEvent>
+
     <exclusiveGateway id="exclusivegateway3" name="Exclusive Gateway"></exclusiveGateway>
     <sequenceFlow id="flow14" sourceRef="sid_usertask8" targetRef="exclusivegateway3"></sequenceFlow>
     <sequenceFlow id="flow15" name="通过法务审核" sourceRef="exclusivegateway3" targetRef="sid_usertask6">
@@ -44,11 +45,13 @@
         <activiti:executionListener event="take" expression="${execution.setVariable('endTaskUrl', 'http://localhost:3022')}"></activiti:executionListener>
       </extensionElements>
     </sequenceFlow>
-    <userTask id="usertask10" name="BD主管提交者知会" activiti:candidateUsers="${BdGroup}">  
-       <extensionElements>
-        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.LawWorkerListener"></activiti:taskListener>
-      </extensionElements>    
+
+    <userTask id="usertask10" name="BD主管提交者知会" activiti:candidateUsers="${remindUsers}">     
+     <extensionElements>
+        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"/>
+      </extensionElements>   
     </userTask>
+
     <sequenceFlow id="flow26" name="BD主管驳回" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask7">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter < BdGroup.size()}]]></conditionExpression>
     </sequenceFlow>

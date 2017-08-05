@@ -1,0 +1,60 @@
+1.创建pi
+{
+  "businessKey": "form.222",
+  "processDefinitionKey": "QuotationInvoice0803",
+  "tenantId": "",
+ "variables": {
+"BdGroup": ["bd1","bd2"] , 
+"LawGroup": ["law1","law2"],
+"FinanceGroup": ["f1","f2"]
+}
+}
+
+2.查询
+{
+  "pageIndex": 0,
+  "pageSize": 0,
+  "processInstanceId": "11",
+  "taskName": "",
+  "userId": ""
+}
+
+某个用户的task
+{
+  "pageIndex": 0,
+  "pageSize": 0,
+  "processInstanceId": "",
+  "taskName": "",
+  "userId": "bd1"
+}
+
+
+3.
+完成任务
+BD主管审核
+{
+"taskId": "2539",
+"userId": "bd2",
+"variables": {
+"approvedBd":"true",
+"isHaveContract":"true",
+"CreateUserId":"miao",
+"BdGroup": ["bd1","bd2"] , 
+"LawGroup": ["law1","law2"],
+"FinanceGroup": ["f1","f2"]
+}
+} 
+财务审核
+{
+"taskId": "2561",
+"userId": "f2",
+"variables": {
+"approveFinance":"true",
+"isHaveContract":"true",
+"CreateUserId":"miao",
+"BdGroup": ["bd1","bd2"] , 
+"LawGroup": ["law1","law2"],
+"FinanceGroup": ["f1","f2"]
+}
+} 
+4.查询历史变量
