@@ -46,10 +46,7 @@
       </extensionElements>
     </sequenceFlow>
 
-    <userTask id="usertask10" name="BD主管提交者知会" activiti:candidateUsers="${remindUsers}">     
-     <extensionElements>
-        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"/>
-      </extensionElements>   
+    <userTask id="usertask10" name="BD主管提交者知会" activiti:candidateUsers="${remindUsers}">    
     </userTask>
 
     <sequenceFlow id="flow26" name="BD主管驳回" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask7">
