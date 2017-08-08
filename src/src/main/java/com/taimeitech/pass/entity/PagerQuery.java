@@ -1,11 +1,15 @@
 package com.taimeitech.pass.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 
 /**
  * Created by yanjie.miao on 2017/7/26.
  */
 public class PagerQuery {
+
+
     @ApiModelProperty(value = "pageIndex")
     private int pageIndex;
 
