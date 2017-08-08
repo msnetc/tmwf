@@ -38,8 +38,8 @@
         <activiti:executionListener event="take" expression="${execution.setVariable('endTaskUrl', 'http://localhost:3022')}"></activiti:executionListener>
       </extensionElements>
     </sequenceFlow>
-    <userTask id="usertask10" name="BD主管自会" activiti:candidateUsers="${remindUsers}"></userTask>
-    <sequenceFlow id="flow30" sourceRef="usertask10" targetRef="endevent2">
+    <userTask id="usertask10" name="提交人知会" activiti:assignee="${remindUsers}"></userTask>    	
+	<sequenceFlow id="flow30" sourceRef="usertask10" targetRef="endevent2">
       <extensionElements>
         <activiti:executionListener event="take" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"></activiti:executionListener>
       </extensionElements>

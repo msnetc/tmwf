@@ -41,13 +41,13 @@ public class WfServiceImpl implements WfService {
     public List<Task> QueryTasks(GetTaskList data) {
         TaskQuery query = taskService.createTaskQuery();
         String userId = data.getUserId();
-        if (StringUtil.isNotEmpty(userId)) {
+        if (StringUtil.isNotBlank(userId)) {
              query=query.taskAssignee(userId);
         }
-        if (StringUtils.isNotEmpty(data.getProcessInstanceId())) {
+        if (StringUtils.isNotBlank(data.getProcessInstanceId())) {
             query = query.processInstanceId(data.getProcessInstanceId());
         }
-        if (StringUtils.isNotEmpty(data.getTaskName())) {
+        if (StringUtils.isNotBlank(data.getTaskName())) {
             query = query.taskName(data.getTaskName());
         }
         List<Task> tasks = query.list();
@@ -57,7 +57,6 @@ public class WfServiceImpl implements WfService {
     @Override
     public ProcessInstance CreatePi(CreatePI data) {
         Map<String, Object> variables = data.getVariables();
-        UpdateVariables(variables);
         ProcessInstance pi = runtimeService.startProcessInstanceByKey(data.getProcessDefinitionKey(), data.getBusinessKey(), variables);
         return pi;
     }
@@ -73,13 +72,13 @@ public class WfServiceImpl implements WfService {
     @Override
     public List<HistoricTaskInstance> QueryHistoryTasks(GetHistoryTask data){
         HistoricTaskInstanceQuery taskHistoryQuery = processEngine.getHistoryService().createHistoricTaskInstanceQuery(); // 创建历史任务实例查询
-        if (StringUtil.isNotEmpty(data.getUserId())) {
+        if (StringUtil.isNotBlank(data.getUserId())) {
             taskHistoryQuery = taskHistoryQuery.taskAssignee(data.getUserId());
         }
-        if (StringUtils.isNotEmpty(data.getProcessInstanceId())) {
+        if (StringUtils.isNotBlank(data.getProcessInstanceId())) {
             taskHistoryQuery = taskHistoryQuery.processInstanceId(data.getProcessInstanceId());
         }
-        if (StringUtils.isNotEmpty(data.getTaskName())) {
+        if (StringUtils.isNotBlank(data.getTaskName())) {
             taskHistoryQuery = taskHistoryQuery.taskName(data.getTaskName());
         }
         List<HistoricTaskInstance> result = taskHistoryQuery.list();
@@ -91,13 +90,13 @@ public class WfServiceImpl implements WfService {
 
 //创建一个历史的流程变量查询
         HistoricVariableInstanceQuery query = processEngine.getHistoryService().createHistoricVariableInstanceQuery();
-        if (StringUtil.isNotEmpty(queryParam.getVaribleName())) {
+        if (StringUtil.isNotBlank(queryParam.getVaribleName())) {
             query = query.variableNameLike(queryParam.getVaribleName());
         }
-        if (StringUtils.isNotEmpty(queryParam.getTaskId())) {
+        if (StringUtils.isNotBlank(queryParam.getTaskId())) {
             query = query.taskId(queryParam.getTaskId());
         }
-        if (StringUtils.isNotEmpty(queryParam.getProcessInstanceId())) {
+        if (StringUtils.isNotBlank(queryParam.getProcessInstanceId())) {
             query = query.processInstanceId(queryParam.getProcessInstanceId());
         }
         List<HistoricVariableInstance> list = query.list();
@@ -126,17 +125,6 @@ public class WfServiceImpl implements WfService {
         return userIds;
     }
 
-    private void UpdateVariables( Map<String, Object> variables){
-         if(variables!=null){
-            for (Map.Entry<String, Object> entry:variables.entrySet()) {
-                if(entry.getKey().startsWith("group_")){
-                    String groupName = StringUtils.substringAfter(entry.getKey(), "group_");
-                    List<String> userIds=GetUserIds(groupName);
-                    variables.replace(entry.getKey(), userIds);
-                }
-            }
-        }
 
-    }
 
 }

@@ -10,7 +10,7 @@ public class FinanceUserListener implements TaskListener {
 
     @Override
     public void notify(DelegateTask delegateTask) {
-        String approved = (String) delegateTask.getVariable("approveFinance");
+        String approved = (String) delegateTask.getVariable("approved");
         if (approved.equals("true")) {
             Long agreeCounter = (Long) delegateTask.getVariable("approvedFinanceCounter");
             delegateTask.setVariable("approvedFinanceCounter", agreeCounter + 1);

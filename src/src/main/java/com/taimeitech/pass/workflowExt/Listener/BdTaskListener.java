@@ -9,7 +9,7 @@ public class BdTaskListener implements TaskListener {
     private static final long serialVersionUID = 1L;
     @Override
     public void notify(DelegateTask delegateTask) {
-        String approved = (String) delegateTask.getVariable("approvedBd");
+        String approved = (String) delegateTask.getVariable("approved");
         if (approved.equals("true")) {
             Long agreeCounter = (Long) delegateTask.getVariable("approvedBdCounter");
             delegateTask.setVariable("approvedBdCounter", agreeCounter + 1);
