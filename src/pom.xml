@@ -21,10 +21,11 @@
 
 	<dependencies>
 
-		<!--<dependency>-->
-			<!--<groupId>org.activiti</groupId>-->
-			<!--<artifactId>activiti-spring-boot-starter-jpa</artifactId>-->
-		<!--</dependency>-->
+
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-mq</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.activiti</groupId>
@@ -82,12 +83,7 @@
             <version>RELEASE</version>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>com.taimeitech.framework</groupId>
-            <artifactId>framework-mq</artifactId>
-        </dependency>
-        -->
+
 
 	</dependencies>
 

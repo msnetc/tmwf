@@ -23,11 +23,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @SpringBootApplication
-@MapperScan("com.taimeitech.pass.dao")
-
-@Configuration
-@ComponentScan
-
 public class TaimeiBootApplication {
 
     ///java -jar /usr/local/workflow/tmwf-1.0-SNAPSHOT.jar
