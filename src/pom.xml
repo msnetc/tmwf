@@ -21,6 +21,11 @@
 
 	<dependencies>
 
+		<!--<dependency>-->
+			<!--<groupId>org.activiti</groupId>-->
+			<!--<artifactId>activiti-spring-boot-starter-jpa</artifactId>-->
+		<!--</dependency>-->
+
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring-boot-starter-basic</artifactId>
@@ -71,13 +76,18 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+        </dependency>
 
-		<!--
-		<dependency>
-			<groupId>com.taimeitech.framework</groupId>
-			<artifactId>framework-mq</artifactId>
-		</dependency>
-		-->
+        <!--
+        <dependency>
+            <groupId>com.taimeitech.framework</groupId>
+            <artifactId>framework-mq</artifactId>
+        </dependency>
+        -->
 
 	</dependencies>
 
