@@ -67,6 +67,8 @@ public class ActivitiConfiguration {
     public ProcessEngineConfiguration processEngineConfiguration(DataSource dataSource, PlatformTransactionManager transactionManager, EntityManagerFactory entityManagerFactory){
         SpringProcessEngineConfiguration processEngineConfiguration = new SpringProcessEngineConfiguration();
         processEngineConfiguration.setDataSource(dataSource);
+        processEngineConfiguration.setJpaCloseEntityManager(false); //不关闭EntityManager
+        processEngineConfiguration.setJpaHandleTransaction(false); //由spring容器管理事务
         processEngineConfiguration.setJpaEntityManagerFactory(entityManagerFactory);
         processEngineConfiguration.setTransactionManager(transactionManager);
         return processEngineConfiguration;
