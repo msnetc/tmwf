@@ -20,13 +20,19 @@ import java.util.Map;
 public class TaskEndListener implements ExecutionListener,TaskListener {
 
     public void notify(DelegateExecution execution)   {
-            SendMsg(execution.getProcessDefinitionId(), execution.getProcessInstanceId(),true);
+        String processInstanceId =execution.getProcessInstanceId();
+        String pdId =GetPdId(execution.getProcessDefinitionId());
+            SendMsg(pdId, processInstanceId,true);
     }
 
     @Override
     public void notify(DelegateTask delegateTask) {
         String processInstanceId = delegateTask.getProcessInstanceId();
+    }
 
+    private String GetPdId(String processInstanceId){
+        String ret = processInstanceId.substring(0, processInstanceId.indexOf(":"));
+        return ret;
     }
     private void SendMsg(String processId, String piId, boolean reslult){
         try{

@@ -23,10 +23,15 @@ public class TaskRejectionListener implements ExecutionListener,TaskListener {
     }
     //ExecutionListener类的实现
     public void notify(DelegateExecution execution)   {
-        SendMsg(execution.getProcessDefinitionId(), execution.getProcessInstanceId(),false);
-
+        String processInstanceId =execution.getProcessInstanceId();
+        String pdId =GetPdId(execution.getProcessDefinitionId());
+        SendMsg(pdId, processInstanceId,false);
     }
 
+    private String GetPdId(String processInstanceId){
+        String ret = processInstanceId.substring(0, processInstanceId.indexOf(":"));
+        return ret;
+    }
 
     public RabbitMessageSender getRabbitMessageSender() {
         return SpringUtils.getBean(RabbitMessageSender.class);

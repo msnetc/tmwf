@@ -17,6 +17,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -36,7 +38,6 @@ public class ActivitiConfiguration {
     @Bean
     @Primary
    public javax.sql.DataSource activitiDataSource() {
-
         return DataSourceBuilder
                 .create()
                 .url(url)
@@ -51,8 +52,14 @@ public class ActivitiConfiguration {
         DataSource ds = dataSource;
         LocalContainerEntityManagerFactoryBean beanFactory = new LocalContainerEntityManagerFactoryBean();
         beanFactory.setDataSource(ds);
-        beanFactory.setPackagesToScan("com.taimeitech.pass.entity");
+        beanFactory.setPackagesToScan(com.taimeitech.pass.entity.Finance.SaveAuditForm.class.getPackage().getName());
         return beanFactory.getObject();
+    }
+
+
+    @Bean
+    public EntityManager getEntityManager(EntityManagerFactory factory){
+        return factory.createEntityManager();
     }
 
     @Bean
