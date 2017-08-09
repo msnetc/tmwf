@@ -20,15 +20,19 @@ import java.util.Map;
 public class TaskEndListener implements ExecutionListener,TaskListener {
 
     public void notify(DelegateExecution execution)   {
-            String processId =execution.getProcessDefinitionId();
-            SendMsg(processId,true);
+            SendMsg(execution.getProcessDefinitionId(), execution.getProcessInstanceId(),true);
     }
 
-    private void SendMsg(String processId, boolean reslult){
+    @Override
+    public void notify(DelegateTask delegateTask) {
+        String processInstanceId = delegateTask.getProcessInstanceId();
+
+    }
+    private void SendMsg(String processId, String piId, boolean reslult){
         try{
             getQueueUtil().declareQueue(processId);
             Map<String, Object> map = new HashMap<>();
-            map.put("ProcessInstanceId", processId);
+            map.put("ProcessInstanceId", piId);
             map.put("IsPass", reslult);
             String messageData = SerializeUtils.toJson(map);
             getRabbitMessageSender().directSend(processId, messageData);
@@ -42,15 +46,9 @@ public class TaskEndListener implements ExecutionListener,TaskListener {
         return SpringUtils.getBean(RabbitMessageSender.class);
     }
 
-
     public IQueueUtil getQueueUtil() {
         return SpringUtils.getBean(IQueueUtil.class);
     }
 
-    @Override
-    public void notify(DelegateTask delegateTask) {
-        String processInstanceId = delegateTask.getProcessInstanceId();
-
-    }
 }
 

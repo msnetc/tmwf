@@ -16,6 +16,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TaskRejectionListener implements ExecutionListener,TaskListener {
+
+    @Override
+    public void notify(DelegateTask delegateTask) {
+
+    }
+    //ExecutionListener类的实现
+    public void notify(DelegateExecution execution)   {
+        SendMsg(execution.getProcessDefinitionId(), execution.getProcessInstanceId(),false);
+
+    }
+
+
     public RabbitMessageSender getRabbitMessageSender() {
         return SpringUtils.getBean(RabbitMessageSender.class);
     }
@@ -23,21 +35,11 @@ public class TaskRejectionListener implements ExecutionListener,TaskListener {
         return SpringUtils.getBean(IQueueUtil.class);
     }
 
-    @Override
-    public void notify(DelegateTask delegateTask) {
-
-    }
-
-    //ExecutionListener类的实现
-    public void notify(DelegateExecution execution)   {
-        SendMsg(execution.getProcessDefinitionId(), false);
-    }
-
-    private void SendMsg(String processId, boolean reslult){
+    private void SendMsg(String processId, String piId, boolean reslult){
         try{
             getQueueUtil().declareQueue(processId);
             Map<String, Object> map = new HashMap<>();
-            map.put("ProcessInstanceId", processId);
+            map.put("ProcessInstanceId", piId);
             map.put("IsPass", reslult);
             String messageData = SerializeUtils.toJson(map);
             getRabbitMessageSender().directSend(processId, messageData);
