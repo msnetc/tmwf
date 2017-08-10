@@ -4,6 +4,7 @@ import com.taimeitech.pass.entity.Finance.*;
 //import com.taimeitech.pass.service.FinanceSystem.AuditFormService;
 import com.taimeitech.pass.entity.workflow.GetTaskListResponse;
 import com.taimeitech.pass.entity.workflow.tmTask;
+import com.taimeitech.pass.service.FinanceSystem.FinanceService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.activiti.engine.task.Task;
@@ -21,6 +22,10 @@ import static org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers.data;
 
 @RestController
 public class FinanceController {
+
+    @Autowired
+    private FinanceService financeService;
+
 
     //    @Autowired
     ////    private  AuditFormService auditFormService;
@@ -48,6 +53,8 @@ public class FinanceController {
     @RequestMapping(value = "finance/QueryUserTask", method = RequestMethod.POST)
     public QueryUserTaskResponse Post(@ApiParam("query") @RequestBody QueryUserTask query){
         QueryUserTaskResponse response = new QueryUserTaskResponse();
+        List<UserTask> tasks = financeService.GetUserTasks(query);
+        response.setData(tasks);
         return  response;
     }
 
@@ -55,6 +62,8 @@ public class FinanceController {
     @RequestMapping(value = "finance/QueryUserAllTask", method = RequestMethod.POST)
     public QueryUserAllTaskResponse Post(@ApiParam("query") @RequestBody QueryUserAllTask query){
         QueryUserAllTaskResponse response = new QueryUserAllTaskResponse();
+        List<UserTask> tasks = financeService.GetUserTasks(query);
+        response.setData(tasks);
         return  response;
     }
 
