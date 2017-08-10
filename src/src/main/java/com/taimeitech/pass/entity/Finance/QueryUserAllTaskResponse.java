@@ -4,6 +4,5 @@ import com.taimeitech.framework.common.dto.ActionResult;
 
 import java.util.List;
 
-public class QueryUserTaskResponse  extends ActionResult<List<UserTask>>{
-
+public class QueryUserAllTaskResponse extends ActionResult<List<UserTask>>{
 }

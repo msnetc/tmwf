@@ -41,6 +41,9 @@ public class WfServiceImpl implements WfService {
     public List<Task> QueryTasks(GetTaskList data) {
         TaskQuery query = taskService.createTaskQuery();
         String userId = data.getUserId();
+        if(StringUtil.isNotBlank(data.getPdId())){
+            query.processDefinitionKeyLikeIgnoreCase(data.getPdId());
+        }
         if (StringUtil.isNotBlank(userId)) {
              query=query.taskAssignee(userId);
         }

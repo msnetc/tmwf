@@ -4,25 +4,44 @@ import com.taimeitech.pass.entity.workflow.IReturn;
 import io.swagger.annotations.ApiModelProperty;
 
 public class QueryUserTask implements IReturn<QueryUserTaskResponse> {
-    @ApiModelProperty(value = "")
-    private String pdId;
-    @ApiModelProperty(value = "group的id列表")
-    private int taskStatusId;
+    @ApiModelProperty(value = "任务名称")
+    private String taskName;
+    @ApiModelProperty(value = "PdId", notes = "报价单QuotationInvoice0808, 项目任务跟踪ProjectTaskTrace0808, 工时表跟踪LaborHourTrace0808")
+    private String PdId;
+    @ApiModelProperty(value = "processInstanceId")
+    private String processInstanceId;
+    @ApiModelProperty(value = "用户id")
+    private String userId;
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
 
     public String getPdId() {
-        return pdId;
+        return PdId;
     }
 
     public void setPdId(String pdId) {
-        this.pdId = pdId;
+        PdId = pdId;
     }
 
-    public int getTaskStatusId() {
-        return taskStatusId;
+    public String getProcessInstanceId() {
+        return processInstanceId;
     }
 
-    public void setTaskStatusId(int taskStatusId) {
-        this.taskStatusId = taskStatusId;
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
     }
-    
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }
