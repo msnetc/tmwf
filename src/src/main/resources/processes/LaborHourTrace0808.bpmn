@@ -3,27 +3,36 @@
   <process id="LaborHourTrace0808" name="My process" isExecutable="true">
     <startEvent id="startevent1" name="Start"></startEvent>
     <endEvent id="endevent1" name="End"></endEvent>
-    <userTask id="usertask1" name="主审审核" activiti:assignee="${users}"></userTask>
+    <userTask id="usertask1" name="主审审核" activiti:assignee="${BdUser}">
+      <extensionElements>
+        <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.finance.LaborHourTraceAuditCountListener"></activiti:taskListener>
+      </extensionElements>
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="users" activiti:elementVariable="BdUser"></multiInstanceLoopCharacteristics>
+    </userTask>
     <userTask id="usertask2" name="用户修改"></userTask>
     <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
-    <sequenceFlow id="flow1" name="提交" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
-    <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="exclusivegateway1"></sequenceFlow>
+    <sequenceFlow id="flow1" name="提交" sourceRef="startevent1" targetRef="usertask1">
+	<extensionElements>
+        <activiti:executionListener event="take" expression="${execution.setVariable('approvedAuditiCounter', 0)}"></activiti:executionListener>
+	</extensionElements>
+	</sequenceFlow>
     <sequenceFlow id="flow3" name="审核拒绝" sourceRef="exclusivegateway1" targetRef="usertask2">
       <extensionElements>
         <activiti:executionListener event="take" class="com.taimeitech.pass.workflowExt.Listener.TaskRejectionListener"></activiti:executionListener>
       </extensionElements>
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved == false}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedAuditiCounter < users.size()}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="flow4" name="审核通过" sourceRef="exclusivegateway1" targetRef="endevent1">
       <extensionElements>
         <activiti:executionListener event="take" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"></activiti:executionListener>
       </extensionElements>
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved == true}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedAuditiCounter == users.size()}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="flow5" sourceRef="usertask2" targetRef="usertask1"></sequenceFlow>
+    <sequenceFlow id="flow6" sourceRef="usertask1" targetRef="exclusivegateway1"></sequenceFlow>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_myProcess">
-    <bpmndi:BPMNPlane bpmnElement="myProcess" id="BPMNPlane_myProcess">
+  <bpmndi:BPMNDiagram id="BPMNDiagram_LaborHourTrace0808">
+    <bpmndi:BPMNPlane bpmnElement="LaborHourTrace0808" id="BPMNPlane_LaborHourTrace0808">
       <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
         <omgdc:Bounds height="35.0" width="35.0" x="33.0" y="372.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
@@ -46,15 +55,11 @@
           <omgdc:Bounds height="14.0" width="24.0" x="111.0" y="383.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
-        <omgdi:waypoint x="315.0" y="387.0"></omgdi:waypoint>
-        <omgdi:waypoint x="660.0" y="389.0"></omgdi:waypoint>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
         <omgdi:waypoint x="680.0" y="369.0"></omgdi:waypoint>
         <omgdi:waypoint x="429.0" y="185.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="48.0" x="571.0" y="279.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="100.0" x="571.0" y="279.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
@@ -67,6 +72,10 @@
       <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
         <omgdi:waypoint x="429.0" y="185.0"></omgdi:waypoint>
         <omgdi:waypoint x="262.0" y="360.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="315.0" y="387.0"></omgdi:waypoint>
+        <omgdi:waypoint x="660.0" y="389.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
