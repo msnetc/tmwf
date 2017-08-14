@@ -12,7 +12,9 @@ public class UserTask {
 
     @ApiModelProperty(value = "taskId")
     private String taskId;
+
     @ApiModelProperty(value = "taskName")
+
     private String taskName;
     @ApiModelProperty(value = "businessKeyId")
     private String businessKeyId;
@@ -25,6 +27,18 @@ public class UserTask {
 
     @ApiModelProperty(value = "提交者")
     private String Submiter;
+
+    @ApiModelProperty(value = "提交日期")
+    private String CommitDate;
+
+
+    public String getCommitDate() {
+        return CommitDate;
+    }
+
+    public void setCommitDate(String commitDate) {
+        CommitDate = commitDate;
+    }
 
     public int getApproved() {
         return approved;
