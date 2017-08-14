@@ -26,8 +26,8 @@
       <file leaf-file-name="UserTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/UserTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="308">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#806#807#0" expanded="true" />
                 <element signature="e#839#840#0" expanded="true" />
@@ -1054,12 +1054,12 @@
       <workItem from="1501822718104" duration="11383000" />
       <workItem from="1502242588162" duration="18354000" />
       <workItem from="1502268612872" duration="42630000" />
-      <workItem from="1502678460482" duration="136000" />
+      <workItem from="1502678460482" duration="175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269282000" />
+    <option name="totallyTimeSpent" value="269321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1748,8 +1748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/UserTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="308">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#806#807#0" expanded="true" />
             <element signature="e#839#840#0" expanded="true" />
