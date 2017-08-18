@@ -1,48 +1,52 @@
 package com.taimeitech.pass.dao.FinanceSystem;
 
+
+import com.taimeitech.framework.common.po.BasePO;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-//AuditForm
-@Entity(name = "AuditForm")
-public class AuditFormEntity implements Serializable {
-
-    private Long id;
+@Table(name = "AuditForm")
+public class AuditFormEntity  extends BasePO {
 
     @ApiModelProperty(value = "processInstanceId")
+    @Column
     private String processInstanceId;
+
     @ApiModelProperty(value = "任务id")
+    @Column
     private int taskId;
+
     @ApiModelProperty(value = "节点名称")
+    @Column
     private String taskName;
+
     @ApiModelProperty(value = "处理人userId")
+    @Column
     private String processUserId;
 
     @ApiModelProperty(value = "处理人姓名")
+    @Column
     private String processUserName;
 
     @ApiModelProperty(value = "处理日期")
+    @Column
     private DateTime processDate;
+
     @ApiModelProperty(value = "任务日期")
+    @Column
     private DateTime taskAssignDate;
+
     @ApiModelProperty(value = "审批结果-是否通过")
+    @Column
     private boolean Approved;
+
     @ApiModelProperty(value = "审批意见")
+    @Column
     private String ExaminationComment;
 
-    @Id
-    @Column(name="ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getProcessInstanceId() {
         return processInstanceId;

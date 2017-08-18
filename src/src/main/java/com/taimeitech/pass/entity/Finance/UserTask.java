@@ -1,6 +1,9 @@
 package com.taimeitech.pass.entity.Finance;
 
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
+
+import java.util.Date;
 
 /**
  * Created by yanjie.miao on 2017/8/10.
@@ -14,8 +17,8 @@ public class UserTask {
     private String taskId;
 
     @ApiModelProperty(value = "taskName")
-
     private String taskName;
+
     @ApiModelProperty(value = "businessKeyId")
     private String businessKeyId;
 
@@ -29,15 +32,14 @@ public class UserTask {
     private String Submiter;
 
     @ApiModelProperty(value = "提交日期")
-    private String CommitDate;
+    private Date commitDate;
 
-
-    public String getCommitDate() {
-        return CommitDate;
+    public Date getCommitDate() {
+        return commitDate;
     }
 
-    public void setCommitDate(String commitDate) {
-        CommitDate = commitDate;
+    public void setCommitDate(Date commitDate) {
+        this.commitDate = commitDate;
     }
 
     public int getApproved() {

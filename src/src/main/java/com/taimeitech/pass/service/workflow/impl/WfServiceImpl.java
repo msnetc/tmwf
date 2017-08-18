@@ -1,6 +1,7 @@
 package com.taimeitech.pass.service.workflow.impl;
 
 import com.taimeitech.framework.util.StringUtil;
+import com.taimeitech.pass.entity.Finance.CompleteTasks;
 import com.taimeitech.pass.entity.workflow.*;
 import com.taimeitech.pass.service.workflow.WfService;
 import org.activiti.engine.*;
@@ -10,17 +11,16 @@ import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.history.HistoricVariableInstanceQuery;
 import org.activiti.engine.identity.User;
 import org.activiti.engine.identity.UserQuery;
-import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
+import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
-
-import static org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers.data;
 
 @Service
 public class WfServiceImpl implements WfService {
@@ -63,11 +63,13 @@ public class WfServiceImpl implements WfService {
     }
 
     @Override
+
+    @Transactional
     public boolean CompleteTask(CompleteTask data) {
         taskService.claim(data.getTaskId(), data.getUserId());
         taskService.complete(data.getTaskId(), data.getVariables());
-        Task task = taskService.createTaskQuery().taskId(data.getTaskId()).singleResult();
-        return task == null;
+//        Task task = taskService.createTaskQuery().taskId(data.getTaskId()).singleResult();
+        return true;
     }
 
     @Override
