@@ -28,6 +28,16 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-mysql</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.taimeitech.framework</groupId>
+			<artifactId>framework-redis</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring-boot-starter-basic</artifactId>
 			<version>6.0.0</version>
@@ -61,15 +71,7 @@
 			<artifactId>framework-common</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.taimeitech.framework</groupId>
-			<artifactId>framework-mysql</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>com.taimeitech.framework</groupId>
-			<artifactId>framework-redis</artifactId>
-		</dependency>
 
 		<!--Swagger 相关jar包-->
 		<dependency>

@@ -7,6 +7,6 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Created by yanjie.miao on 2017/7/25.
  */
-public class SaveUserGroupRelationsResponse  extends ActionBaseResult{
+public class SaveUserGroupRelationsResponse  extends ActionResult{
 
 }

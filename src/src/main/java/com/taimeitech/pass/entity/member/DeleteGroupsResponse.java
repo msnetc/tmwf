@@ -4,6 +4,6 @@ import com.taimeitech.framework.common.dto.ActionResult;
 import com.taimeitech.pass.entity.ActionBaseResult;
 import io.swagger.annotations.ApiModelProperty;
 
-public class DeleteGroupsResponse  extends ActionBaseResult {
+public class DeleteGroupsResponse  extends ActionResult {
 
 }

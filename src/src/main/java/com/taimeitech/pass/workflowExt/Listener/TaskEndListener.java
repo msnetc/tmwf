@@ -34,6 +34,7 @@ public class TaskEndListener implements ExecutionListener,TaskListener {
         String ret = processInstanceId.substring(0, processInstanceId.indexOf(":"));
         return ret;
     }
+
     private void SendMsg(String processId, String piId, boolean reslult){
         try{
             getQueueUtil().declareQueue(processId);
@@ -41,7 +42,9 @@ public class TaskEndListener implements ExecutionListener,TaskListener {
             map.put("ProcessInstanceId", piId);
             map.put("IsPass", reslult);
             String messageData = SerializeUtils.toJson(map);
-            getRabbitMessageSender().directSend(processId, messageData);
+
+            getRabbitMessageSender().dynamicSend("",processId, messageData);
+            // getRabbitMessageSender().directSend(processId, messageData);
         }
         catch (Exception ex){
             TaimeiLogger.error(ex);

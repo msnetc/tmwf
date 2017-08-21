@@ -1,6 +1,7 @@
 package com.taimeitech.pass.entity.member;
 
-import com.taimeitech.pass.entity.ActionBaseResult;
 
-public class SaveUserGroupRelationsByUserResponse  extends ActionBaseResult {
+import com.taimeitech.framework.common.dto.ActionResult;
+
+public class SaveUserGroupRelationsByUserResponse  extends ActionResult {
 }
