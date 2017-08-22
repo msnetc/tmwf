@@ -45,7 +45,7 @@ public class AuditFormEntity  extends BasePO {
 
     @ApiModelProperty(value = "审批意见")
     @Column
-    private String ExaminationComment;
+    private String examinationComment;
 
 
     public String getProcessInstanceId() {
@@ -113,10 +113,10 @@ public class AuditFormEntity  extends BasePO {
     }
 
     public String getExaminationComment() {
-        return ExaminationComment;
+        return examinationComment;
     }
 
     public void setExaminationComment(String examinationComment) {
-        ExaminationComment = examinationComment;
+        this.examinationComment = examinationComment;
     }
 }

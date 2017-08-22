@@ -1,5 +1,7 @@
 package com.taimeitech.pass.dao.FinanceSystem;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.math.BigInteger;
@@ -9,8 +11,6 @@ import java.math.BigInteger;
  */
 public class AuditFormDao {
 
-    @PersistenceContext
-    private EntityManager entityManager;
 
     /**
      * 流程完成后清理detail表中的表单类型数据
@@ -18,15 +18,17 @@ public class AuditFormDao {
      * @return
      */
     public int deleteFormPropertyByProcessInstanceId(String processInstanceId) {
-        int i = entityManager.createNativeQuery("delete from act_hi_detail where proc_inst_id_ = ? and type_ = 'FormProperty' ")
-                .setParameter(1, processInstanceId).executeUpdate();
-        return i;
+//        int i = entityManager.createNativeQuery("delete from act_hi_detail where proc_inst_id_ = ? and type_ = 'FormProperty' ")
+//                .setParameter(1, processInstanceId).executeUpdate();
+//        return i;
+        throw new NotImplementedException();
     }
 
     public int deleteHistoryVariable(String processInstanceId, String variableName) {
-        int i = entityManager.createNativeQuery("delete from act_hi_varinst where proc_inst_id_ = ? and name_ = ? ")
-                .setParameter(1, processInstanceId).setParameter(2, variableName).executeUpdate();
-        return i;
+//        int i = entityManager.createNativeQuery("delete from act_hi_varinst where proc_inst_id_ = ? and name_ = ? ")
+//                .setParameter(1, processInstanceId).setParameter(2, variableName).executeUpdate();
+//        return i;
+        throw new NotImplementedException();
     }
 
     /**
@@ -35,6 +37,7 @@ public class AuditFormDao {
      * @return
      */
     public Long countTableRows(String tableName) {
-        return ((BigInteger)entityManager.createNativeQuery("select count(*) from " + tableName).getSingleResult()).longValue();
+        throw new NotImplementedException();
+//        return ((BigInteger)entityManager.createNativeQuery("select count(*) from " + tableName).getSingleResult()).longValue();
     }
 }

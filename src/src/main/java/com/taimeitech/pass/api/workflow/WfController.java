@@ -23,7 +23,7 @@ import java.util.List;
 @RestController
 public class WfController {
     @Autowired
-    WfService wfService;
+    private WfService wfService;
 
     @ApiOperation(value = "创建pi，启动工作流", notes = "一般是创建表单后启动任务，把表单对应的id传给工作流引擎")
     @RequestMapping(value = "pi/createPI", method = RequestMethod.POST)
