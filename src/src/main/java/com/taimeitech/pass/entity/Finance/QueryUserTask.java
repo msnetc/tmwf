@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class QueryUserTask implements IReturn<QueryUserTaskResponse> {
 
-    @ApiModelProperty(value = "PdId", notes = "报价单QuotationInvoice0808, 项目任务跟踪ProjectTaskTrace0808, 工时表跟踪LaborHourTrace0808")
+    @ApiModelProperty(value = "PdId 报价单QuotationInvoice0808, 项目任务跟踪ProjectTaskTrace0808, 工时表跟踪LaborHourTrace0808", notes = "报价单QuotationInvoice0808, 项目任务跟踪ProjectTaskTrace0808, 工时表跟踪LaborHourTrace0808")
     private String PdId;
 
     @ApiModelProperty(value = "用户id")

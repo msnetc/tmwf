@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class GetUserTaskFormData  implements  IReturn<GetUserTaskFormDataResponse> {
 
-    @Autowired
     @ApiModelProperty(value = "taskId")
     private String taskId;
 

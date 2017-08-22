@@ -10,14 +10,25 @@ import java.util.List;
  */
 public class QueryUserAllTask  implements IReturn<QueryUserAllTaskResponse> {
 
-    @ApiModelProperty(value = "processInstanceId 列表")
-   private List<String> processInstanceIds;
+    @ApiModelProperty(value = "pdId 报价单QuotationInvoice0808, 项目任务跟踪ProjectTaskTrace0808, 工时表跟踪LaborHourTrace0808" )
+    private String pdId;
 
-    public List<String> getProcessInstanceIds() {
-        return processInstanceIds;
+    @ApiModelProperty(value = "userId")
+    private String userId;
+
+    public String getPdId() {
+        return pdId;
     }
 
-    public void setProcessInstanceIds(List<String> processInstanceIds) {
-        this.processInstanceIds = processInstanceIds;
+    public void setPdId(String pdId) {
+        this.pdId = pdId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

@@ -35,10 +35,13 @@ public class FinanceServiceImpl implements FinanceService{
         HistoricTaskInstanceQuery historyTaskQuery = historyService.createHistoricTaskInstanceQuery(); // 创建历史任务实例查询
         HistoricVariableInstanceQuery variableHistoryQuery =historyService.createHistoricVariableInstanceQuery();
 
-        List<String> pidIds = queryParm.getProcessInstanceIds();
-        if(pidIds !=null && pidIds.isEmpty()==false){
-            runTimeTaskQuery.processInstanceIdIn(pidIds);
-            historyTaskQuery.processInstanceIdIn(pidIds);
+        if(StringUtils.isNotEmpty(queryParm.getPdId())){
+            runTimeTaskQuery.processDefinitionKeyLikeIgnoreCase(queryParm.getPdId().toUpperCase());
+            historyTaskQuery.processDefinitionKeyLikeIgnoreCase(queryParm.getPdId().toUpperCase());
+        }
+        if(StringUtils.isNotEmpty(queryParm.getUserId())){
+            runTimeTaskQuery.taskAssignee(queryParm.getUserId());
+            historyTaskQuery.taskAssignee(queryParm.getUserId());
         }
         List<Task> runTimeTasks = runTimeTaskQuery.list();
         List<HistoricTaskInstance>  historyTasks = historyTaskQuery.list();

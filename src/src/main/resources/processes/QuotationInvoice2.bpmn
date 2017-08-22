@@ -18,7 +18,7 @@
       <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="FinanceGroup" activiti:elementVariable="financeUser"></multiInstanceLoopCharacteristics>
     </userTask>
     <sequenceFlow id="flow6" name="通过且无合同" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask6">
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == true}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == false}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="flow8" sourceRef="usertask4" targetRef="sid_exGateWayBDMgr"></sequenceFlow>
     <userTask id="sid_usertask8" name="法务主管审核" activiti:assignee="${LawWorker}">
@@ -28,7 +28,7 @@
       <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="LawGroup" activiti:elementVariable="LawWorker"></multiInstanceLoopCharacteristics>
     </userTask>
     <sequenceFlow id="flow10" name="通过且有合同" sourceRef="sid_exGateWayBDMgr" targetRef="sid_usertask8">
-      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == false}]]></conditionExpression>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedBdCounter == BdGroup.size() && isHaveContract == true}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="flow18" sourceRef="startevent1" targetRef="usertask4">
       <extensionElements>
@@ -113,7 +113,7 @@
         <omgdi:waypoint x="442.0" y="214.0"></omgdi:waypoint>
         <omgdi:waypoint x="877.0" y="207.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="72.0" x="324.0" y="235.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="100.0" x="324.0" y="235.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
@@ -124,7 +124,7 @@
         <omgdi:waypoint x="380.0" y="372.0"></omgdi:waypoint>
         <omgdi:waypoint x="877.0" y="372.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="72.0" x="506.0" y="366.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="100.0" x="506.0" y="366.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow18" id="BPMNEdge_flow18">

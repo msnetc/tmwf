@@ -13,31 +13,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/TaskController.java">
+      <file leaf-file-name="FinanceServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="28" column="71" lean-forward="true" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+            <state relative-caret-position="139">
+              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
-                <element signature="e#977#1045#0" expanded="false" />
-                <element signature="method#readTaskForm#0;class#TaskController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FinanceController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/FinanceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-              <folding>
-                <element signature="e#1203#1256#0" expanded="false" />
-                <element signature="method#Post#0;class#FinanceController#0" expanded="false" />
-                <element signature="e#1638#1691#0" expanded="false" />
-                <element signature="method#Post#1;class#FinanceController#0" expanded="false" />
-                <element signature="e#2088#2135#0" expanded="false" />
-                <element signature="method#Post#2;class#FinanceController#0" expanded="false" />
+                <element signature="e#3771#3889#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,7 +67,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetTaskFormData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/TaskFormData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetUserTaskFormDataResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetUserTaskFormData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/FinanceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/ActivitiConfiguration.java" />
@@ -93,7 +74,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/UserTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/CompleteTasks.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/CompleteUserTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/CompleteTasksResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/CompleteTaskResponse.java" />
@@ -109,12 +89,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/TaskEndListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/TaskRejectionListener.java" />
         <option value="$MAVEN_REPOSITORY$/com/taimeitech/pom/springboot-public-pom/1.0.0-SNAPSHOT/springboot-public-pom-1.0.0-SNAPSHOT.pom" />
-        <option value="$PROJECT_DIR$/src/main/resources/bootstrap.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/mapper/AuditFormMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/WfController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetUserTaskFormData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/QueryUserAllTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/QueryUserTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -261,36 +245,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tmwf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="workflow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -320,7 +274,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.tmwf [package]">
+  <component name="RunManager" selected="Spring Boot.TaimeiBootApplication">
     <configuration default="false" name="tmwf [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -809,12 +763,12 @@
       <updated>1502688182375</updated>
       <workItem from="1502688195341" duration="76739000" />
       <workItem from="1503280601016" duration="16800000" />
-      <workItem from="1503368165769" duration="2697000" />
+      <workItem from="1503368165769" duration="7955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96236000" />
+    <option name="totallyTimeSpent" value="101494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2064" height="1128" extended-state="6" />
@@ -823,7 +777,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17285156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17089844" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -831,8 +785,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65225935" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5314342" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09823183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -841,7 +796,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71944445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23486328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.104003906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -852,7 +807,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="BPMN Editor" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09823183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -902,8 +856,32 @@
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -912,58 +890,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/interceptor/InterceptorConfigurer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/queue/QueueUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mq/1.0.0-SNAPSHOT/framework-mq-1.0.0-SNAPSHOT.jar!/com/taimeitech/framework/message/RabbitMessageSender.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/1.7.3.RELEASE/spring-rabbit-1.7.3.RELEASE.jar!/org/springframework/amqp/rabbit/core/RabbitTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="458" column="16" lean-forward="false" selection-start-line="458" selection-start-column="16" selection-end-line="458" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/SpringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mq/1.0.0-SNAPSHOT/framework-mq-1.0.0-20170817.071101-43.jar!/com/taimeitech/framework/message/RabbitMessageSender.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/BdTaskListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1101,6 +1027,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,6 +1035,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,22 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1248,19 +1160,6 @@
         <state relative-caret-position="88">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="29" column="36" lean-forward="true" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-          <folding>
-            <element signature="method#GetUserTasks#0;class#FinanceServiceImpl#0" expanded="false" />
-            <element signature="method#GetUserTasks#1;class#FinanceServiceImpl#0" expanded="false" />
-            <element signature="e#3548#3666#0" expanded="false" />
-            <element signature="method#CompleteTasks#0;class#FinanceServiceImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1293,6 +1192,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="e#754#755#0" expanded="false" />
+            <element signature="e#812#813#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding>
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2578#2579#0" expanded="true" />
+            <element signature="e#2646#2647#0" expanded="true" />
+            <element signature="e#2706#2707#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/WfController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1314,34 +1237,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="110" column="38" lean-forward="true" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
           <folding>
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
+            <element signature="docComment;class#List#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#isEmpty#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#contains#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#iterator#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#toArray#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#toArray#1;class#List#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#remove#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#containsAll#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#addAll#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#addAll#1;class#List#0" expanded="false" />
+            <element signature="docComment;method#removeAll#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#retainAll#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#replaceAll#0;class#List#0" expanded="false" />
+            <element signature="method#replaceAll#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#sort#0;class#List#0" expanded="false" />
+            <element signature="method#sort#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#clear#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#equals#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#hashCode#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#get#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#set#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#add#1;class#List#0" expanded="false" />
+            <element signature="docComment;method#remove#1;class#List#0" expanded="false" />
+            <element signature="docComment;method#indexOf#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#lastIndexOf#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#listIterator#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#listIterator#1;class#List#0" expanded="false" />
+            <element signature="docComment;method#subList#0;class#List#0" expanded="false" />
+            <element signature="docComment;method#spliterator#0;class#List#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormEntity.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Collection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        <state relative-caret-position="257">
+          <caret line="156" column="69" lean-forward="true" selection-start-line="156" selection-start-column="69" selection-end-line="156" selection-end-column="69" />
           <folding>
-            <element signature="e#2537#2538#0" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2646#2647#0" expanded="true" />
-            <element signature="e#2706#2707#0" expanded="true" />
+            <element signature="docComment;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#contains#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#iterator#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#toArray#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#toArray#1;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#remove#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#containsAll#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#addAll#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#removeAll#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#removeIf#0;class#Collection#0" expanded="false" />
+            <element signature="method#removeIf#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#retainAll#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#clear#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#equals#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#hashCode#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#spliterator#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#stream#0;class#Collection#0" expanded="false" />
+            <element signature="docComment;method#parallelStream#0;class#Collection#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetUserTaskFormData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="28" column="71" lean-forward="true" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+        <state relative-caret-position="286">
+          <caret line="29" column="92" lean-forward="false" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
           <folding>
             <element signature="e#977#1045#0" expanded="false" />
             <element signature="method#readTaskForm#0;class#TaskController#0" expanded="false" />
@@ -1349,17 +1341,172 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/QueryUserTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="112" lean-forward="false" selection-start-line="7" selection-start-column="112" selection-end-line="7" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/task/TaskInfoQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/impl/TaskQueryImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="223" column="55" lean-forward="false" selection-start-line="223" selection-start-column="55" selection-end-line="223" selection-end-column="55" />
+          <folding>
+            <element signature="method#TaskQueryImpl#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#TaskQueryImpl#3;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskName#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskNameIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskNameInIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskNameLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskNameLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskDescription#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskDescriptionLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskDescriptionLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskPriority#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskMinPriority#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskMaxPriority#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskAssignee#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskAssigneeLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskAssigneeLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskAssigneeIds#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskOwner#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskOwnerLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskOwnerLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskUnassigned#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskDelegationState#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCandidateUser#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskInvolvedUser#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskInvolvedGroupsIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCandidateGroup#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCandidateOrAssigned#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCandidateGroupIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskTenantId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskTenantIdLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskWithoutTenantId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processInstanceId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processInstanceIdIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processInstanceBusinessKey#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processInstanceBusinessKeyLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processInstanceBusinessKeyLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#executionId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCreatedOn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCreatedBefore#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCreatedAfter#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskCategory#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskDefinitionKey#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskDefinitionKeyLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueEquals#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueEquals#1;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueEqualsIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueNotEqualsIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueNotEquals#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueGreaterThan#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueGreaterThanOrEqual#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueLessThan#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueLessThanOrEqual#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#taskVariableValueLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueEquals#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueNotEquals#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueEquals#1;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueEqualsIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueNotEqualsIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueGreaterThan#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueGreaterThanOrEqual#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueLessThan#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueLessThanOrEqual#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processVariableValueLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionKey#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionKeyLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionKeyLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionKeyIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionName#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processDefinitionNameLike#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processCategoryIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#processCategoryNotIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#deploymentId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#deploymentIdIn#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#dueDate#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#dueBefore#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#dueAfter#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#withoutDueDate#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#excludeSubtasks#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#suspended#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#active#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#locale#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#withLocalizationFallback#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#includeTaskLocalVariables#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#includeProcessVariables#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#limitTaskVariables#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#getCandidateGroups#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#getGroupsForCandidateUser#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#ensureVariablesInitialized#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#or#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#endOr#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#orderByProcessInstanceId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#orderByProcessDefinitionId#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#orderByTaskDefinitionKey#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#orderByDueDateNullsFirst#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#orderByDueDateNullsLast#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#getMssqlOrDB2OrderBy#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#executeList#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#executeCount#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#localize#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#getDelegationStateString#0;class#TaskQueryImpl#0" expanded="false" />
+            <element signature="method#getProcessInstanceBusinessKeyLikeIgnoreCase#0;class#TaskQueryImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/QueryUserAllTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/FinanceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        <state relative-caret-position="528">
+          <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
           <folding>
             <element signature="e#1203#1256#0" expanded="false" />
-            <element signature="method#Post#0;class#FinanceController#0" expanded="false" />
             <element signature="e#1638#1691#0" expanded="false" />
-            <element signature="method#Post#1;class#FinanceController#0" expanded="false" />
             <element signature="e#2088#2135#0" expanded="false" />
             <element signature="method#Post#2;class#FinanceController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#3771#3889#0" expanded="false" />
           </folding>
         </state>
       </provider>
