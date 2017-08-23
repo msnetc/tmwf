@@ -5,9 +5,6 @@ import org.joda.time.DateTime;
 
 import java.util.Date;
 
-/**
- * Created by yanjie.miao on 2017/8/10.
- */
 public class UserTask {
 
     @ApiModelProperty(value = "processInstanceId")
