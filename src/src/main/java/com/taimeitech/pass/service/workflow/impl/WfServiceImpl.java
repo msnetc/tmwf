@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.*;
 
 @Service
+@Transactional
 public class WfServiceImpl implements WfService {
 
     @Autowired
@@ -63,8 +64,6 @@ public class WfServiceImpl implements WfService {
     }
 
     @Override
-
-    @Transactional
     public boolean CompleteTask(CompleteTask data) {
         taskService.claim(data.getTaskId(), data.getUserId());
         taskService.complete(data.getTaskId(), data.getVariables());

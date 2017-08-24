@@ -22,6 +22,7 @@ import org.activiti.engine.*;
         import java.util.List;
 
 @Service
+@Transactional
 public class FinanceServiceImpl implements FinanceService{
 
     @Autowired
@@ -109,7 +110,6 @@ public class FinanceServiceImpl implements FinanceService{
         return ret;
     }
 
-    @Transactional
     public boolean CompleteTasks(CompleteTasks data) {
         for (CompleteUserTask task:data.getUserTasks()){
             taskService.claim(task.getTaskId(), task.getUserId());

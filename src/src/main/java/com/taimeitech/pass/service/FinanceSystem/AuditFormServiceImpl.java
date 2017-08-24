@@ -13,11 +13,11 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
+@Transactional
 public class AuditFormServiceImpl implements  AuditFormService {
     @Autowired
     private AuditFormMapper auditFormMapper;
 
-    @Transactional
     public void SaveAuditFroms(List<AuditFormEntity> dateItems){
             auditFormMapper.batchInsert(dateItems);
     }

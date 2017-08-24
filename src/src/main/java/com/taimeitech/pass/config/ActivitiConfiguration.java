@@ -21,7 +21,6 @@ import javax.sql.DataSource;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-
 @Configuration
 public class ActivitiConfiguration {
     @Value("${spring.datasource.driver-class-name}")
@@ -36,18 +35,18 @@ public class ActivitiConfiguration {
     @Bean
     @Primary
     public javax.sql.DataSource activitiDataSource() {
-
         return DataSourceBuilder
                 .create()
                 .url(url)
                 .username(userName)
                 .password(password)
                 .driverClassName(driverClassName)
+                .type(com.alibaba.druid.pool.DruidDataSource.class)
                 .build();
     }
 
     @Bean
-    public EntityManagerFactory getEntityManagerFactory(DataSource dataSource) {
+    public EntityManagerFactory getEntityManagerFactory(DataSource dataSource){
         DataSource ds = dataSource;
         LocalContainerEntityManagerFactoryBean beanFactory = new LocalContainerEntityManagerFactoryBean();
         beanFactory.setDataSource(ds);
@@ -63,11 +62,13 @@ public class ActivitiConfiguration {
     }
 
     //流程配置，与spring整合采用SpringProcessEngineConfiguration这个实现
+    //close job https://stackoverflow.com/questions/44263068/migration-from-5-22-0-to-6-0-0-jobexecutoractivate-flag-missing
     @Bean
     public ProcessEngineConfiguration processEngineConfiguration(DataSource dataSource, PlatformTransactionManager transactionManager, EntityManagerFactory entityManagerFactory){
         SpringProcessEngineConfiguration processEngineConfiguration = new SpringProcessEngineConfiguration();
         processEngineConfiguration.setDataSource(dataSource);
-        processEngineConfiguration.setJpaCloseEntityManager(false); //不关闭EntityManager
+        processEngineConfiguration.setJpaCloseEntityManager(true); //关闭EntityManager
+        processEngineConfiguration.setAsyncExecutorActivate(false); //关闭作业执行器
         processEngineConfiguration.setJpaHandleTransaction(false); //由spring容器管理事务
         processEngineConfiguration.setJpaEntityManagerFactory(entityManagerFactory);
         processEngineConfiguration.setTransactionManager(transactionManager);
