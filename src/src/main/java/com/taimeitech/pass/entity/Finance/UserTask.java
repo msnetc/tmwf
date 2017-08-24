@@ -29,13 +29,13 @@ public class UserTask {
     private String Submiter;
 
     @ApiModelProperty(value = "提交日期")
-    private Date commitDate;
+    private String commitDate;
 
-    public Date getCommitDate() {
+    public String getCommitDate() {
         return commitDate;
     }
 
-    public void setCommitDate(Date commitDate) {
+    public void setCommitDate(String commitDate) {
         this.commitDate = commitDate;
     }
 
@@ -54,8 +54,6 @@ public class UserTask {
     public void setSubmiter(String submiter) {
         Submiter = submiter;
     }
-
-
 
     public int getTaskStatusId() {
         return taskStatusId;

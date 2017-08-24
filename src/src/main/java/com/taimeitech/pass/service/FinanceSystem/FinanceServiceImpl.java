@@ -18,8 +18,12 @@ import org.activiti.engine.*;
         import org.springframework.stereotype.Service;
         import org.springframework.transaction.annotation.Transactional;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 @Service
 @Transactional
@@ -55,7 +59,7 @@ public class FinanceServiceImpl implements FinanceService{
 
             item.setTaskId(t.getId());
             item.setTaskName(t.getName());
-            item.setCommitDate(t.getCreateTime());
+            item.setCommitDate(FormtDate(t.getCreateTime(),"yyyy-MM-dd HH:mm:ss"));
             item.setTaskStatusId(0);
             ret.add(item);
         }
@@ -64,7 +68,7 @@ public class FinanceServiceImpl implements FinanceService{
             BeanUtils.copyProperties(t, item);
             item.setTaskId(t.getId());
             item.setTaskName(t.getName());
-            item.setCommitDate(t.getCreateTime());
+            item.setCommitDate(FormtDate(t.getCreateTime(),"yyyy-MM-dd HH:mm:ss"));
             item.setTaskStatusId(1);
             variableHistoryQuery = variableHistoryQuery.taskId(t.getId());
             //.variableNameLike("approved");
@@ -84,6 +88,12 @@ public class FinanceServiceImpl implements FinanceService{
 
         }
         return ret;
+    }
+
+    private String FormtDate(Date date, String dtFormat){
+        DateFormat df = new SimpleDateFormat(dtFormat);
+        String retDate = df.format(date);
+        return retDate;
     }
 
     public List<UserTask> GetUserTasks(QueryUserTask queryParm){
