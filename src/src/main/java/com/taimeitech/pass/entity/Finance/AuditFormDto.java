@@ -1,16 +1,10 @@
-package com.taimeitech.pass.dao.FinanceSystem;
+package com.taimeitech.pass.entity.Finance;
 
-
-import com.taimeitech.framework.common.po.BasePO;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Column;
 
-@Table(name = "AuditForm")
-public class AuditFormEntity  extends BasePO {
-
+public class AuditFormDto {
     @ApiModelProperty(value = "processInstanceId")
     @Column
     private String processInstanceId;
@@ -38,7 +32,6 @@ public class AuditFormEntity  extends BasePO {
     @ApiModelProperty(value = "审批意见")
     @Column
     private String examinationComment;
-
 
     public String getProcessInstanceId() {
         return processInstanceId;
@@ -80,19 +73,19 @@ public class AuditFormEntity  extends BasePO {
         this.processUserName = processUserName;
     }
 
-    public String getExaminationComment() {
-        return examinationComment;
-    }
-
-    public void setExaminationComment(String examinationComment) {
-        this.examinationComment = examinationComment;
-    }
-
     public boolean isApproved() {
         return approved;
     }
 
     public void setApproved(boolean approved) {
         this.approved = approved;
+    }
+
+    public String getExaminationComment() {
+        return examinationComment;
+    }
+
+    public void setExaminationComment(String examinationComment) {
+        this.examinationComment = examinationComment;
     }
 }

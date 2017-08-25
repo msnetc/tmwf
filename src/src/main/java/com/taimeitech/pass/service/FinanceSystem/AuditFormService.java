@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface AuditFormService {
 
-    void SaveAuditFroms(List<AuditFormEntity> dateItems);
+    boolean SaveAuditFormList(List<AuditFormEntity> dateItems);
 
     AuditFormEntity GetAuditForm(String id);
 

@@ -104,5 +104,4 @@ public class DeploymentController  {
         repositoryService.deleteDeployment(deploymentId, true);
         return "redirect:process-list";
     }
-
 }

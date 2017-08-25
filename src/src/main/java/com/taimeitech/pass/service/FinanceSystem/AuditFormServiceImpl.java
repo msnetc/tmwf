@@ -1,6 +1,7 @@
 package com.taimeitech.pass.service.FinanceSystem;
 
 import com.taimeitech.pass.dao.FinanceSystem.AuditFormEntity;
+import com.taimeitech.pass.entity.Finance.AuditFormDto;
 import com.taimeitech.pass.mapper.AuditFormMapper;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
@@ -18,12 +19,18 @@ public class AuditFormServiceImpl implements  AuditFormService {
     @Autowired
     private AuditFormMapper auditFormMapper;
 
-    public void SaveAuditFroms(List<AuditFormEntity> dateItems){
-            auditFormMapper.batchInsert(dateItems);
+    public boolean SaveAuditFormList(List<AuditFormEntity> dateItems){
+        for (AuditFormEntity af :dateItems) {
+            af.setCreateTime(DateTime.now().toDate());
+            af.setUpdateTime(DateTime.now().toDate());
+        }
+        auditFormMapper.batchInsert(dateItems);
+        return true;
     }
 
     public AuditFormEntity GetAuditForm(String id){
         AuditFormEntity obj =  auditFormMapper.get(id);
         return obj;
     }
+
 }
