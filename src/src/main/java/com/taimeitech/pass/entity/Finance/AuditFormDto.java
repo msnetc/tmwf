@@ -5,17 +5,9 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.Column;
 
 public class AuditFormDto {
-    @ApiModelProperty(value = "processInstanceId")
-    @Column
-    private String processInstanceId;
-
     @ApiModelProperty(value = "任务id")
     @Column
-    private int taskId;
-
-    @ApiModelProperty(value = "节点名称")
-    @Column
-    private String taskName;
+    private String taskId;
 
     @ApiModelProperty(value = "处理人userId")
     @Column
@@ -33,28 +25,12 @@ public class AuditFormDto {
     @Column
     private String examinationComment;
 
-    public String getProcessInstanceId() {
-        return processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
-    public int getTaskId() {
+    public String getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(int taskId) {
+    public void setTaskId(String taskId) {
         this.taskId = taskId;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
     }
 
     public String getProcessUserId() {
