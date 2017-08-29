@@ -37,7 +37,7 @@ public class AuditFormController {
             BeanUtils.copyProperties(t, form);
             data.add(form);
         }
-        Boolean ret =auditFormService.SaveAuditFormList(data);
+        Boolean ret = auditFormService.SaveAuditFormList(data);
         response.setSuccess(ret);
         return  response;
     }

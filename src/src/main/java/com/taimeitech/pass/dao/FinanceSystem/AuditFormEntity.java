@@ -44,7 +44,7 @@ public class AuditFormEntity  extends BasePO {
     @Column(name = "processDate")
     private Date processDate;
 
-    @ApiModelProperty(value = "任务分配日期")
+    @ApiModelProperty(value = "")
     @Column(name = "task_assign_date")
     private Date task_assign_date;
 

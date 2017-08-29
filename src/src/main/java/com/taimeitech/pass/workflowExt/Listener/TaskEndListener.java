@@ -57,6 +57,5 @@ public class TaskEndListener implements ExecutionListener,TaskListener {
     public IQueueUtil getQueueUtil() {
         return SpringUtils.getBean(IQueueUtil.class);
     }
-
 }
 

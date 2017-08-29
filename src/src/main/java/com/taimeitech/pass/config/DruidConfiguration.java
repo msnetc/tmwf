@@ -16,7 +16,6 @@ import static com.taimeitech.framework.common.TaimeiLogger.*;
 
 @Configuration
 public class DruidConfiguration {
-
     @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
     @Value("${spring.datasource.url}")
@@ -25,7 +24,6 @@ public class DruidConfiguration {
     private String userName;
     @Value("${spring.datasource.password}")
     private String password;
-
     @Bean
     public ServletRegistrationBean druidServlet() {
         info("init Druid Servlet Configuration ");

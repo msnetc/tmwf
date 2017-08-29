@@ -27,7 +27,6 @@ public class AuditFormServiceImpl implements  AuditFormService {
     @Autowired
     private TaskService taskService;
 
-
     public boolean SaveAuditFormList(List<AuditFormEntity> dateItems){
         TaskQuery runTimeTaskQuery = taskService.createTaskQuery();
         for (AuditFormEntity af :dateItems) {
@@ -50,5 +49,4 @@ public class AuditFormServiceImpl implements  AuditFormService {
         AuditFormEntity obj =  auditFormMapper.get(id);
         return obj;
     }
-
 }
