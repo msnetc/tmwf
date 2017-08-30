@@ -10,20 +10,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/tmwf$TaimeiBootApplication.coverage" NAME="TaimeiBootApplication Coverage Results" MODIFIED="1504072152611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="tmwf" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DeploymentController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeploymentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+            <state relative-caret-position="91">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#DeploymentController#0" expanded="false" />
-                <element signature="e#855#866#0" expanded="false" />
                 <element signature="docComment;method#processList#0;class#DeploymentController#0" expanded="false" />
                 <element signature="docComment;method#deploy#0;class#DeploymentController#0" expanded="false" />
                 <element signature="method#deploy#0;class#DeploymentController#0" expanded="false" />
@@ -31,7 +46,19 @@
                 <element signature="method#readResource#0;class#DeploymentController#0" expanded="false" />
                 <element signature="docComment;method#deleteProcessDefinition#0;class#DeploymentController#0" expanded="false" />
                 <element signature="method#deleteProcessDefinition#0;class#DeploymentController#0" expanded="false" />
-                <marker date="1503647094653" expanded="true" signature="0:3731" ph="..." />
+                <marker date="1504061686866" expanded="true" signature="0:3745" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="process-list.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/process-list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -59,6 +86,7 @@
       <find>Executor</find>
       <find>job</find>
       <find>jsp</find>
+      <find>SpringBootServletInitializer</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -69,8 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/member/SaveUserGroupRelationsByUserResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/member/SaveUsersResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/ActionBaseResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/member/SaveUserGroupRelationsByGroupResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/member/SaveUserGroupRelationsResponse.java" />
@@ -97,15 +123,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/process-list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/UserTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/SaveAuditForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/SaveAuditFormListResponse.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/SaveAuditFormResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/SaveAuditFormList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/bootstrap.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/AuditFormDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java" />
@@ -120,6 +142,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/TaskFormController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetStartFormData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/TaskFormController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/common/include-base-styles.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/MvcConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -129,6 +157,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <PATH>
@@ -137,7 +172,57 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="tmwf" />
+          <option name="myItemId" value="tmwf-workflow" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="tmwf-workflow" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="com.taimeitech.framework:framework-common:1.0.0-SNAPSHOT" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="tmwf-workflow" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="com.taimeitech.framework:framework-core:1.0.0-SNAPSHOT" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="tmwf-workflow" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -147,21 +232,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="tmwf" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tmwf" />
+          <option name="myItemId" value="tmwf-workflow" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -200,7 +271,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmwf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmwf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -233,10 +328,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -280,6 +371,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="processes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmwf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -314,45 +431,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="workflow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tmwf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,7 +445,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/java/github/Activiti" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-boot-demo-jsp-example (1)/spring-boot-demo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -386,7 +465,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TaimeiBootApplication">
+  <component name="RunManager" selected="Tomcat Server.debug.Workflow">
     <configuration default="false" name="tmwf [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -862,10 +941,85 @@
       <envs />
       <method />
     </configuration>
-    <list size="3">
+    <configuration default="false" name="debug.Workflow" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.75" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8083/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="src:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_tmwf" />
+        <option name="HTTP_PORT" value="8083" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1943" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="src:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.TaimeiBootApplication" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.tmwf [package]" />
-      <item index="2" class="java.lang.String" itemvalue="Maven.tmwf [clean]" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.debug.Workflow" />
+      <item index="2" class="java.lang.String" itemvalue="Maven.tmwf [package]" />
+      <item index="3" class="java.lang.String" itemvalue="Maven.tmwf [clean]" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -893,16 +1047,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201594000" />
+    <option name="totallyTimeSpent" value="218870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2064" height="1128" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16308594" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6208252" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3100586" sideWeight="0.8202357" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="BPMN Editor" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958984" sideWeight="0.4960707" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -911,7 +1065,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43222004" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33988214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52455795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -919,15 +1073,16 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30451867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68074656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.072753906" sideWeight="0.17976424" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22753906" sideWeight="0.78546715" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25878906" sideWeight="0.49410608" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22753906" sideWeight="0.5058939" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22753906" sideWeight="0.21453287" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22753906" sideWeight="0.2102161" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1063,18 +1218,6 @@
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/process-list.jsp</url>
-          <line>12</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/process-list.jsp</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java</url>
           <line>43</line>
           <properties />
@@ -1085,18 +1228,6 @@
           <line>48</line>
           <properties />
           <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java</url>
@@ -1158,14 +1289,58 @@
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/process-list.jsp</url>
+          <line>5</line>
+          <properties />
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/BdTaskListener.java</url>
           <line>8</line>
           <properties field="serialVersionUID" class="com.taimeitech.pass.workflowExt.Listener.BdTaskListener" />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java</url>
+          <line>102</line>
+          <properties class="com.taimeitech.pass.api.ui.DeploymentController" method="deleteProcessDefinition">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1174,229 +1349,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-common/1.0.0-SNAPSHOT/framework-common-1.0.0-20170821.063543-71.jar!/com/taimeitech/framework/common/dto/ActionResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2167">
-          <caret line="163" column="11" lean-forward="false" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
-          <folding>
-            <element signature="e#6252#6253#0" expanded="false" />
-            <element signature="e#6320#6321#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/workflow/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/workflow/WfService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/FinanceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="67" />
-          <folding>
-            <element signature="method#FormtDate#0;class#FinanceServiceImpl#0" expanded="false" />
-            <element signature="method#GetUserTasks#1;class#FinanceServiceImpl#0" expanded="false" />
-            <element signature="e#4137#4255#0" expanded="false" />
-            <element signature="method#CompleteTasks#0;class#FinanceServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/task/TaskQuery.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/task/TaskInfoQuery.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="109" column="56" lean-forward="true" selection-start-line="109" selection-start-column="56" selection-end-line="109" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/WfMemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/workflow/impl/WfServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding>
-            <element signature="method#CreatePi#0;class#WfServiceImpl#0" expanded="false" />
-            <element signature="method#CompleteTask#0;class#WfServiceImpl#0" expanded="false" />
-            <element signature="method#QueryHistoryTasks#0;class#WfServiceImpl#0" expanded="false" />
-            <element signature="method#GetHistoryVariables#0;class#WfServiceImpl#0" expanded="false" />
-            <element signature="method#GetUsers#0;class#WfServiceImpl#0" expanded="false" />
-            <element signature="method#GetUserIds#0;class#WfServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="156" column="57" lean-forward="true" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" column="90" lean-forward="false" selection-start-line="31" selection-start-column="90" selection-end-line="31" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/FinanceSystem/AuditFormMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/mapper/AuditFormMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="59" lean-forward="true" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-common/1.0.0-SNAPSHOT/framework-common-1.0.0-20170821.063543-71.jar!/com/taimeitech/framework/common/po/BasePO.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/SaveAuditFormList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/Finance/AuditFormDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/dao/FinanceSystem/AuditFormEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="e#339#385#0" expanded="false" />
-            <element signature="e#469#502#0" expanded="false" />
-            <element signature="e#564#597#0" expanded="false" />
-            <element signature="e#663#701#0" expanded="false" />
-            <element signature="e#777#811#0" expanded="false" />
-            <element signature="e#891#929#0" expanded="false" />
-            <element signature="e#996#1029#0" expanded="false" />
-            <element signature="e#1115#1148#0" expanded="false" />
-            <element signature="e#1218#1247#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/service/FinanceSystem/AuditFormServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="e#843#851#0" expanded="false" />
-            <element signature="method#SaveAuditFormList#0;class#AuditFormServiceImpl#0" expanded="false" />
-            <element signature="method#GetAuditForm#0;class#AuditFormServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/interceptor/DevinInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/interceptor/InterceptorConfigurer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/TaskCountListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/TaskEndListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -1409,38 +1361,6 @@
             <element signature="e#2187#2188#0" expanded="false" />
             <element signature="e#2247#2248#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/ActivitiConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="e#1371#1376#0" expanded="false" />
-            <element signature="method#activitiDataSource#0;class#ActivitiConfiguration#0" expanded="false" />
-            <element signature="method#getTtransactionManager#0;class#ActivitiConfiguration#0" expanded="false" />
-            <element signature="method#processEngine#0;class#ActivitiConfiguration#0" expanded="false" />
-            <element signature="method#repositoryService#0;class#ActivitiConfiguration#0" expanded="false" />
-            <element signature="method#managementService#0;class#ActivitiConfiguration#0" expanded="false" />
-            <element signature="method#dynamicBpmnService#0;class#ActivitiConfiguration#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/SwaggerAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/DruidConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="32" column="75" lean-forward="true" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1464,22 +1384,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/processes/leave.bpmn">
       <provider selected="true" editor-type-id="bpmn-editor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/WfController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="43" selection-end-column="86" />
-          <folding>
-            <element signature="e#1038#1113#0" expanded="false" />
-            <element signature="e#2721#2760#0" expanded="false" />
-            <element signature="method#Post#3;class#WfController#0" expanded="false" />
-            <element signature="e#3420#3452#0" expanded="false" />
-            <element signature="method#Post#4;class#WfController#0" expanded="false" />
-            <element signature="e#3777#3808#0" expanded="false" />
-            <element signature="method#Post#5;class#WfController#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/TaskController.java">
@@ -1570,7 +1474,7 @@
         <state relative-caret-position="154">
           <caret line="7" column="0" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1605,19 +1509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/task-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="n#c:if#0;n#jsp:root#0;n#!!top" expanded="false" />
-            <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
-            <element signature="n#c:if#0;n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
-            <element signature="n#c:if#1;n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/task-form.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -1639,14 +1530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/entity/workflow/GetUserTaskFormData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1655,9 +1538,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/WfController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <element signature="e#1038#1113#0" expanded="false" />
+            <element signature="e#2721#2760#0" expanded="false" />
+            <element signature="method#Post#3;class#WfController#0" expanded="false" />
+            <element signature="e#3420#3452#0" expanded="false" />
+            <element signature="method#Post#4;class#WfController#0" expanded="false" />
+            <element signature="e#3777#3808#0" expanded="false" />
+            <element signature="method#Post#5;class#WfController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/BdTaskListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/workflowExt/Listener/CaclulationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/workflow/FinanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding>
+            <element signature="e#1203#1256#0" expanded="false" />
+            <element signature="e#1638#1691#0" expanded="false" />
+            <element signature="e#2088#2135#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/meta.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-responsive.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/include-base-styles.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/global.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/TaskFormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="447">
           <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="66" />
           <folding>
             <element signature="e#940#951#0" expanded="false" />
@@ -1665,13 +1632,450 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/task-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="n#c:if#0;n#jsp:root#0;n#!!top" expanded="false" />
+            <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
+            <element signature="n#c:if#0;n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
+            <element signature="n#c:if#1;n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-SNAPSHOT.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/maven-archiver/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/processes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/processes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/com.taimeitech.pass:tmwf:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.taimeitech.pass:tmwf:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">com.taimeitech.pass:tmwf:1.0-SNAPSHOT</node>
+            <node x="" y="">com.alibaba:druid-spring-boot-starter:jar:1.1.2</node>
+            <node x="" y="">com.alibaba:druid-spring-boot-starter:jar:1.1.2/com.alibaba:druid:jar:1.0.29</node>
+            <node x="" y="">com.alibaba:druid-spring-boot-starter:jar:1.1.2/com.alibaba:druid:jar:1.0.29/com.alibaba:jconsole:jar:1.8.0</node>
+            <node x="" y="">com.alibaba:druid-spring-boot-starter:jar:1.1.2/com.alibaba:druid:jar:1.0.29/com.alibaba:tools:jar:1.8.0</node>
+            <node x="" y="">com.alibaba:druid-spring-boot-starter:jar:1.1.2/org.springframework.boot:spring-boot-autoconfigure:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.alibaba:druid-spring-boot-starter:jar:1.1.2/org.springframework.boot:spring-boot-autoconfigure:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.4.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.25</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.4.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.25</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter:jar:1.5.4.RELEASE/org.springframework:spring-core:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-amqp:jar:1.7.3.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/org.springframework:spring-context:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/org.springframework:spring-context:jar:4.3.9.RELEASE/org.springframework:spring-expression:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/org.springframework:spring-messaging:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/com.rabbitmq:http-client:jar:1.1.1.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/com.rabbitmq:amqp-client:jar:4.0.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/org.springframework.retry:spring-retry:jar:1.2.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mq:jar:1.0.0-SNAPSHOT/org.springframework.amqp:spring-rabbit:jar:1.7.3.RELEASE/org.springframework:spring-tx:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/mysql:mysql-connector-java:jar:5.1.42</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.0/org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:jar:1.3.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.0/org.mybatis:mybatis-spring:jar:1.3.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-aop:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-aop:jar:1.5.4.RELEASE/org.springframework:spring-aop:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-aop:jar:1.5.4.RELEASE/org.aspectj:aspectjweaver:jar:1.8.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.4.RELEASE/org.apache.tomcat:tomcat-jdbc:jar:8.5.15</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.4.RELEASE/org.apache.tomcat:tomcat-jdbc:jar:8.5.15/org.apache.tomcat:tomcat-juli:jar:8.5.15</node>
+            <node x="" y="">com.taimeitech.framework:framework-mysql:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.4.RELEASE/org.springframework:spring-jdbc:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/org.springframework.data:spring-data-redis:jar:1.8.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/org.springframework.data:spring-data-redis:jar:1.8.4.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.2.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/org.springframework.data:spring-data-redis:jar:1.8.4.RELEASE/org.springframework.data:spring-data-keyvalue:jar:1.2.4.RELEASE/org.springframework.data:spring-data-commons:jar:1.13.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/org.springframework.data:spring-data-redis:jar:1.8.4.RELEASE/org.springframework:spring-oxm:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/org.springframework.data:spring-data-redis:jar:1.8.4.RELEASE/org.springframework:spring-context-support:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/redis.clients:jedis:jar:2.9.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-redis:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.4.RELEASE/redis.clients:jedis:jar:2.9.0/org.apache.commons:commons-pool2:jar:2.4.2</node>
+            <node x="" y="">org.activiti:activiti-spring-boot-starter-basic:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-spring-boot-starter-basic:jar:6.0.0/org.activiti:activiti-spring:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-spring-boot-starter-basic:jar:6.0.0/org.activiti:activiti-spring:jar:6.0.0/org.springframework:spring-orm:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.activiti:activiti-spring-boot-starter-basic:jar:6.0.0/org.activiti:activiti-spring:jar:6.0.0/commons-dbcp:commons-dbcp:jar:1.4</node>
+            <node x="" y="">org.activiti:activiti-spring-boot-starter-basic:jar:6.0.0/org.activiti:activiti-spring:jar:6.0.0/commons-dbcp:commons-dbcp:jar:1.4/commons-pool:commons-pool:jar:1.6</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-bpmn-converter:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-bpmn-converter:jar:6.0.0/org.activiti:activiti-bpmn-model:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-process-validation:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-image-generator:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-dmn-api:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-dmn-api:jar:6.0.0/org.activiti:activiti-dmn-model:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-form-model:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-form-model:jar:6.0.0/com.fasterxml.jackson.core:jackson-core:jar:2.8.8</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.activiti:activiti-form-api:jar:6.0.0</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.apache.commons:commons-email:jar:1.4</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.apache.commons:commons-email:jar:1.4/com.sun.mail:javax.mail:jar:1.5.6</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.apache.commons:commons-email:jar:1.4/com.sun.mail:javax.mail:jar:1.5.6/javax.activation:activation:jar:1.1</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.apache.commons:commons-email:jar:1.4/javax.activation:activation:jar:1.1.1</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.apache.commons:commons-lang3:jar:3.4</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.mybatis:mybatis:jar:3.4.4</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.springframework:spring-beans:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/de.odysseus.juel:juel-api:jar:2.2.7</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/de.odysseus.juel:juel-impl:jar:2.2.7</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/de.odysseus.juel:juel-spi:jar:2.2.7</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/joda-time:joda-time:jar:2.9.9</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.slf4j:slf4j-api:jar:1.7.25</node>
+            <node x="" y="">org.activiti:activiti-engine:jar:6.0.0/org.slf4j:jcl-over-slf4j:jar:1.7.25</node>
+            <node x="" y="">com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.google.guava:guava:jar:22.0/com.google.code.findbugs:jsr305:jar:1.3.9</node>
+            <node x="" y="">com.google.guava:guava:jar:22.0/com.google.errorprone:error_prone_annotations:jar:2.0.18</node>
+            <node x="" y="">com.google.guava:guava:jar:22.0/com.google.j2objc:j2objc-annotations:jar:1.1</node>
+            <node x="" y="">com.google.guava:guava:jar:22.0/org.codehaus.mojo:animal-sniffer-annotations:jar:1.14</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-web:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-web:jar:1.5.4.RELEASE/org.hibernate:hibernate-validator:jar:5.3.5.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-web:jar:1.5.4.RELEASE/org.hibernate:hibernate-validator:jar:5.3.5.Final/org.jboss.logging:jboss-logging:jar:3.3.1.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-web:jar:1.5.4.RELEASE/org.springframework:spring-webmvc:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot-test:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot-test-autoconfigure:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1/net.minidev:accessors-smart:jar:1.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1/net.minidev:accessors-smart:jar:1.1/org.ow2.asm:asm:jar:5.0.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.assertj:assertj-core:jar:2.6.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.mockito:mockito-core:jar:1.10.19</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.mockito:mockito-core:jar:1.10.19/org.objenesis:objenesis:jar:2.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.hamcrest:hamcrest-core:jar:1.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.hamcrest:hamcrest-library:jar:1.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.skyscreamer:jsonassert:jar:1.4.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.skyscreamer:jsonassert:jar:1.4.0/com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-test:jar:1.5.4.RELEASE/org.springframework:spring-test:jar:4.3.9.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-actuator:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.boot:spring-boot-starter-actuator:jar:1.5.4.RELEASE/org.springframework.boot:spring-boot-actuator:jar:1.5.4.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/commons-lang:commons-lang:jar:2.6</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/commons-beanutils:commons-beanutils:jar:1.9.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/javax.validation:validation-api:jar:1.1.0.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/commons-collections:commons-collections:jar:3.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/commons-fileupload:commons-fileupload:jar:1.3.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/commons-fileupload:commons-fileupload:jar:1.3.2/commons-io:commons-io:jar:2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.apache.httpcomponents:httpclient:jar:4.5.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.apache.httpcomponents:httpclient:jar:4.5.3/org.apache.httpcomponents:httpcore:jar:4.4.6</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.apache.httpcomponents:httpmime:jar:4.5.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/dom4j:dom4j:jar:1.6.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/dom4j:dom4j:jar:1.6.1/xml-apis:xml-apis:jar:1.4.01</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.apache.ant:ant:jar:1.8.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.apache.ant:ant:jar:1.8.2/org.apache.ant:ant-launcher:jar:1.8.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.2.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.2.0.RELEASE/org.springframework.security:spring-security-crypto:jar:4.2.3.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE/org.springframework.cloud:spring-cloud-commons:jar:1.2.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.3.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.3.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.55</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.3.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.55/org.bouncycastle:bcprov-jdk15on:jar:1.55</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-netflix-core:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-netflix-eureka-client:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/org.codehaus.jettison:jettison:jar:1.3.7</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/org.codehaus.jettison:jettison:jar:1.3.7/stax:stax-api:jar:1.0.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/commons-jxpath:commons-jxpath:jar:1.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/org.antlr:antlr-runtime:jar:3.4</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/org.antlr:antlr-runtime:jar:3.4/org.antlr:stringtemplate:jar:3.2.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/org.antlr:antlr-runtime:jar:3.4/antlr:antlr:jar:2.7.7</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/com.google.guava:guava:jar:14.0.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/com.google.code.gson:gson:jar:2.8.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.servo:servo-core:jar:0.5.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.archaius:archaius-core:jar:0.3.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/org.apache.commons:commons-math:jar:2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.archaius:archaius-core:jar:0.7.3/com.google.guava:guava:jar:16.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/javax.ws.rs:jsr311-api:jar:1.1.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.servo:servo-core:jar:0.10.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.servo:servo-core:jar:0.10.1/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.servo:servo-core:jar:0.10.1/com.netflix.servo:servo-internal:jar:0.10.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.servo:servo-core:jar:0.10.1/com.netflix.servo:servo-internal:jar:0.10.1/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.sun.jersey:jersey-core:jar:1.19.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.sun.jersey:jersey-client:jar:1.19.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.sun.jersey.contribs:jersey-apache-client4:jar:1.19.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.google.inject:guice:jar:4.1.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.google.inject:guice:jar:4.1.0/aopalliance:aopalliance:jar:1.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.google.inject:guice:jar:4.1.0/com.google.guava:guava:jar:19.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1/javax.xml.stream:stax-api:jar:1.0-2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1/org.codehaus.woodstox:stax2-api:jar:3.1.4</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.0.RELEASE/com.netflix.archaius:archaius-core:jar:0.7.4</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.0.RELEASE/commons-configuration:commons-configuration:jar:1.8</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.0.RELEASE/com.google.guava:guava:jar:18.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-eureka:jar:2.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-eureka:jar:2.2.2/com.netflix.eureka:eureka-client:jar:1.4.6</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-eureka:jar:2.2.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.thoughtworks.xstream:xstream:jar:1.4.9</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.thoughtworks.xstream:xstream:jar:1.4.9/xmlpull:xmlpull:jar:1.1.3.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.0.RELEASE/com.thoughtworks.xstream:xstream:jar:1.4.9/xpp3:xpp3_min:jar:1.1.4c</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxjava:jar:1.0.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-contexts:jar:0.4.9</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-contexts:jar:0.4.9/io.reactivex:rxjava:jar:1.1.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-servo:jar:0.4.9</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-servo:jar:0.4.9/io.reactivex:rxjava:jar:1.1.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-servo:jar:0.4.9/com.netflix.servo:servo-core:jar:0.7.5</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.hystrix:hystrix-core:jar:1.4.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/javax.inject:javax.inject:jar:1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxjava:jar:1.1.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.reactivex:rxjava:jar:1.1.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-codec:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-handler:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-common:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-buffer:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-transport:jar:4.0.27.Final</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-core:jar:2.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-core:jar:2.2.2/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-core:jar:2.2.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2/com.netflix.netflix-commons:netflix-commons-util:jar:0.1.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2/com.netflix.netflix-commons:netflix-statistics:jar:0.1.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2/io.reactivex:rxjava:jar:1.0.9</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2/com.netflix.archaius:archaius-core:jar:0.7.3</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.0.RELEASE/io.reactivex:rxjava:jar:1.1.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.10/com.netflix.archaius:archaius-core:jar:0.4.1</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.10/io.reactivex:rxjava:jar:1.2.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.10/org.hdrhistogram:HdrHistogram:jar:2.1.9</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-metrics-event-stream:jar:1.5.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-metrics-event-stream:jar:1.5.10/com.netflix.hystrix:hystrix-serialization:jar:1.5.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-metrics-event-stream:jar:1.5.10/com.netflix.hystrix:hystrix-serialization:jar:1.5.10/com.fasterxml.jackson.module:jackson-module-afterburner:jar:2.8.8</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.10</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.10/org.ow2.asm:asm:jar:5.0.4</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.3.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.10/com.google.guava:guava:jar:15.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-config:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-core:jar:1.0.0-SNAPSHOT/org.springframework.cloud:spring-cloud-starter-config:jar:1.3.0.RELEASE/org.springframework.cloud:spring-cloud-config-client:jar:1.3.0.RELEASE</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT/javax.persistence:persistence-api:jar:1.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT/com.fasterxml.jackson.core:jackson-databind:jar:2.8.8</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT/com.fasterxml.jackson.core:jackson-databind:jar:2.8.8/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT/ch.qos.logback:logback-access:jar:1.1.11</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT/ch.qos.logback:logback-classic:jar:1.1.11</node>
+            <node x="" y="">com.taimeitech.framework:framework-common:jar:1.0.0-SNAPSHOT/ch.qos.logback:logback-core:jar:1.1.11</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.swagger:swagger-annotations:jar:1.5.13</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.swagger:swagger-models:jar:1.5.13</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0/io.springfox:springfox-core:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0/io.springfox:springfox-core:jar:2.7.0/net.bytebuddy:byte-buddy:jar:1.6.14</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0/io.springfox:springfox-core:jar:2.7.0/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-schema:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-swagger-common:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-swagger-common:jar:2.7.0/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/org.reflections:reflections:jar:0.9.11</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/org.reflections:reflections:jar:0.9.11/com.google.guava:guava:jar:20.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/org.reflections:reflections:jar:0.9.11/org.javassist:javassist:jar:3.21.0-GA</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/com.google.guava:guava:jar:22.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/com.fasterxml:classmate:jar:1.3.3</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/org.springframework.plugin:spring-plugin-core:jar:1.2.0.RELEASE</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/org.springframework.plugin:spring-plugin-metadata:jar:1.2.0.RELEASE</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/org.mapstruct:mapstruct:jar:1.1.0.Final</node>
+            <node x="" y="">io.springfox:springfox-swagger-ui:jar:2.7.0</node>
+            <node x="" y="">org.testng:testng:jar:6.12</node>
+            <node x="" y="">org.testng:testng:jar:6.12/com.beust:jcommander:jar:1.66</node>
+            <node x="" y="">org.testng:testng:jar:6.12/org.yaml:snakeyaml:jar:1.17</node>
+            <node x="" y="">org.testng:testng:jar:6.12/com.google.code.findbugs:jsr305:jar:3.0.1</node>
+            <node x="" y="">org.testng:testng:jar:6.12/junit:junit:jar:4.12</node>
+            <node x="" y="">org.testng:testng:jar:6.12/org.apache-extras.beanshell:bsh:jar:2.0b6</node>
+            <node x="" y="">javax.servlet:jstl:jar:1.2</node>
+            <node x="" y="">org.apache.tomcat.embed:tomcat-embed-jasper:jar:8.5.15</node>
+            <node x="" y="">org.apache.tomcat.embed:tomcat-embed-jasper:jar:8.5.15/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.15</node>
+            <node x="" y="">org.apache.tomcat.embed:tomcat-embed-jasper:jar:8.5.15/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.15</node>
+            <node x="" y="">org.apache.tomcat.embed:tomcat-embed-jasper:jar:8.5.15/org.eclipse.jdt:ecj:jar:3.12.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.4.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.4.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.15</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8271862319854483" x="3648.755651270779" y="4476.740151688297" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/SwaggerAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="35" column="41" lean-forward="false" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/DruidConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.jar!/org/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="938">
+          <caret line="359" column="0" lean-forward="false" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/ActivitiConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="e#1371#1376#0" expanded="false" />
+            <element signature="method#getTtransactionManager#0;class#ActivitiConfiguration#0" expanded="false" />
+            <element signature="method#processEngine#0;class#ActivitiConfiguration#0" expanded="false" />
+            <element signature="method#repositoryService#0;class#ActivitiConfiguration#0" expanded="false" />
+            <element signature="method#managementService#0;class#ActivitiConfiguration#0" expanded="false" />
+            <element signature="method#dynamicBpmnService#0;class#ActivitiConfiguration#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/SpringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/TaimeiBootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="22" column="2" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <folding>
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1730#1731#0" expanded="true" />
+            <element signature="e#1777#1778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/javax/servlet/jstl/1.2/jstl-1.2.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.15/tomcat-embed-core-8.5.15.jar!/javax/servlet/ServletContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#3403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/api/ui/DeploymentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+        <state relative-caret-position="91">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DeploymentController#0" expanded="false" />
-            <element signature="e#855#866#0" expanded="false" />
             <element signature="docComment;method#processList#0;class#DeploymentController#0" expanded="false" />
             <element signature="docComment;method#deploy#0;class#DeploymentController#0" expanded="false" />
             <element signature="method#deploy#0;class#DeploymentController#0" expanded="false" />
@@ -1679,8 +2083,26 @@
             <element signature="method#readResource#0;class#DeploymentController#0" expanded="false" />
             <element signature="docComment;method#deleteProcessDefinition#0;class#DeploymentController#0" expanded="false" />
             <element signature="method#deleteProcessDefinition#0;class#DeploymentController#0" expanded="false" />
-            <marker date="1503647094653" expanded="true" signature="0:3731" ph="..." />
+            <marker date="1504061686866" expanded="true" signature="0:3745" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/process-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taimeitech/pass/config/MvcConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

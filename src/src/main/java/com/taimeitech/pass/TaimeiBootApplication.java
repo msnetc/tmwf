@@ -22,17 +22,15 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication(exclude = {SwaggerAutoConfiguration.class})
 */
 
-//TaimeiBootApplication类名需要根据项目修改
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan("com.taimeitech.pass.mapper")
 public class TaimeiBootApplication extends SpringBootServletInitializer {
 
-    //This SpringBootServletInitializer run a SpringApplication from a traditional WAR deployment
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
+        return application.sources(TaimeiBootApplication.class);
     }
 
     ///java -jar /usr/local/workflow/tmwf-1.0-SNAPSHOT.jar

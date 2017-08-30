@@ -22,7 +22,7 @@ import java.util.zip.ZipInputStream;
  * 部署流程
  */
 @Controller
-@RequestMapping(value = "/deployment")
+//@RequestMapping(value = "/deployment")
 public class DeploymentController  {
     @Autowired
     private  RepositoryService repositoryService;
@@ -30,9 +30,9 @@ public class DeploymentController  {
     /**
      * 流程定义列表
      */
-    @RequestMapping(value = "/process-list")
+    @RequestMapping(value = "/deployment/process-list")
     public ModelAndView processList() {
-        ModelAndView mav = new ModelAndView("process-list");
+        ModelAndView mav = new ModelAndView("/process-list");
         List<ProcessDefinition> processDefinitionList = repositoryService.createProcessDefinitionQuery().list();
         mav.addObject("processDefinitionList", processDefinitionList);
         return mav;
