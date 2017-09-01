@@ -7,7 +7,7 @@
           <element id="module-output" name="src" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: com.taimeitech.framework:framework-core:1.0.0-SNAPSHOT" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170828.093524-68.jar" output-file-name="framework-core-1.0.0-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.4.RELEASE" />
@@ -112,7 +112,7 @@
           <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.0.4" />
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-config:1.3.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-config-client:1.3.0.RELEASE" />
-          <element id="library" level="project" name="Maven: com.taimeitech.framework:framework-common:1.0.0-SNAPSHOT" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-common/1.0.0-SNAPSHOT/framework-common-1.0.0-20170828.093520-73.jar" output-file-name="framework-common-1.0.0-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.8" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
@@ -120,7 +120,7 @@
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-access:1.1.11" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.11" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.11" />
-          <element id="library" level="project" name="Maven: com.taimeitech.framework:framework-mq:1.0.0-SNAPSHOT" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mq/1.0.0-SNAPSHOT/framework-mq-1.0.0-20170828.093529-46.jar" output-file-name="framework-mq-1.0.0-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.springframework.amqp:spring-amqp:1.7.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.amqp:spring-rabbit:1.7.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.9.RELEASE" />
@@ -129,7 +129,7 @@
           <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:4.0.2" />
           <element id="library" level="project" name="Maven: org.springframework.retry:spring-retry:1.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.9.RELEASE" />
-          <element id="library" level="project" name="Maven: com.taimeitech.framework:framework-mysql:1.0.0-SNAPSHOT" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-mysql/1.0.0-SNAPSHOT/framework-mysql-1.0.0-20170828.093528-46.jar" output-file-name="framework-mysql-1.0.0-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.42" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.29" />
           <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0" />
@@ -139,7 +139,7 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.5.15" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.15" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.9.RELEASE" />
-          <element id="library" level="project" name="Maven: com.taimeitech.framework:framework-redis:1.0.0-SNAPSHOT" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-redis/1.0.0-SNAPSHOT/framework-redis-1.0.0-20170828.093527-46.jar" output-file-name="framework-redis-1.0.0-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:1.8.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-keyvalue:1.2.4.RELEASE" />
@@ -192,13 +192,10 @@
           <element id="library" level="project" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.mapstruct:mapstruct:1.1.0.Final" />
           <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-ui:2.7.0" />
-          <element id="library" level="project" name="Maven: org.testng:testng:6.12" />
-          <element id="library" level="project" name="Maven: com.beust:jcommander:1.66" />
+          <element id="library" level="project" name="Maven: org.testng:testng:6.11" />
+          <element id="library" level="project" name="Maven: com.beust:jcommander:1.64" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.17" />
-          <element id="library" level="project" name="Maven: junit:junit:4.12" />
-          <element id="library" level="project" name="Maven: org.apache-extras.beanshell:bsh:2.0b6" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
-          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.9.RELEASE" />
         </element>
       </element>

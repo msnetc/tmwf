@@ -41,19 +41,15 @@ public class DeploymentController  {
     /**
      * 部署流程资源
      */
-    @RequestMapping(value = "/deploy")
+    @RequestMapping(value = "/deployment/deploy")
     public String deploy(@RequestParam(value = "file", required = true) MultipartFile file) {
-
         // 获取上传的文件名
         String fileName = file.getOriginalFilename();
-
         try {
             // 得到输入流（字节流）对象
             InputStream fileInputStream = file.getInputStream();
-
             // 文件的扩展名
             String extension = FilenameUtils.getExtension(fileName);
-
             // zip或者bar类型的文件用ZipInputStream方式部署
             DeploymentBuilder deployment = repositoryService.createDeployment();
             if (extension.equals("zip") || extension.equals("bar")) {
@@ -67,7 +63,6 @@ public class DeploymentController  {
         } catch (Exception e) {
             TaimeiLogger.error("error on deploy process, because of file input stream");
         }
-
         return "redirect:process-list";
     }
 
@@ -77,7 +72,7 @@ public class DeploymentController  {
      * @param processDefinitionId 流程定义ID
      * @param resourceName        资源名称
      */
-    @RequestMapping(value = "/read-resource")
+    @RequestMapping(value = "/deployment/read-resource")
     public void readResource(@RequestParam("pdid") String processDefinitionId, @RequestParam("resourceName") String resourceName, HttpServletResponse response)
             throws Exception {
         ProcessDefinitionQuery pdq = repositoryService.createProcessDefinitionQuery();
@@ -99,7 +94,7 @@ public class DeploymentController  {
      *
      * @param deploymentId 流程部署ID
      */
-    @RequestMapping(value = "/delete-deployment")
+    @RequestMapping(value = "/deployment/delete-deployment")
     public String deleteProcessDefinition(@RequestParam("deploymentId") String deploymentId) {
         repositoryService.deleteDeployment(deploymentId, true);
         return "redirect:process-list";

@@ -1,4 +1,4 @@
-package com.taimeitech.pass.entity.Finance;
+package com.taimeitech.pass.entity.approval;
 
 import com.taimeitech.framework.common.dto.ActionResult;
 import io.swagger.annotations.ApiOperation;

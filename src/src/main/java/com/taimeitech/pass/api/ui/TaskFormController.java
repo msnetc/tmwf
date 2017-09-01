@@ -10,6 +10,7 @@ import org.activiti.engine.FormService;
 import org.activiti.engine.HistoryService;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.form.StartFormData;
 import org.activiti.engine.form.TaskFormData;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.task.Task;
@@ -24,14 +25,12 @@ https://stackoverflow.com/questions/16017763/how-to-get-the-submitted-form-value
 @Controller
 @RequestMapping(value = "/form")
 public class TaskFormController {
-
-    @Autowired
-    private RepositoryService repositoryService;
-
     @Autowired
     private FormService formService;
     @Autowired
     private TaskService taskService;
+    @Autowired
+    private RepositoryService repositoryService;
 
     @ApiOperation(value = "获取某个task的form表单")
     @RequestMapping(value = "/getUserTaskFormData/{query}")
@@ -63,4 +62,5 @@ public class TaskFormController {
         }
         return mav;
     }
+
 }

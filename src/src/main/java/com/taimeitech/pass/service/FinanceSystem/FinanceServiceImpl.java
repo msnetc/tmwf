@@ -20,10 +20,7 @@ import org.activiti.engine.*;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 @Transactional
@@ -36,56 +33,50 @@ public class FinanceServiceImpl implements FinanceService{
 
     public List<UserTask> GetUserTasks(QueryUserAllTask queryParm){
 
-        TaskQuery runTimeTaskQuery = taskService.createTaskQuery();
         HistoricTaskInstanceQuery historyTaskQuery = historyService.createHistoricTaskInstanceQuery(); // 创建历史任务实例查询
         HistoricVariableInstanceQuery variableHistoryQuery =historyService.createHistoricVariableInstanceQuery();
-
         if(StringUtils.isNotEmpty(queryParm.getPdId())){
-            runTimeTaskQuery.processDefinitionKeyLikeIgnoreCase(queryParm.getPdId().toUpperCase());
             historyTaskQuery.processDefinitionKeyLikeIgnoreCase(queryParm.getPdId().toUpperCase());
         }
         if(StringUtils.isNotEmpty(queryParm.getUserId())){
-            runTimeTaskQuery.taskAssignee(queryParm.getUserId());
             historyTaskQuery.taskAssignee(queryParm.getUserId());
         }
-        List<Task> runTimeTasks = runTimeTaskQuery.list();
         List<HistoricTaskInstance>  historyTasks = historyTaskQuery.list();
+        List<HistoricVariableInstance> variables  = variableHistoryQuery.variableName("approved").list();
 
         List<UserTask> ret = new ArrayList<>();
-
-        for (Task t : runTimeTasks) {
-            UserTask item = new UserTask();
-            BeanUtils.copyProperties(t, item);
-
-            item.setTaskId(t.getId());
-            item.setTaskName(t.getName());
-            item.setCommitDate(FormtDate(t.getCreateTime(),"yyyy-MM-dd HH:mm:ss"));
-            item.setTaskStatusId(0);
-            ret.add(item);
-        }
         for (HistoricTaskInstance t : historyTasks) {
+
             UserTask item = new UserTask();
             BeanUtils.copyProperties(t, item);
             item.setTaskId(t.getId());
             item.setTaskName(t.getName());
             item.setCommitDate(FormtDate(t.getCreateTime(),"yyyy-MM-dd HH:mm:ss"));
-            item.setTaskStatusId(1);
-            variableHistoryQuery = variableHistoryQuery.taskId(t.getId());
-            //.variableNameLike("approved");
-            List<HistoricVariableInstance> list =variableHistoryQuery.list();
+            if(t.getEndTime() == null){
+                item.setTaskStatusId(0);
+            }
+            else{
+                item.setTaskStatusId(1);
+            }
+            Map<String, Object> v1 = t.getProcessVariables();
+            Map<String, Object> v2 = t.getTaskLocalVariables();
 
-            if(list !=null && list.isEmpty() ==false){
-                HistoricVariableInstance apprvoed = list.get(0);
-                if(apprvoed == null) return ret;
-                String approved = apprvoed.getValue().toString();
-                if(approved.toUpperCase() =="TRUE"){
-                    item.setApproved(1);
-                }else{
-                    item.setApproved(0);
+
+            if(variables !=null && variables.size() >0) {
+                for(HistoricVariableInstance hvi:variables){
+
+                    if(hvi.getProcessInstanceId() != t.getExecutionId()) continue;
+                    String varibaleName = hvi.getVariableName();
+                    if(varibaleName!= "approved") continue;;
+                    String approved = hvi.getValue().toString();
+                    if(approved.toUpperCase() == "TRUE"){
+                        item.setApproved(1);
+                    }else{
+                        item.setApproved(0);
+                    }
                 }
             }
             ret.add(item);
-
         }
         return ret;
     }

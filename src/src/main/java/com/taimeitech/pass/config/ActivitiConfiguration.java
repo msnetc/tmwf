@@ -41,7 +41,6 @@ public class ActivitiConfiguration {
                 .username(userName)
                 .password(password)
                 .driverClassName(driverClassName)
-                .type(com.alibaba.druid.pool.DruidDataSource.class)
                 .build();
     }
 
@@ -71,6 +70,7 @@ public class ActivitiConfiguration {
         processEngineConfiguration.setAsyncExecutorActivate(false); //关闭作业执行器
         processEngineConfiguration.setJpaHandleTransaction(false); //由spring容器管理事务
         processEngineConfiguration.setJpaEntityManagerFactory(entityManagerFactory);
+        processEngineConfiguration.setHistory("full");
         processEngineConfiguration.setTransactionManager(transactionManager);
         return processEngineConfiguration;
     }

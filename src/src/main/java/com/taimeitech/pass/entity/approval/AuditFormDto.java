@@ -1,29 +1,31 @@
-package com.taimeitech.pass.entity.Finance;
+package com.taimeitech.pass.entity.approval;
 
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 
 import javax.persistence.Column;
 
 public class AuditFormDto {
     @ApiModelProperty(value = "任务id")
     @Column
-    private String taskId;
+    protected String taskId;
 
-    @ApiModelProperty(value = "处理人userId")
+    @ApiModelProperty(value = "提交者")
     @Column
-    private String processUserId;
+    protected String processUserId;
 
     @ApiModelProperty(value = "处理人姓名")
     @Column
-    private String processUserName;
+    protected String processUserName;
 
     @ApiModelProperty(value = "审批结果-是否通过")
     @Column
-    private boolean approved;
+    protected boolean approved;
 
     @ApiModelProperty(value = "审批意见")
     @Column
-    private String examinationComment;
+    protected String examinationComment;
+
 
     public String getTaskId() {
         return taskId;
