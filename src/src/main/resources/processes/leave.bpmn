@@ -3,7 +3,16 @@
   <process id="leave" name="请假流程-动态表单" isExecutable="true">
     <documentation>请假流程演示-动态表单</documentation>
     <startEvent id="startevent1" name="Start"></startEvent>
-    <userTask id="deptLeaderAudit" name="部门领导审批" activiti:candidateGroups="deptLeader">
+    <userTask id="usertaskStart" name="请假" activiti:assignee="${applyUserId}">
+      <extensionElements>
+        <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
+        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
+        <activiti:formProperty id="reason" name="请假原因" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="deptLeaderUserId" name="部门经理" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <userTask id="deptLeaderAudit" name="部门领导审批" activiti:assignee="${deptLeaderUserId}">
       <extensionElements>
         <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" writable="false"></activiti:formProperty>
         <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" writable="false"></activiti:formProperty>
@@ -12,6 +21,8 @@
           <activiti:value id="true" name="同意"></activiti:value>
           <activiti:value id="false" name="拒绝"></activiti:value>
         </activiti:formProperty>
+        <activiti:formProperty id="reason" name="请假原因" type="string" writable="false"></activiti:formProperty>
+        <activiti:formProperty id="reason" name="请假原因" type="string" writable="false"></activiti:formProperty>
       </extensionElements>
     </userTask>
     <exclusiveGateway id="exclusivegateway5" name="Exclusive Gateway"></exclusiveGateway>
@@ -26,7 +37,7 @@
         </activiti:formProperty>
       </extensionElements>
     </userTask>
-    <userTask id="hrAudit" name="人事审批" activiti:candidateGroups="hr">
+    <userTask id="hrAudit" name="人事审批" activiti:assignee="${hrUserId}">
       <extensionElements>
         <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" writable="false"></activiti:formProperty>
         <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" writable="false"></activiti:formProperty>
@@ -78,13 +89,6 @@
       </extensionElements>
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${reApply == 'false'}]]></conditionExpression>
     </sequenceFlow>
-    <userTask id="usertaskStart" name="请假"  activiti:assignee="${applyUserId}">
-      <extensionElements>
-        <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
-        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
-        <activiti:formProperty id="reason" name="请假原因" type="string" required="true"></activiti:formProperty>
-      </extensionElements>
-    </userTask>
     <sequenceFlow id="flow13" sourceRef="usertaskStart" targetRef="deptLeaderAudit"></sequenceFlow>
     <textAnnotation id="textannotation1" textFormat="text/plain">
       <text>请求被驳回后员工可以选择继续申请，或者取消本次申请</text>
@@ -95,6 +99,9 @@
     <bpmndi:BPMNPlane bpmnElement="leave" id="BPMNPlane_leave">
       <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
         <omgdc:Bounds height="35.0" width="35.0" x="55.0" y="313.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertaskStart" id="BPMNShape_usertaskStart">
+        <omgdc:Bounds height="55.0" width="105.0" x="20.0" y="37.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="deptLeaderAudit" id="BPMNShape_deptLeaderAudit">
         <omgdc:Bounds height="55.0" width="105.0" x="190.0" y="37.0"></omgdc:Bounds>
@@ -118,10 +125,7 @@
         <omgdc:Bounds height="35.0" width="35.0" x="1061.0" y="299.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="exclusivegateway7" id="BPMNShape_exclusivegateway7">
-        <omgdc:Bounds height="40.0" width="40.0" x="420.0" y="310.0"></omgdc:Bounds>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="usertaskStart" id="BPMNShape_usertaskStart">
-        <omgdc:Bounds height="55.0" width="105.0" x="20.0" y="37.0"></omgdc:Bounds>
+        <omgdc:Bounds height="40.0" width="40.0" x="429.0" y="310.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
         <omgdc:Bounds height="57.0" width="120.0" x="530.0" y="200.0"></omgdc:Bounds>
@@ -156,40 +160,40 @@
         <omgdi:waypoint x="843.0" y="167.0"></omgdi:waypoint>
         <omgdi:waypoint x="1011.0" y="160.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="843.0" y="167.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="24.0" x="843.0" y="167.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
         <omgdi:waypoint x="1063.0" y="188.0"></omgdi:waypoint>
         <omgdi:waypoint x="1078.0" y="299.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="1063.0" y="188.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="24.0" x="1063.0" y="188.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
         <omgdi:waypoint x="803.0" y="167.0"></omgdi:waypoint>
         <omgdi:waypoint x="502.0" y="167.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="803.0" y="167.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="24.0" x="741.0" y="166.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
-        <omgdi:waypoint x="420.0" y="330.0"></omgdi:waypoint>
-        <omgdi:waypoint x="230.0" y="329.0"></omgdi:waypoint>
+        <omgdi:waypoint x="429.0" y="330.0"></omgdi:waypoint>
+        <omgdi:waypoint x="242.0" y="330.0"></omgdi:waypoint>
         <omgdi:waypoint x="242.0" y="92.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="48.0" x="314.0" y="321.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="48.0" x="211.0" y="256.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
         <omgdi:waypoint x="449.0" y="195.0"></omgdi:waypoint>
-        <omgdi:waypoint x="440.0" y="310.0"></omgdi:waypoint>
+        <omgdi:waypoint x="449.0" y="310.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
-        <omgdi:waypoint x="460.0" y="330.0"></omgdi:waypoint>
+        <omgdi:waypoint x="469.0" y="330.0"></omgdi:waypoint>
         <omgdi:waypoint x="1061.0" y="316.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="48.0" x="602.0" y="324.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="48.0" x="611.0" y="324.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">

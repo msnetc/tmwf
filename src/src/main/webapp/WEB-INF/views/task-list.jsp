@@ -45,7 +45,7 @@
 							<a class="btn" href="claim/${task.id}"><i class="icon-eye-open"></i>签收</a>
 						</c:if>
 						<c:if test="${not empty task.assignee }">
-							<a class="btn" href="getform/${task.id}"><i class="icon-user"></i>办理</a>
+							<a class="btn" href="GetStartFormData/${task.id}"><i class="icon-user"></i>办理</a>
 						</c:if>
 					</td>
 				</tr>
