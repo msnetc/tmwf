@@ -19,6 +19,7 @@ import org.activiti.engine.task.Task;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -66,6 +67,7 @@ public class TaskFormController {
      */
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "/task/completeFormTask/{taskId}")
+    @Transactional
     public String completeTask(@PathVariable("taskId") String taskId, HttpServletRequest request) {
         TaskFormData taskFormData = formService.getTaskFormData(taskId);
         String formKey = taskFormData.getFormKey();

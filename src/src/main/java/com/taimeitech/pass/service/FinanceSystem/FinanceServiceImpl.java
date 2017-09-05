@@ -58,18 +58,12 @@ public class FinanceServiceImpl implements FinanceService{
             else{
                 item.setTaskStatusId(1);
             }
-            Map<String, Object> v1 = t.getProcessVariables();
-            Map<String, Object> v2 = t.getTaskLocalVariables();
-
-
             if(variables !=null && variables.size() >0) {
                 for(HistoricVariableInstance hvi:variables){
-
-                    if(hvi.getProcessInstanceId() != t.getExecutionId()) continue;
                     String varibaleName = hvi.getVariableName();
-                    if(varibaleName!= "approved") continue;;
+                    if(varibaleName.equalsIgnoreCase("APPROVED") == false) continue;;
                     String approved = hvi.getValue().toString();
-                    if(approved.toUpperCase() == "TRUE"){
+                    if(approved.equalsIgnoreCase("TRUE")){
                         item.setApproved(1);
                     }else{
                         item.setApproved(0);

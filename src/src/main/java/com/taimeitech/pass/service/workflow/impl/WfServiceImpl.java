@@ -44,7 +44,7 @@ public class WfServiceImpl implements WfService {
         String userId = data.getUserId();
 
         if (StringUtil.isNotBlank(userId)) {
-             query=query.taskAssignee(userId);
+             query=query.taskCandidateOrAssigned(userId);
         }
         if (StringUtils.isNotBlank(data.getProcessInstanceId())) {
             query = query.processInstanceId(data.getProcessInstanceId());
@@ -65,9 +65,9 @@ public class WfServiceImpl implements WfService {
 
     @Override
     public boolean CompleteTask(CompleteTask data) {
+        taskService.setVariablesLocal(data.getTaskId(),data.getVariables());
         taskService.claim(data.getTaskId(), data.getUserId());
         taskService.complete(data.getTaskId(), data.getVariables());
-//        Task task = taskService.createTaskQuery().taskId(data.getTaskId()).singleResult();
         return true;
     }
 
