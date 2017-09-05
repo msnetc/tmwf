@@ -43,6 +43,7 @@ public class DeploymentController  {
      */
     @RequestMapping(value = "/deployment/deploy")
     public String deploy(@RequestParam(value = "file", required = true) MultipartFile file) {
+
         // 获取上传的文件名
         String fileName = file.getOriginalFilename();
         try {
