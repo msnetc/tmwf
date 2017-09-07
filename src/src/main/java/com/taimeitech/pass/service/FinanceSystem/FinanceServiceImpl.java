@@ -42,9 +42,8 @@ public class FinanceServiceImpl implements FinanceService{
             historyTaskQuery.taskAssignee(queryParm.getUserId());
         }
         List<HistoricTaskInstance>  historyTasks = historyTaskQuery.list();
-        List<HistoricVariableInstance> variables  = variableHistoryQuery.variableName("approved").list();
-
         List<UserTask> ret = new ArrayList<>();
+
         for (HistoricTaskInstance t : historyTasks) {
 
             UserTask item = new UserTask();
@@ -58,6 +57,8 @@ public class FinanceServiceImpl implements FinanceService{
             else{
                 item.setTaskStatusId(1);
             }
+            
+            List<HistoricVariableInstance> variables = variableHistoryQuery.taskId(t.getId()).list();
             if(variables !=null && variables.size() >0) {
                 for(HistoricVariableInstance hvi:variables){
                     String varibaleName = hvi.getVariableName();
