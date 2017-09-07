@@ -5,8 +5,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class GetTaskList extends PagerQuery implements IReturn<GetTaskListResponse> {
 
-    @ApiModelProperty(value = "任务名称")
-    private String taskName;
+    @ApiModelProperty(value = "任务id")
+    private String taskId;
 
     @ApiModelProperty(value = "processInstanceId")
     private String processInstanceId;
@@ -15,13 +15,12 @@ public class GetTaskList extends PagerQuery implements IReturn<GetTaskListRespon
     private String userId;
 
 
-
-    public String getTaskName() {
-        return taskName;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     public String getProcessInstanceId() {

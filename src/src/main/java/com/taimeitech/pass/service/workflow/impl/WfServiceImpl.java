@@ -49,8 +49,8 @@ public class WfServiceImpl implements WfService {
         if (StringUtils.isNotBlank(data.getProcessInstanceId())) {
             query = query.processInstanceId(data.getProcessInstanceId());
         }
-        if (StringUtils.isNotBlank(data.getTaskName())) {
-            query = query.taskName(data.getTaskName());
+        if (StringUtils.isNotBlank(data.getTaskId())) {
+            query = query.taskId(data.getTaskId());
         }
         List<Task> tasks = query.list();
         return tasks;

@@ -118,7 +118,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>springBootJsp</finalName>
+		<finalName>tmwf</finalName>
 	</build>
 
 </project>

@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.taimeitech.framework:framework-core:1.0.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170828.093524-68.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170904.085650-75.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170828.093524-68-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170904.085650-75-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170828.093524-68-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/taimeitech/framework/framework-core/1.0.0-SNAPSHOT/framework-core-1.0.0-20170904.085650-75-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
