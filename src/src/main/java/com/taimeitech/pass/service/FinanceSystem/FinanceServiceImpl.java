@@ -25,14 +25,12 @@ import java.util.*;
 @Service
 @Transactional
 public class FinanceServiceImpl implements FinanceService{
-
     @Autowired
     private HistoryService historyService;
     @Autowired
     private TaskService taskService;
 
     public List<UserTask> GetUserTasks(QueryUserAllTask queryParm){
-
         HistoricTaskInstanceQuery historyTaskQuery = historyService.createHistoricTaskInstanceQuery(); // 创建历史任务实例查询
         HistoricVariableInstanceQuery variableHistoryQuery =historyService.createHistoricVariableInstanceQuery();
         if(StringUtils.isNotEmpty(queryParm.getPdId())){
@@ -45,32 +43,34 @@ public class FinanceServiceImpl implements FinanceService{
         List<UserTask> ret = new ArrayList<>();
 
         for (HistoricTaskInstance t : historyTasks) {
-
             UserTask item = new UserTask();
             BeanUtils.copyProperties(t, item);
             item.setTaskId(t.getId());
             item.setTaskName(t.getName());
-            item.setCommitDate(FormtDate(t.getCreateTime(),"yyyy-MM-dd HH:mm:ss"));
-            if(t.getEndTime() == null){
-                item.setTaskStatusId(0);
-            }
-            else{
-                item.setTaskStatusId(1);
-            }
-            
+
             List<HistoricVariableInstance> variables = variableHistoryQuery.taskId(t.getId()).list();
             if(variables !=null && variables.size() >0) {
                 for(HistoricVariableInstance hvi:variables){
                     String varibaleName = hvi.getVariableName();
-                    if(varibaleName.equalsIgnoreCase("APPROVED") == false) continue;;
+                    if(!varibaleName.equalsIgnoreCase("APPROVED")) continue;;
                     String approved = hvi.getValue().toString();
                     if(approved.equalsIgnoreCase("TRUE")){
-                        item.setApproved(1);
+                        item.setApproved(10); //10已通过
                     }else{
-                        item.setApproved(0);
+                        item.setApproved(20); //20未通过
                     }
                 }
             }
+
+            item.setCommitDate(FormtDate(t.getCreateTime(),"yyyy-MM-dd HH:mm:ss"));
+            if(t.getEndTime() == null){
+                item.setTaskStatusId(0);
+                item.setApproved(0); //未处理
+            }
+            else{
+                item.setTaskStatusId(1);
+            }
+
             ret.add(item);
         }
         return ret;
@@ -108,6 +108,7 @@ public class FinanceServiceImpl implements FinanceService{
 
     public boolean CompleteTasks(CompleteTasks data) {
         for (CompleteUserTask task:data.getUserTasks()){
+            taskService.setVariablesLocal(task.getTaskId(),task.getVariables());
             taskService.claim(task.getTaskId(), task.getUserId());
             taskService.complete(task.getTaskId(), task.getVariables());
         }

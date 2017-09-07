@@ -19,7 +19,7 @@ public class UserTask {
     @ApiModelProperty(value = "businessKeyId")
     private String businessKeyId;
 
-    @ApiModelProperty(value = "是否通过 0未通过 1已通过")
+    @ApiModelProperty(value = "是否通过 10已通过 20未通过 0未处理")
     private int approved;
 
     @ApiModelProperty(value = "任务状态 0 未完成 1已完成")
