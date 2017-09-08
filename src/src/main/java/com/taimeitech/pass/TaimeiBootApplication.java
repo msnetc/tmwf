@@ -26,17 +26,12 @@ import org.springframework.context.annotation.Configuration;
 @EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan("com.taimeitech.pass.mapper")
-public class TaimeiBootApplication extends SpringBootServletInitializer {
+public class TaimeiBootApplication   {
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(TaimeiBootApplication.class);
-    }
-
-    ///java -jar /usr/local/workflow/tmwf-1.0-SNAPSHOT.jar
     public static void main(String[] args) {
         SpringApplication.run(TaimeiBootApplication.class, args);
     }
+
     //定义RestTemplate实例并开启负载均衡
     @Bean
     @LoadBalanced

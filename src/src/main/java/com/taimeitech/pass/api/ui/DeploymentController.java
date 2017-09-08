@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.util.List;
@@ -30,12 +31,18 @@ public class DeploymentController  {
     /**
      * 流程定义列表
      */
-    @RequestMapping(value = "/deployment/process-list")
-    public ModelAndView processList() {
+/*    @RequestMapping(value = "/deployment/process-list")
+    public ModelAndView processList( HttpServletRequest request) {
         ModelAndView mav = new ModelAndView("/process-list");
         List<ProcessDefinition> processDefinitionList = repositoryService.createProcessDefinitionQuery().list();
         mav.addObject("processDefinitionList", processDefinitionList);
         return mav;
+    }*/
+    @RequestMapping(value = "/deployment/process-list")
+    public String processList( HttpServletRequest request) {
+        List<ProcessDefinition> processDefinitionList = repositoryService.createProcessDefinitionQuery().list();
+        request.getSession().setAttribute("processDefinitionList", processDefinitionList.get(0));
+        return "process-list";
     }
 
     /**
