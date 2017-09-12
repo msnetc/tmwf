@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-      layout:decorator="layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
     <title>任务列表</title>
 </head>
@@ -11,9 +9,13 @@
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <td>ID</td>
-            <td>NAME</td>
-            <td>OPTS</td>
+            <th>任务ID</th>
+            <th>任务名称</th>
+            <th>流程实例ID</th>
+            <th>流程定义ID</th>
+            <th>任务创建时间</th>
+            <th>办理人</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>

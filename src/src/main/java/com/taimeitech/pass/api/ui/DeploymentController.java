@@ -1,6 +1,7 @@
 package com.taimeitech.pass.api.ui;
 
 import com.taimeitech.framework.common.TaimeiLogger;
+import com.taimeitech.pass.utils.InputStreamUtils;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.repository.ProcessDefinition;
@@ -15,9 +16,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.InputStream;
+import java.io.*;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.zip.ZipInputStream;
+
+import static com.taimeitech.pass.utils.InputStreamUtils.InputStreamTOString;
 
 /**
  * 部署流程
@@ -28,45 +36,16 @@ public class DeploymentController  {
     @Autowired
     private  RepositoryService repositoryService;
 
-    /**
-     * 流程定义列表
-     */
-/*    @RequestMapping(value = "/deployment/process-list")
-    public ModelAndView processList( HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("/process-list");
-        List<ProcessDefinition> processDefinitionList = repositoryService.createProcessDefinitionQuery().list();
-        mav.addObject("processDefinitionList", processDefinitionList);
-        return mav;
-    }*/
-    @RequestMapping(value = "/deployment/process-list")
-    public String processList( HttpServletRequest request) {
-        List<ProcessDefinition> processDefinitionList = repositoryService.createProcessDefinitionQuery().list();
-        request.getSession().setAttribute("processDefinitionList", processDefinitionList.get(0));
-        return "process-list";
-    }
-
-    /**
-     * 部署流程资源
-     */
-    @RequestMapping(value = "/deployment/deploy")
+    @RequestMapping(value = "/activiti/deployment/deploy")
     public String deploy(@RequestParam(value = "file", required = true) MultipartFile file) {
-
         // 获取上传的文件名
         String fileName = file.getOriginalFilename();
         try {
             // 得到输入流（字节流）对象
             InputStream fileInputStream = file.getInputStream();
-            // 文件的扩展名
-            String extension = FilenameUtils.getExtension(fileName);
-            // zip或者bar类型的文件用ZipInputStream方式部署
+            String bpmnFile = InputStreamUtils.InputStreamTOString(fileInputStream);
             DeploymentBuilder deployment = repositoryService.createDeployment();
-            if (extension.equals("zip") || extension.equals("bar")) {
-                ZipInputStream zip = new ZipInputStream(fileInputStream);
-                deployment.addZipInputStream(zip);
-            } else {
-                // 其他类型的文件直接部署
-                deployment.addInputStream(fileName, fileInputStream);
-            }
+            deployment.addString(fileName, bpmnFile);
             deployment.deploy();
         } catch (Exception e) {
             TaimeiLogger.error("error on deploy process, because of file input stream");
@@ -107,4 +86,7 @@ public class DeploymentController  {
         repositoryService.deleteDeployment(deploymentId, true);
         return "redirect:process-list";
     }
+
+
+
 }
