@@ -67,11 +67,6 @@ public class ActivitiFormController {
     public static tmTaskFormData toTaskFormData(TaskFormData formData){
         tmTaskFormData data = new tmTaskFormData();
         BeanUtils.copyProperties(formData, data);
-//        for(FormProperty pro : formData.getFormProperties()) {
-//         tmFormProperty tmPro = new tmFormProperty();
-//            BeanUtils.copyProperties(pro, tmPro);
-//            data.getFormProperties().add(tmPro);
-//        }
         return data;
     }
 }
