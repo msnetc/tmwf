@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,27 +32,26 @@ public class ActivitiController {
     TaskService taskService;
 
     @ResponseBody
-    @RequestMapping("/engine/info")
+    @RequestMapping(value = "/engine/info" ,method = RequestMethod.GET)
     public Map<String, String> engineProperties() {
         return managementService.getProperties();
     }
 
-    @RequestMapping("/processes")
+    @RequestMapping(value = "/processes",method = RequestMethod.GET)
     public ModelAndView processes() {
         ModelAndView mav = new ModelAndView("/processes");
         List<ProcessDefinition> list = repositoryService.createProcessDefinitionQuery().list();
         mav.addObject("processes", list);
         return mav;
     }
-
-    @RequestMapping("/process/start/{processDefinitionId}")
+    @RequestMapping(value = "/process/start/{processDefinitionId}",method = RequestMethod.GET)
     public String startProcess(@PathVariable("processDefinitionId") String processDefinitionId) {
         ProcessInstance processInstance = runtimeService.startProcessInstanceById(processDefinitionId);
         System.out.println("成功启动了流程：" + processInstance.getId());
         return "redirect:/activiti/tasks";
     }
 
-    @RequestMapping("/tasks")
+    @RequestMapping(value="/tasks" ,method = RequestMethod.GET)
     public ModelAndView tasks() {
         ModelAndView mav = new ModelAndView("tasks");
         List<Task> list = taskService.createTaskQuery().list();
@@ -59,7 +59,7 @@ public class ActivitiController {
         return mav;
     }
 
-    @RequestMapping("/task/complete/{taskId}")
+    @RequestMapping(value="/task/complete/{taskId}" ,method = RequestMethod.GET)
     public String completeTask(@PathVariable("taskId") String taskId) {
         taskService.complete(taskId);
         return "redirect:/activiti/tasks";

@@ -1,6 +1,7 @@
 package com.taimeitech.pass.api.ui;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -9,12 +10,12 @@ import java.util.Map;
 public class TemplateController {
 
     /**
-     * 返回html模板.
+     * 返回html模板
      */
-    @RequestMapping("/helloHtml")
+    @RequestMapping(value = "/helloHtml",method = RequestMethod.GET)
     public String helloHtml(Map<String,Object> map){
         map.put("hello","from TemplateController.helloHtml");
-        return"/helloHtml";
+        return "helloHtml";
     }
 
 }
