@@ -26,7 +26,7 @@ public class WfController {
     private WfService wfService;
 
     @ApiOperation(value = "创建pi，启动工作流", notes = "一般是创建表单后启动任务，把表单对应的id传给工作流引擎")
-    @RequestMapping(value = "pi/createPI", method = RequestMethod.POST)
+    @RequestMapping(value = "pi/createPI", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public CreatePIResponse Post(@ApiParam("data") @RequestBody CreatePI data) {
         CreatePIResponse response = new CreatePIResponse();
         ProcessInstance pi = wfService.CreatePi(data);
@@ -40,7 +40,7 @@ public class WfController {
     }
 
     @ApiOperation(value = "获取某个角色/用户的未完成的任务")
-    @RequestMapping(value = "task/queryTask", method = RequestMethod.POST)
+    @RequestMapping(value = "task/queryTask", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public GetTaskListResponse Post(@ApiParam("data") @RequestBody GetTaskList data) {
         List<Task> tasks = wfService.QueryTasks(data);
         List<tmTask> responseData = new ArrayList<tmTask>();
@@ -57,7 +57,7 @@ public class WfController {
     }
 
     @ApiOperation(value = "完成任务", notes = "某个用户完成分给他的任务")
-    @RequestMapping(value = "task/completeTask", method = RequestMethod.POST)
+    @RequestMapping(value = "task/completeTask", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public CompleteTaskResponse Post(@ApiParam("data") @RequestBody CompleteTask data) {
         Boolean result = wfService.CompleteTask(data);
         CompleteTaskResponse response = new CompleteTaskResponse();
@@ -66,7 +66,7 @@ public class WfController {
     }
 
     @ApiOperation(value = "获取某个角色/用户的历史任务")
-    @RequestMapping(value = "historyTask/queryHistoryTask", method = RequestMethod.POST)
+    @RequestMapping(value = "historyTask/queryHistoryTask",method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public GetHistoryTaskResponse Post(@ApiParam("data") @RequestBody GetHistoryTask data) {
         List<HistoricTaskInstance> tasks = wfService.QueryHistoryTasks(data);
         List<HistoryTask> responseData = new ArrayList<>();
@@ -81,7 +81,7 @@ public class WfController {
     }
 
     @ApiOperation(value = "工作流回调接口")
-    @RequestMapping(value = "pi/WorkFlowCallBack", method = RequestMethod.POST)
+    @RequestMapping(value = "pi/WorkFlowCallBack", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public WorkFlowCallBackResponse Post(@ApiParam("data") @RequestBody WorkFlowCallBack data) {
         WorkFlowCallBackResponse response = new WorkFlowCallBackResponse();
         response.setSuccess(true);
@@ -89,7 +89,7 @@ public class WfController {
     }
 
     @ApiOperation(value = "查询历史变量")
-    @RequestMapping(value = "History/HistoricVariable", method = RequestMethod.POST)
+    @RequestMapping(value = "History/HistoricVariable", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public GetHistoryVariablesResponse Post(@ApiParam("data") @RequestBody GetHistoryVariables data) {
         GetHistoryVariablesResponse response = new GetHistoryVariablesResponse();
         List<HistoricVariableInstance> dataList = wfService.GetHistoryVariables(data);

@@ -16,6 +16,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 
 /*
 如果不需要Swagger模块，则添加如下开关
@@ -38,5 +39,6 @@ public class TaimeiBootApplication   {
     TaimeiRestTemplate restTemplate() {
         return new TaimeiRestTemplate();
     }
+
 }
 

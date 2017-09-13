@@ -37,7 +37,7 @@ public class ActivitiFormController {
     private TaskService taskService;
 
     @ApiOperation(value = "获取某个pi的start form表单")
-    @RequestMapping(value = "taskform/GetTaskForm", method = RequestMethod.POST)
+    @RequestMapping(value = "taskform/GetTaskForm", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public GetTaskFormResponse Post(@ApiParam("data") @RequestBody GetTaskForm data) {
         GetTaskFormResponse response = new GetTaskFormResponse();
         UserTaskForm taskForm =new UserTaskForm();
@@ -62,7 +62,7 @@ public class ActivitiFormController {
     }
 
     @ApiOperation(value = "获取某个租户的用户列表")
-    @RequestMapping(value = "taskform/GetUsers", method = RequestMethod.POST)
+    @RequestMapping(value = "taskform/GetUsers", method = {RequestMethod.POST, RequestMethod.OPTIONS})
     public ActionResult<tmCompany> Post(@ApiParam("data") @RequestBody GetUsers data ){
         ActionResult<tmCompany> response = new ActionResult<>();
         tmCompany company = mockGetCompany(data.getTenantId());
