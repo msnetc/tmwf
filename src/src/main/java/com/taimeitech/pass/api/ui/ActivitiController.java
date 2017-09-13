@@ -23,13 +23,10 @@ public class ActivitiController {
 
     @Autowired
     ManagementService managementService;
-
     @Autowired
     RepositoryService repositoryService;
-
     @Autowired
     RuntimeService runtimeService;
-
     @Autowired
     TaskService taskService;
 
@@ -41,7 +38,7 @@ public class ActivitiController {
 
     @RequestMapping("/processes")
     public ModelAndView processes() {
-        ModelAndView mav = new ModelAndView("processes");
+        ModelAndView mav = new ModelAndView("/processes");
         List<ProcessDefinition> list = repositoryService.createProcessDefinitionQuery().list();
         mav.addObject("processes", list);
         return mav;

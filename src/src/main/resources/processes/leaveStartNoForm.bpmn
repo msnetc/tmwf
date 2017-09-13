@@ -8,8 +8,8 @@
         <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
         <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
         <activiti:formProperty id="reason" name="请假原因" type="string" required="true"></activiti:formProperty>
-        <activiti:formProperty id="deptLeaderUserId" name="部门经理" type="string" required="true"></activiti:formProperty>
-        <activiti:formProperty id="hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="user_deptLeaderUserId" name="部门经理" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="users_hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>
       </extensionElements>
     </userTask>
     <userTask id="deptLeaderAudit" name="部门领导审批" activiti:assignee="${deptLeaderUserId}">
