@@ -1,67 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
 <head>
-    <meta charset="UTF-8">
-    <title>已部署流程定义列表</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <meta http-equiv="Cache-Control" content="no-store"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
-    <!--<link rel="stylesheet" href="@{/css/bootstrap.min.css" type="text/css">-->
-    <!--<link rel="stylesheet" href="@{/css/bootstrap-responsive.min.css" type="text/css">-->
-    <!--<link rel="stylesheet" href="@{/css/style.css" type="text/css"/>-->
+    <title>流程定义列表</title>
 </head>
 <body>
-<span>test</span>
-<h1 layout:fragment="header">工作流</h1>
-<div layout:fragment="content"
-     class="container">
-    <ul>
-        <li>proceees</li>
-    </ul>
+<h1 layout:fragment="header">流程定义列表</h1>
+<div layout:fragment="content" class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>KEY</td>
+            <td>NAME</td>
+            <td>OPTS</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${processes.empty}">
+            <td colspan="3">
+                No messages
+            </td>
+        </tr>
+        <tr th:each="process : ${processes}">
+            <td th:text="${process.id}"></td>
+            <td th:text="${process.key}"></td>
+            <td th:text="${process.name}"></td>
+            <td>
+                <a th:href="@{'/activiti/process/start/' + ${process.id}}">启动</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<!--<fieldset id="deployFieldset">-->
-    <!--<legend>部署流程资源</legend>-->
-    <!--<span class="alert alert-info"><b>支持文件格式：</b>zip、bar、bpmn、bpmn20.xml</span>-->
-    <!--<form action="/deployment/deploy" method="post" enctype="multipart/form-data" style="margin-top:1em;">-->
-        <!--<input type="file" name="file" />-->
-        <!--<input type="submit" value="Submit" class="btn" />-->
-    <!--</form>-->
-    <!--<hr class="soften" />-->
-<!--</fieldset>-->
-<!--<div class="container">-->
-    <!--<table class="table table-bordered table-striped">-->
-        <!--<thead>-->
-        <!--<tr>-->
-            <!--<th>流程定义ID</th>-->
-            <!--<th>部署ID</th>-->
-            <!--<th>流程定义名称</th>-->
-            <!--<th>流程定义KEY</th>-->
-            <!--<th>版本号</th>-->
-            <!--<th>XML资源名称</th>-->
-            <!--<th>图片资源名称</th>-->
-            <!--<th width="80">操作</th>-->
-        <!--</tr>-->
-        <!--</thead>-->
-        <!--<tbody>-->
-        <!--<tr th:if="${processDefinitionList.empty}">-->
-            <!--<td colspan="3">-->
-                <!--No messages-->
-            <!--</td>-->
-        <!--</tr>-->
-        <!--<tr th:each="pd : ${processDefinitionList}">-->
-            <!--<td>${pd.id }</td>-->
-            <!--<td>${pd.deploymentId }</td>-->
-            <!--<td>${pd.name }</td>-->
-            <!--<td>${pd.key }</td>-->
-            <!--<td>${pd.version }</td>-->
-            <!--<td><a target="_blank" href='@/deployment/read-resource?pdid=${pd.id }&resourceName=${pd.resourceName }'>${pd.resourceName }</a></td>-->
-            <!--<td><a target="_blank" href='@/deployment/read-resource?pdid=${pd.id }&resourceName=${pd.diagramResourceName }'>${pd.diagramResourceName }</a></td>-->
-            <!--<td><a target="_blank" href='@/deployment/delete-deployment?deploymentId=${pd.deploymentId }'>删除</a></td>-->
-            <!--<a th:href="@{'/activiti/process/start/' + ${process.id}}">启动</a>-->
-        <!--</tr>-->
-        <!--</tbody>-->
-    <!--</table>-->
-<!--</div>-->
 </body>
 </html>
