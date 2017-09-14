@@ -23,13 +23,10 @@ public class ActivitiController {
 
     @Autowired
     ManagementService managementService;
-
     @Autowired
     RepositoryService repositoryService;
-
     @Autowired
     RuntimeService runtimeService;
-
     @Autowired
     TaskService taskService;
 
