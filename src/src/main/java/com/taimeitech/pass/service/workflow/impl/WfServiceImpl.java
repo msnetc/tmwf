@@ -1,5 +1,6 @@
 package com.taimeitech.pass.service.workflow.impl;
 
+import com.taimeitech.framework.common.TaimeiLogger;
 import com.taimeitech.framework.util.StringUtil;
 import com.taimeitech.pass.entity.Finance.CompleteTasks;
 import com.taimeitech.pass.entity.workflow.*;
@@ -64,7 +65,8 @@ public class WfServiceImpl implements WfService {
             ProcessInstanceQuery piQuery = runtimeService.createProcessInstanceQuery();
             List<ProcessInstance> processInstances = piQuery.processInstanceBusinessKey(data.getBusinessKey()).list();
         }
-        ProcessInstance pi = runtimeService.startProcessInstanceByKey(data.getProcessDefinitionKey(), data.getBusinessKey(), variables);
+        ProcessInstance pi = runtimeService.startProcessInstanceByKeyAndTenantId(data.getProcessDefinitionKey(), data.getBusinessKey(), variables, data.getTenantId());
+//        TaimeiLogger.info(pi.getProcessDefinitionId());
         return pi;
     }
 
