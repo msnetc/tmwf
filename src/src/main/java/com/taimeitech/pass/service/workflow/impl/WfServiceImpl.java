@@ -12,6 +12,7 @@ import org.activiti.engine.history.HistoricVariableInstanceQuery;
 import org.activiti.engine.identity.User;
 import org.activiti.engine.identity.UserQuery;
 import org.activiti.engine.runtime.ProcessInstance;
+import org.activiti.engine.runtime.ProcessInstanceQuery;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
 import org.apache.commons.lang.NotImplementedException;
@@ -59,6 +60,10 @@ public class WfServiceImpl implements WfService {
     @Override
     public ProcessInstance CreatePi(CreatePI data) {
         Map<String, Object> variables = data.getVariables();
+        if(StringUtils.isNotBlank(data.getBusinessKey())){
+            ProcessInstanceQuery piQuery = runtimeService.createProcessInstanceQuery();
+            List<ProcessInstance> processInstances = piQuery.processInstanceBusinessKey(data.getBusinessKey()).list();
+        }
         ProcessInstance pi = runtimeService.startProcessInstanceByKey(data.getProcessDefinitionKey(), data.getBusinessKey(), variables);
         return pi;
     }

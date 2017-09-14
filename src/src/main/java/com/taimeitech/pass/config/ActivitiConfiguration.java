@@ -72,7 +72,7 @@ public class ActivitiConfiguration {
         processEngineConfiguration.setJpaEntityManagerFactory(entityManagerFactory);
         processEngineConfiguration.setHistory("full");
         processEngineConfiguration.setTransactionManager(transactionManager);
-//        processEngineConfiguration.setDeploymentMode("single-resource");   //为每个资源创建一个单独的部署，并用于重复检测过滤
+        processEngineConfiguration.setDeploymentMode("single-resource");   //为每个资源创建一个单独的部署，并用于重复检测过滤
         return processEngineConfiguration;
     }
 
