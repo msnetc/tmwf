@@ -8,11 +8,11 @@ public class WebInterceptor  extends HandlerInterceptorAdapter{
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
-        response.setHeader("Access-Control-Max-Age", "3600");
-        response.setHeader("Access-Control-Allow-Headers", "x-requested-with, content-type, Access-Token, Authorization, Accept");
-        response.setHeader("Access-Control-Allow-Credentials","true");
+//        response.setHeader("Access-Control-Allow-Origin", "*");
+//        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
+//        response.setHeader("Access-Control-Max-Age", "3600");
+//        response.setHeader("Access-Control-Allow-Headers", "x-requested-with, content-type, Access-Token, Authorization, Accept");
+//        response.setHeader("Access-Control-Allow-Credentials","true");
         return super.preHandle(request, response, handler);
     }
 

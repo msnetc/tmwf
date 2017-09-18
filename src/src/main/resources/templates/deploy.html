@@ -11,8 +11,9 @@
      class="container">
     <legend>部署流程资源</legend>
     <span class="alert alert-info"><b>支持文件格式：</b>zip、bar、bpmn、bpmn20.xml</span>
-    <form action= "/deployment/deployFile" method="post" enctype="multipart/form-data" style="margin-top:1em;">
+    <form action= "/deployment/upload" method="post" enctype="multipart/form-data" style="margin-top:1em;">
         <input type="file" name="file" />
+        <input type="input" id="tenantId" name="租户id" />
         <input type="submit" value="Submit" class="btn" />
     </form>
 </div>

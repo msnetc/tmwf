@@ -8,15 +8,22 @@ import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.repository.ProcessDefinitionQuery;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.*;
 
 
@@ -32,7 +39,6 @@ import static com.taimeitech.pass.utils.InputStreamUtils.InputStreamTOString;
  * 部署流程
  */
 @Controller
-//@RequestMapping(value = "/deployment")
 public class DeploymentController  {
     @Autowired
     private  RepositoryService repositoryService;
@@ -40,27 +46,10 @@ public class DeploymentController  {
     @RequestMapping(value = "/deployment/index")
     public ModelAndView Index() {
         ModelAndView mav = new ModelAndView("deploy");
-
-//        String text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-//                + "<definitions xmlns=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:activiti=\"http://activiti.org/bpmn\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:omgdc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:omgdi=\"http://www.omg.org/spec/DD/20100524/DI\" typeLanguage=\"http://www.w3.org/2001/XMLSchema\" expressionLanguage=\"http://www.w3.org/1999/XPath\" targetNamespace=\"http://www.kafeitu.me/activiti-in-action\">"
-//                + "  <process id=\"candidateUserInUserTask\" name=\"candidateUserInUserTask\">"
-//                + "    <startEvent id=\"startevent1\" name=\"Start\"></startEvent>"
-//                + "    <userTask id=\"usertask1\" name=\"用户任务包含多个直接候选人\" activiti:candidateUsers=\"jackchen, henryyan\"></userTask>"
-//                + "    <sequenceFlow id=\"flow1\" name=\"\" sourceRef=\"startevent1\" targetRef=\"usertask1\"></sequenceFlow>"
-//                + "    <endEvent id=\"endevent1\" name=\"End\"></endEvent>"
-//                + "    <sequenceFlow id=\"flow2\" name=\"\" sourceRef=\"usertask1\" targetRef=\"endevent1\"></sequenceFlow>"
-//                + "  </process>"
-//                + "</definitions>";
-//        DeploymentBuilder deployment = repositoryService.createDeployment();
-//        repositoryService.createDeployment().addString("candidateUserInUserTask.bpmn", text).deploy();
-//        // 验证流程定义是否部署成功
-//        ProcessDefinitionQuery processDefinitionQuery = repositoryService.createProcessDefinitionQuery();
-//        long count = processDefinitionQuery.processDefinitionKey("candidateUserInUserTask").count();
-
         return mav;
     }
 
-    @RequestMapping(value = "/deployment/deploy")
+    @RequestMapping(value = "/deployment/deploy", method = RequestMethod.POST)
     public String deploy(@RequestParam(value = "file", required = true) MultipartFile file) {
         // 获取上传的文件名
         String fileName = file.getOriginalFilename();
@@ -77,20 +66,20 @@ public class DeploymentController  {
         return "redirect:/activiti/processes";
     }
 
-    /**
-     * 部署流程资源
-     */
-    @RequestMapping(value = "/deployment/deployFile")
-    public String deployInFile(@RequestParam(value = "file", required = true) MultipartFile file) {
-        // 获取上传的文件名
-        String fileName = file.getOriginalFilename();
+    @RequestMapping(value="deployment/upload", method=RequestMethod.POST)
+    @ResponseBody
+    public String upload(HttpServletRequest request) throws Exception
+    {
+        Part part = request.getPart("file");
         try {
-            // 得到输入流（字节流）对象
-            InputStream fileInputStream = file.getInputStream();
+            String talentId = request.getParameter("tenantId");
+            InputStream fileInputStream = part.getInputStream();
+            String fileName = part.getSubmittedFileName();
             // 文件的扩展名
-            String extension = FilenameUtils.getExtension(fileName);
+            String extension=  FilenameUtils.getExtension(fileName);
             // zip或者bar类型的文件用ZipInputStream方式部署
             DeploymentBuilder deployment = repositoryService.createDeployment();
+            deployment.tenantId(talentId);
             if (extension.equals("zip") || extension.equals("bar")) {
                 ZipInputStream zip = new ZipInputStream(fileInputStream);
                 deployment.addZipInputStream(zip);
@@ -98,11 +87,11 @@ public class DeploymentController  {
                 // 其他类型的文件直接部署
                 deployment.addInputStream(fileName, fileInputStream);
             }
-            deployment.deploy();
+            fileInputStream.close();
         } catch (Exception e) {
             TaimeiLogger.error("error on deploy process, because of file input stream");
         }
-        return "redirect:processes";
+        return "redirect:/activiti/processes";
     }
 
     /**
@@ -127,7 +116,6 @@ public class DeploymentController  {
             response.getOutputStream().write(b, 0, len);
         }
     }
-
     /**
      * 删除部署的流程，级联删除流程实例
      *
@@ -136,7 +124,20 @@ public class DeploymentController  {
     @RequestMapping(value = "/deployment/delete-deployment")
     public String deleteProcessDefinition(@RequestParam("deploymentId") String deploymentId) {
         repositoryService.deleteDeployment(deploymentId, true);
-        return "redirect:process-list";
+        return "redirect:/activiti/processes";
+    }
+
+
+
+    @Bean
+    MultipartConfigElement createMultipartConfigElement()
+    {
+        MultipartConfigFactory mcf = new MultipartConfigFactory();
+        /**
+         * 设置最大上传文件的大小，默认是10MB
+         */
+        mcf.setMaxFileSize("50MB");
+        return mcf.createMultipartConfig();
     }
 
 

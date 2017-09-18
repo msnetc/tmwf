@@ -80,14 +80,6 @@ public class WfController {
         return  response;
     }
 
-    @ApiOperation(value = "工作流回调接口")
-    @RequestMapping(value = "pi/WorkFlowCallBack", method = {RequestMethod.POST})
-    public WorkFlowCallBackResponse Post(@ApiParam("data") @RequestBody WorkFlowCallBack data) {
-        WorkFlowCallBackResponse response = new WorkFlowCallBackResponse();
-        response.setSuccess(true);
-        return response;
-    }
-
     @ApiOperation(value = "查询历史变量")
     @RequestMapping(value = "History/HistoricVariable", method = {RequestMethod.POST})
     public GetHistoryVariablesResponse Post(@ApiParam("data") @RequestBody GetHistoryVariables data) {
