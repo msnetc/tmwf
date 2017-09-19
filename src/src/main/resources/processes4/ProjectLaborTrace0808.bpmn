@@ -24,7 +24,10 @@
     <sequenceFlow id="flow2" name="pm审核通过" sourceRef="pmTask" targetRef="financeTask">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedPmCounter == pmUsers.size()}]]></conditionExpression>
     </sequenceFlow>
-    <sequenceFlow id="flowFinal" name="PM主管审核通过" sourceRef="financeTask" targetRef="endevent1">
+    <sequenceFlow id="flowFinal" name="财务主管审核通过" sourceRef="financeTask" targetRef="endevent1">
+      <extensionElements>
+        <activiti:executionListener event="take" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"></activiti:executionListener>
+      </extensionElements>
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedFinanceUsersCounter == financeUsers.size()}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="flow4" name="pm审核驳回" sourceRef="pmTask" targetRef="submitupdate">
@@ -39,7 +42,7 @@
   <bpmndi:BPMNDiagram id="BPMNDiagram_ProjectLaborTrace0808">
     <bpmndi:BPMNPlane bpmnElement="ProjectLaborTrace0808" id="BPMNPlane_ProjectLaborTrace0808">
       <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="160.0" y="460.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="175.0" y="459.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="pmTask" id="BPMNShape_pmTask">
         <omgdc:Bounds height="55.0" width="105.0" x="140.0" y="265.0"></omgdc:Bounds>
@@ -51,10 +54,10 @@
         <omgdc:Bounds height="55.0" width="105.0" x="530.0" y="80.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="930.0" y="265.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="990.0" y="270.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
-        <omgdi:waypoint x="177.0" y="460.0"></omgdi:waypoint>
+        <omgdi:waypoint x="192.0" y="459.0"></omgdi:waypoint>
         <omgdi:waypoint x="192.0" y="320.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
@@ -66,7 +69,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flowFinal" id="BPMNEdge_flowFinal">
         <omgdi:waypoint x="635.0" y="287.0"></omgdi:waypoint>
-        <omgdi:waypoint x="930.0" y="282.0"></omgdi:waypoint>
+        <omgdi:waypoint x="990.0" y="287.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="48.0" width="100.0" x="749.0" y="269.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>

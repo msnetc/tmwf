@@ -39,6 +39,9 @@ public class FinanceServiceImpl implements FinanceService{
         if(StringUtils.isNotEmpty(queryParm.getUserId())){
             historyTaskQuery.taskAssignee(queryParm.getUserId());
         }
+        if(StringUtils.isNotEmpty(queryParm.getBusinessKey())){
+            historyTaskQuery.processInstanceBusinessKey(queryParm.getBusinessKey());
+        }
         List<HistoricTaskInstance>  historyTasks = historyTaskQuery.list();
         List<UserTask> ret = new ArrayList<>();
 
@@ -84,8 +87,6 @@ public class FinanceServiceImpl implements FinanceService{
 
     public List<UserTask> GetUserTasks(QueryUserTask queryParm){
         TaskQuery runTimeTaskQuery = taskService.createTaskQuery();
-//        HistoricTaskInstanceQuery historyTaskQuery = historyService.createHistoricTaskInstanceQuery(); // 创建历史任务实例查询
-//        HistoricVariableInstanceQuery variableHistoryQuery =historyService.createHistoricVariableInstanceQuery();
 
         if(StringUtils.isNotEmpty(queryParm.getPdId())){
             runTimeTaskQuery.processDefinitionKeyLikeIgnoreCase(queryParm.getPdId().toUpperCase());
