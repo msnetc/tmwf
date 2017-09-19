@@ -40,7 +40,7 @@ public class FinanceServiceImpl implements FinanceService{
             historyTaskQuery.taskAssignee(queryParm.getUserId());
         }
         if(StringUtils.isNotEmpty(queryParm.getBusinessKey())){
-            historyTaskQuery.processInstanceBusinessKey(queryParm.getBusinessKey());
+            historyTaskQuery.processInstanceBusinessKeyLike(queryParm.getBusinessKey());
         }
         List<HistoricTaskInstance>  historyTasks = historyTaskQuery.list();
         List<UserTask> ret = new ArrayList<>();

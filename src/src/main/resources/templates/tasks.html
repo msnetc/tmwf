@@ -13,6 +13,9 @@
         <tr>
             <td>ID</td>
             <td>NAME</td>
+            <td>processInstanceId</td>
+            <td>formKey</td>
+            <td>assignee</td>
             <td>OPTS</td>
         </tr>
         </thead>
@@ -25,6 +28,9 @@
         <tr th:each="task : ${tasks}">
             <td th:text="${task.id}"></td>
             <td th:text="${task.name}"></td>
+            <td th:text="${task.processInstanceId}"></td>
+            <td th:text="${task.formKey}"></td>
+            <td th:text="${task.assignee}"></td>
             <td>
                 <a th:href="@{'/activiti/task/complete/' + ${task.id}}">完成</a>
             </td>

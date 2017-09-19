@@ -59,7 +59,7 @@ public class DeploymentController  {
             String bpmnFile = InputStreamUtils.InputStreamTOString(fileInputStream);
             DeploymentBuilder deployment = repositoryService.createDeployment();
             deployment.addString(fileName, bpmnFile);
-            Deployment deploy = deployment.deploy();
+            deployment.deploy();
         } catch (Exception e) {
             TaimeiLogger.error("error on deploy process, because of file input stream");
         }
@@ -90,8 +90,9 @@ public class DeploymentController  {
             fileInputStream.close();
         } catch (Exception e) {
             TaimeiLogger.error("error on deploy process, because of file input stream");
+            TaimeiLogger.error(e);
         }
-        return "redirect:/activiti/processes";
+        return "redirect:activiti/processes";
     }
 
     /**
@@ -124,7 +125,7 @@ public class DeploymentController  {
     @RequestMapping(value = "/deployment/delete-deployment")
     public String deleteProcessDefinition(@RequestParam("deploymentId") String deploymentId) {
         repositoryService.deleteDeployment(deploymentId, true);
-        return "redirect:/activiti/processes";
+        return "redirect:activiti/processes";
     }
 
 

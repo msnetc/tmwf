@@ -66,6 +66,7 @@ public class WfServiceImpl implements WfService {
             List<ProcessInstance> processInstances = piQuery.processInstanceBusinessKey(data.getBusinessKey()).list();
         }
         ProcessInstance pi = runtimeService.startProcessInstanceByKeyAndTenantId(data.getProcessDefinitionKey(), data.getBusinessKey(), variables, data.getTenantId());
+
 //        TaimeiLogger.info(pi.getProcessDefinitionId());
         return pi;
     }
