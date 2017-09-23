@@ -47,8 +47,8 @@ public class TaskRejectionListener implements ExecutionListener,TaskListener {
             map.put("ProcessInstanceId", piId);
             map.put("IsPass", reslult);
             String messageData = SerializeUtils.toJson(map);
-            //getRabbitMessageSender().dynamicSend("", processId, messageData);
             getRabbitMessageSender().directSend(processId, messageData);
+            TaimeiLogger.warn(messageData);
         }
         catch (Exception ex){
             TaimeiLogger.error(ex);

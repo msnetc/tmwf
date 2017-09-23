@@ -55,12 +55,13 @@ public class FinanceServiceImpl implements FinanceService{
             if(variables !=null && variables.size() >0) {
                 for(HistoricVariableInstance hvi:variables){
                     String varibaleName = hvi.getVariableName();
-                    if(!varibaleName.equalsIgnoreCase("APPROVED")) continue;;
-                    String approved = hvi.getValue().toString();
-                    if(approved.equalsIgnoreCase("TRUE")){
-                        item.setApproved(10); //10已通过
-                    }else{
-                        item.setApproved(20); //20未通过
+                    if(varibaleName.equalsIgnoreCase("APPROVED")) {
+                        String approved = hvi.getValue().toString();
+                        if (approved.equalsIgnoreCase("TRUE")) {
+                            item.setApproved(10); //10已通过
+                        } else {
+                            item.setApproved(20); //20未通过
+                        }
                     }
                 }
             }

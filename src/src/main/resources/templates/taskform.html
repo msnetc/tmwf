@@ -13,24 +13,7 @@
 </head>
 <body>
 <form action="$/task/completeFormTask/${hasFormKey ? task.id : taskFormData.task.id}" class="form-horizontal" method="post">
-
-    <th:if test="${hasFormKey}">
-        ${taskFormData}
-    </th:if>
-    <th:if test="${!hasFormKey}">
-    <th:each ="fp:${taskform.formProperties}">
-        <div class="control-group">
-            <%-- 文本或者数字类型 --%>
-            <th:if test="${fp.type.name == 'string' || fp.type.name == 'long'}">
-                <label class="control-label" for="${fp.id}">${fp.name}:</label>
-                <div class="controls">
-                    <input type="text" id="${fp.id}" name="${fp.id}" data-type="${fp.type.name}" value="${fp.value}" ${readonly} ${required} />
-                </div>
-            </th:if>
-        </div>
-    </th:each>
-    </th:if>
-
+    
 </form>
 
 </body>
