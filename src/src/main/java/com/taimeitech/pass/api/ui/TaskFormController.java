@@ -60,6 +60,7 @@ public class TaskFormController {
         }
         else {
             mav.addObject("taskFormData", taskFormData);
+            mav.addObject("hasFormKey", false);
         }
         return mav;
     }

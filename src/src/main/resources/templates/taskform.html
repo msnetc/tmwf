@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"      layout:decorator="layout">
 <head>
     <title>任务办理</title>
     <link rel="stylesheet"     href="../../css/bootstrap.min.css"/>
@@ -13,7 +13,22 @@
 </head>
 <body>
 <form action="$/task/completeFormTask/${hasFormKey ? task.id : taskFormData.task.id}" class="form-horizontal" method="post">
-    
+    <div th:switch="${hasFormKey}">
+        <p th:case="true"> ${taskFormData}</p>
+        <p th:case="false">
+        <div  class="form-group" th:each = "fp : ${taskFormData.formProperties}">
+          <div th:switch="${fp.type.name}">
+                <p th:case="string">
+                    <label class="col-sm-3 control-label" th:for="${fp.id}" th:text="${fp.name}"></label>
+                    <div class="col-sm-6">
+                        <input type="text" th:id="${fp.id}" class="form-control"
+                        th:name="${fp.id}"
+                        th:attr="data-type=${fp.type.name}"
+                        th:value="${fp.value}" th:readonly="${readonly}" th:required="${required}" />
+                  </div>
+            </p>
+          </div>
+        </div>
+    </div>
 </form>
-
 </body>
