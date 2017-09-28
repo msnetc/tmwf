@@ -14,14 +14,13 @@
 <body>
 <div layout:fragment="content" class="container">
 
-<form action="/task/completeFormTask/14" class="form-horizontal" method="post">
+<form th:action="@{/task/completeFormTask/}+${taskFormData.task.id}" class="form-horizontal" method="post">
     <p th:switch="${hasFormKey}">
         <p th:case="true"> ${taskFormData}</p>
         <p th:case="false">
 
 <div  class="form-group" th:each = "fp : ${taskFormData.formProperties}">
         <div th:switch="${fp.type.name}">
-
         <p th:case="string">
             <label  class="control-label"  th:for="${fp.id}" th:text="${fp.name}"></label>
         <div class="controls">
@@ -46,23 +45,33 @@
             <label class="control-label" th:for="${fp.id}" th:text="${fp.name}"></label>
         <div class="controls">
             <input type="text" th:id="${fp.id}" class="datepicker"     th:name="${fp.id}"
-                   th:attr="data-type=${fp.type.name}"  th:value="${fp.value}" th:readonly="${!fp.writable}" th:required="${fp.required}" />
+           th:attr="data-type=${fp.type.name} ,data-date-format='yyyy-mm-dd'"  th:value="${fp.value}" th:readonly="${!fp.writable}" th:required="${fp.required}" />
         </div>
-        </p>
-
-    <p th:case="enum">
-        <label class="control-label" th:for="${fp.id}" th:text="${fp.name}"></label>
-    <div class="controls">
-
-    </div>
-
-
-    </p>
+        </p> 
             </div>
             </div>
             </p>
 
         </p>
+    <div  class="form-group" th:each = "ep : ${enumProperties}">
+        <label class="control-label" th:for="${ep.id}" th:text="${ep.name}"></label>
+        <div class="controls">
+            <select  th:name="${ep.id}" th:id="${ep.id}" th:disabled="${!ep.writable}" th:required="${ep.required}" >
+                <p th:each = "item : ${ep.values}">
+                    <option  th:if="${ep.value == item.value}" th:value="${item.key}" th:text="${item.value}">selected</option>
+                    <option  th:value="${item.key}" th:text="${item.value}"></option>
+                </p>
+            </select>
+        </div>
+    </div>
+
+
+<div class="control-group">
+    <div class="controls">
+        <a href="javascript:history.back();" class="btn"><i class="icon-backward"></i>返回列表</a>
+        <button type="submit" class="btn"><i class="icon-ok"></i>完成任务</button>
+    </div>
+</div>
 </form>
 
 </div>

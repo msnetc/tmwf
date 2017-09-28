@@ -4,6 +4,7 @@ import com.taimeitech.pass.entity.Finance.QueryUserTask;
 import com.taimeitech.pass.entity.Finance.QueryUserTaskResponse;
 
 import com.taimeitech.pass.entity.workflow.*;
+import com.taimeitech.pass.entity.workflow.form.tmEnumFormType;
 import com.taimeitech.pass.service.workflow.WfService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -15,9 +16,11 @@ import org.activiti.engine.form.FormProperty;
 import org.activiti.engine.form.StartFormData;
 import org.activiti.engine.form.TaskFormData;
 import org.activiti.engine.identity.User;
+import org.activiti.engine.impl.form.EnumFormType;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.task.Task;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,10 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /*
 https://stackoverflow.com/questions/16017763/how-to-get-the-submitted-form-values-in-external-form-rendering-concept
@@ -50,17 +50,20 @@ public class TaskFormController {
         String viewName = "taskform";
         ModelAndView mav = new ModelAndView(viewName);
         TaskFormData taskFormData = formService.getTaskFormData(taskId);
+        List<tmEnumFormType> enumProperties= getTmEnumFormTypes(taskFormData.getFormProperties());
         if (taskFormData.getFormKey() != null) {
             Object renderedTaskForm = formService.getRenderedTaskForm(taskId);
             Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
             mav.addObject("task", task);
             mav.addObject("taskFormData", renderedTaskForm);
             mav.addObject("hasFormKey", true);
+            mav.addObject("enumProperties", enumProperties);
             return mav;
         }
         else {
             mav.addObject("taskFormData", taskFormData);
             mav.addObject("hasFormKey", false);
+            mav.addObject("enumProperties", enumProperties);
         }
         return mav;
     }
@@ -109,5 +112,29 @@ public class TaskFormController {
         mav.addObject("tasks", allTasks);
         return mav;
     }
+
+    private List<tmEnumFormType> getTmEnumFormTypes( List<FormProperty> formProperties){
+        List<tmEnumFormType> ret = new ArrayList<>();
+        for(FormProperty fp : formProperties){
+            tmEnumFormType data =   getEnumFormTypeValue(fp);
+            if(data ==null) continue;
+            ret.add(data);
+        }
+        return ret;
+    }
+
+    private tmEnumFormType getEnumFormTypeValue(FormProperty formProperty){
+       if(formProperty.getType() instanceof EnumFormType){
+            tmEnumFormType ret = new tmEnumFormType();
+            BeanUtils.copyProperties(formProperty, ret);
+            EnumFormType formData =(EnumFormType) formProperty.getType();
+            Object vlaues = formData.getInformation("values");
+            LinkedHashMap<Object, Object> items = (LinkedHashMap<Object, Object>)vlaues;
+            ret.setValues(items);
+            return ret;
+     }
+     return null;
+    }
+
 
 }

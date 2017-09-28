@@ -5,11 +5,11 @@
     <startEvent id="startevent1" name="Start"></startEvent>
     <userTask id="usertaskStart" name="请假" activiti:assignee="${applyUserId}">
       <extensionElements>
-        <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
-        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
         <activiti:formProperty id="reason" name="请假原因" type="string" required="true"></activiti:formProperty>
         <activiti:formProperty id="user_deptLeaderUserId" name="部门经理" type="string" required="true"></activiti:formProperty>
-        <activiti:formProperty id="users_hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="users_hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>        
+        <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
+        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
       </extensionElements>
     </userTask>
     <userTask id="deptLeaderAudit" name="部门领导审批" activiti:assignee="${user_deptLeaderUserId}">
@@ -21,8 +21,6 @@
           <activiti:value id="true" name="同意"></activiti:value>
           <activiti:value id="false" name="拒绝"></activiti:value>
         </activiti:formProperty>
-        <activiti:formProperty id="reason" name="请假原因" type="string" writable="false"></activiti:formProperty>
-        <activiti:formProperty id="reason" name="请假原因" type="string" writable="false"></activiti:formProperty>
       </extensionElements>
     </userTask>
     <exclusiveGateway id="exclusivegateway5" name="Exclusive Gateway"></exclusiveGateway>

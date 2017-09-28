@@ -16,7 +16,6 @@ public class tmTaskFormData {
     @ApiModelProperty(value = "表单字段")
     private List<tmFormProperty> formProperties;
 
-
     public String getFormKey() {
         return formKey;
     }
