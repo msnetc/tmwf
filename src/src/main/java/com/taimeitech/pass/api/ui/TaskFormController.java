@@ -47,7 +47,7 @@ public class TaskFormController {
     @ApiOperation(value = "获取某个pi的start form表单")
     @RequestMapping(value = "/task/GetStartFormData/{taskId}")
     public ModelAndView Post(@PathVariable("taskId") String taskId) {
-        String viewName = "task-form";
+        String viewName = "taskform";
         ModelAndView mav = new ModelAndView(viewName);
         TaskFormData taskFormData = formService.getTaskFormData(taskId);
         if (taskFormData.getFormKey() != null) {
