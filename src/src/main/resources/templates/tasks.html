@@ -32,7 +32,7 @@
             <td th:text="${task.formKey}"></td>
             <td th:text="${task.assignee}"></td>
             <td>
-                <a th:href="@{'/activiti/task/complete/' + ${task.id}}">完成</a>
+                <a th:href="@{'/task/GetStartFormData/' + ${task.id}}">完成</a>
             </td>
         </tr>
         </tbody>

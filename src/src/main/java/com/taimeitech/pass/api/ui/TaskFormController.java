@@ -42,7 +42,7 @@ public class TaskFormController {
     private TaskService taskService;
 
 
-    private static String TASK_LIST = "redirect:/task/list";
+    private static String TASK_LIST = "redirect:/activiti/tasks";
 
     @ApiOperation(value = "获取某个pi的start form表单")
     @RequestMapping(value = "/task/GetStartFormData/{taskId}")
