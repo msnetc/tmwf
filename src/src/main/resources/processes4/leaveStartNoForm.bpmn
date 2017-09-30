@@ -3,14 +3,24 @@
   <process id="leaveStartNoForm" name="请假流程-动态表单" isExecutable="true">
     <documentation>请假流程演示-动态表单</documentation>
     <startEvent id="startevent1" name="Start"></startEvent>
-    <userTask id="usertaskStart" name="请假" activiti:assignee="${applyUserId}">
+    <userTask id="usertaskStart" name="请假">
       <extensionElements>
         <activiti:formProperty id="reason" name="请假原因" type="string" required="true"></activiti:formProperty>
         <activiti:formProperty id="user_deptLeaderUserId" name="部门经理" type="string" required="true"></activiti:formProperty>
-        <activiti:formProperty id="users_hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>        
+        <activiti:formProperty id="users_hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>
         <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
-        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
+        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty> 
+
+		<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.MyAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[t123]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="auditorRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>		
       </extensionElements>
+	  
     </userTask>
     <userTask id="deptLeaderAudit" name="部门领导审批" activiti:assignee="${user_deptLeaderUserId}">
       <extensionElements>
@@ -21,6 +31,7 @@
           <activiti:value id="true" name="同意"></activiti:value>
           <activiti:value id="false" name="拒绝"></activiti:value>
         </activiti:formProperty>
+        
       </extensionElements>
     </userTask>
     <exclusiveGateway id="exclusivegateway5" name="Exclusive Gateway"></exclusiveGateway>
@@ -93,8 +104,8 @@
     </textAnnotation>
     <association id="association1" sourceRef="modifyApply" targetRef="textannotation1"></association>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_leave">
-    <bpmndi:BPMNPlane bpmnElement="leave" id="BPMNPlane_leave">
+  <bpmndi:BPMNDiagram id="BPMNDiagram_leaveStartNoForm">
+    <bpmndi:BPMNPlane bpmnElement="leaveStartNoForm" id="BPMNPlane_leaveStartNoForm">
       <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
         <omgdc:Bounds height="35.0" width="35.0" x="55.0" y="313.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
@@ -140,14 +151,14 @@
         <omgdi:waypoint x="449.0" y="84.0"></omgdi:waypoint>
         <omgdi:waypoint x="449.0" y="140.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="438.0" y="97.0"></omgdc:Bounds>
+          <omgdc:Bounds height="16.0" width="32.0" x="438.0" y="97.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
         <omgdi:waypoint x="469.0" y="64.0"></omgdi:waypoint>
         <omgdi:waypoint x="771.0" y="57.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="24.0" x="155.0" y="0.0"></omgdc:Bounds>
+          <omgdc:Bounds height="48.0" width="24.0" x="155.0" y="0.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
@@ -158,21 +169,21 @@
         <omgdi:waypoint x="843.0" y="167.0"></omgdi:waypoint>
         <omgdi:waypoint x="1011.0" y="160.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="24.0" x="843.0" y="167.0"></omgdc:Bounds>
+          <omgdc:Bounds height="48.0" width="24.0" x="843.0" y="167.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
         <omgdi:waypoint x="1063.0" y="188.0"></omgdi:waypoint>
         <omgdi:waypoint x="1078.0" y="299.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="24.0" x="1063.0" y="188.0"></omgdc:Bounds>
+          <omgdc:Bounds height="48.0" width="24.0" x="1063.0" y="188.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
         <omgdi:waypoint x="803.0" y="167.0"></omgdi:waypoint>
         <omgdi:waypoint x="502.0" y="167.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="24.0" x="741.0" y="166.0"></omgdc:Bounds>
+          <omgdc:Bounds height="48.0" width="24.0" x="741.0" y="166.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
@@ -180,7 +191,7 @@
         <omgdi:waypoint x="242.0" y="330.0"></omgdi:waypoint>
         <omgdi:waypoint x="242.0" y="92.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="48.0" x="211.0" y="256.0"></omgdc:Bounds>
+          <omgdc:Bounds height="48.0" width="48.0" x="211.0" y="256.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
@@ -191,7 +202,7 @@
         <omgdi:waypoint x="469.0" y="330.0"></omgdi:waypoint>
         <omgdi:waypoint x="1061.0" y="316.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="48.0" x="611.0" y="324.0"></omgdc:Bounds>
+          <omgdc:Bounds height="48.0" width="48.0" x="611.0" y="324.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">

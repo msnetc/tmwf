@@ -45,7 +45,7 @@ public class TaskFormController {
     private static String TASK_LIST = "redirect:/activiti/tasks";
 
     @ApiOperation(value = "获取某个pi的start form表单")
-    @RequestMapping(value = "/task/GetStartFormData/{taskId}")
+    @RequestMapping(value = "/task/GetStartFormData/{taskId}", method = {RequestMethod.GET, RequestMethod.OPTIONS})
     public ModelAndView Post(@PathVariable("taskId") String taskId) {
         String viewName = "taskform";
         ModelAndView mav = new ModelAndView(viewName);
