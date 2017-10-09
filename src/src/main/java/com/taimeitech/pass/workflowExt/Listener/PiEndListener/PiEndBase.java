@@ -9,6 +9,7 @@ import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.ExecutionListener;
 import org.activiti.engine.delegate.TaskListener;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,9 +17,10 @@ import java.util.Map;
 public class PiEndBase implements ExecutionListener,TaskListener {
 
     public void notify(DelegateExecution execution)   {
+        String businesskey = execution.getProcessBusinessKey();
         String processInstanceId =execution.getProcessInstanceId();
         String pdId =GetPdId(execution.getProcessDefinitionId());
-        SendMsg(pdId, processInstanceId, getEndEnum());
+        SendMsg(pdId, processInstanceId, businesskey, getEndEnum());
     }
 
     @Override
@@ -31,11 +33,12 @@ public class PiEndBase implements ExecutionListener,TaskListener {
         return ret;
     }
 
-    private void SendMsg(String processId, String piId, PiEndEnum endEnum){
+    private void SendMsg(String processId, String piId, String businesskey, PiEndEnum endEnum){
         try{
             getQueueUtil().declareQueue(processId);
             Map<String, Object> map = new HashMap<>();
             map.put("ProcessInstanceId", piId);
+            map.put("BusinessKey", StringUtils.isBlank(businesskey) ? "":businesskey);
             map.put("EndStatus", endEnum.toString());
             String messageData = SerializeUtils.toJson(map);
             getRabbitMessageSender().directSend(processId, messageData);

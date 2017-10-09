@@ -1,22 +1,21 @@
 package com.taimeitech.pass.service.workflow.impl;
 
-import com.taimeitech.framework.common.TaimeiLogger;
 import com.taimeitech.framework.util.StringUtil;
-import com.taimeitech.pass.entity.Finance.CompleteTasks;
 import com.taimeitech.pass.entity.workflow.*;
 import com.taimeitech.pass.service.workflow.WfService;
+import com.taimeitech.pass.workflowExt.JumpCmd;
 import org.activiti.engine.*;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricTaskInstanceQuery;
 import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.history.HistoricVariableInstanceQuery;
-import org.activiti.engine.identity.User;
-import org.activiti.engine.identity.UserQuery;
+import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
+import org.activiti.engine.impl.pvm.ReadOnlyProcessDefinition;
+import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.runtime.ProcessInstanceQuery;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
-import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,10 +34,16 @@ public class WfServiceImpl implements WfService {
     private RuntimeService runtimeService;
 
     @Autowired
-    private IdentityService identityService;
+    private HistoryService historyService;
+
+    @Autowired
+    private ManagementService managementService;
 
     @Autowired
     private TaskService taskService;
+
+    @Autowired
+    private RepositoryService repositoryServivce;
 
     @Override
     public List<Task> QueryTasks(GetTaskList data) {
@@ -113,28 +118,24 @@ public class WfServiceImpl implements WfService {
         return list;
     }
 
-    private List<User> GetUsers(String groupId){
-        UserQuery query = identityService.createUserQuery();
-        if(StringUtil.isNotEmpty(groupId)){
-            query=query.memberOfGroup(groupId.trim());
-        }
-        List<User> users = query.list();
-        return users;
+    @Override
+    public boolean RollBackTask(String taskId) {
+        //根据要跳转的任务ID获取其任务
+        HistoricTaskInstance hisTask = historyService
+                .createHistoricTaskInstanceQuery().taskId(taskId)
+                .singleResult();
+        //进而获取流程实例
+        ProcessInstance instance = runtimeService
+                .createProcessInstanceQuery()
+                .processInstanceId(hisTask.getProcessInstanceId())
+                .singleResult();
+
+        //取得流程定义
+        ProcessDefinitionEntity definition = (ProcessDefinitionEntity) repositoryServivce.getProcessDefinition(hisTask.getProcessDefinitionId());
+        //获取历史任务的Activity
+        ActivityImpl hisActivity = definition.findActivity(hisTask.getTaskDefinitionKey());
+        //实现跳转
+        managementService.executeCommand(new JumpCmd(instance.getId(), hisActivity.getId()));
+        return true;
     }
-
-    private List<String> GetUserIds(String groupId){
-        UserQuery query = identityService.createUserQuery();
-        if(StringUtil.isNotEmpty(groupId)){
-            query=query.memberOfGroup(groupId.trim());
-        }
-        List<User> users = query.list();
-        List<String> userIds = new ArrayList<String>();
-        for (User u:users) {
-            userIds.add(u.getId());
-        }
-        return userIds;
-    }
-
-
-
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 public interface WfService {
 
@@ -27,4 +28,5 @@ public interface WfService {
 
     List<HistoricVariableInstance> GetHistoryVariables(GetHistoryVariables queryParam);
 
+    boolean RollBackTask(String taskId);
 }

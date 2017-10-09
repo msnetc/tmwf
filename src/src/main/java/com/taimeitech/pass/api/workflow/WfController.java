@@ -10,6 +10,7 @@ import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,9 +51,24 @@ public class WfController {
             BeanUtils.copyProperties(t, task);
             task.setTaskId(t.getId());
             task.setAssignee(t.getAssignee());
+
             responseData.add(task);
         }
         response.setData(responseData);
+        return response;
+    }
+
+    @ApiOperation(value = "撤回任务")
+    @RequestMapping(value = "task/rollTack", method = {RequestMethod.POST})
+    public RollBackTaskResponse Post(@ApiParam("data") @RequestBody RollBackTask data){
+        RollBackTaskResponse response=new RollBackTaskResponse();
+        if(StringUtils.isBlank(data.getTaskId())){
+            response.setData("taskId不允许为空");
+            response.setSuccess(false);
+            return response;
+        }
+        Boolean ret = wfService.RollBackTask(data.getTaskId());
+        response.setSuccess(ret);
         return response;
     }
 
@@ -100,4 +116,6 @@ public class WfController {
         response.setData(responseData);
         return response;
     }
+
+
 }

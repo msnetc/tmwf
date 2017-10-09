@@ -18,9 +18,12 @@ public class MyAssignmentHandler implements TaskListener {
         String eventName =delegateTask.getEventName();
         if(eventName == EVENTNAME_CREATE){
             List<String> users = new ArrayList<>();
-            users.add("m1");
-            users.add("m2");
-            delegateTask.addCandidateUsers(users);;
+//            users.add("m1");
+//            users.add("m2");
+//            delegateTask.addCandidateUsers(users);;
+            delegateTask.setAssignee("kermit");
+            delegateTask.addCandidateUser("fozzie");
+//            delegateTask.addCandidateGroup("management");
         }
         return;
     }
