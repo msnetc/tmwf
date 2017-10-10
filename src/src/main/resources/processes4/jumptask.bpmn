@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="daling">  
-  <process id="jump" name="jumptask" isExecutable="true" activiti:candidateStarterUsers="a,b,c,d">  
+  <process id="jump" name="jumptask" isExecutable="true">  
     <userTask id="usertask2" name="usertask2" activiti:assignee="c"></userTask>  
-    <userTask id="usertask3" name="usertask3"></userTask>  
+    <userTask id="usertask3" name="usertask3" activiti:candidateUsers="b1, b2"></userTask>  
     <sequenceFlow id="flow4" sourceRef="usertask2" targetRef="usertask3"></sequenceFlow>  
-    <userTask id="usertask4" name="usertask4"></userTask>  
+    <userTask id="usertask4" name="usertask4">
+	<extensionElements>
+			<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.MyAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[t123]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="auditorRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>		
+      </extensionElements>
+	</userTask>  
     <sequenceFlow id="flow5" sourceRef="usertask3" targetRef="usertask4"></sequenceFlow>  
     <userTask id="usertask5" name="usertask5"></userTask>  
     <sequenceFlow id="flow6" sourceRef="usertask4" targetRef="usertask5"></sequenceFlow>  
