@@ -1,12 +1,13 @@
 package com.taimeitech.pass.workflowExt.taskListener;
 
-import com.sun.source.util.TaskEvent;
-import org.activiti.engine.delegate.*;
-import org.activiti.engine.task.IdentityLink;
 
+
+import org.activiti.engine.delegate.DelegateTask;
+import org.activiti.engine.delegate.Expression;
+import org.activiti.engine.delegate.TaskListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 public class MyAssignmentHandler implements TaskListener {
     private Expression talentId;

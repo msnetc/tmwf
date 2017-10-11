@@ -1,6 +1,6 @@
 package com.taimeitech.pass.entity.workflow;
 
-import com.sun.org.apache.bcel.internal.generic.IREM;
+
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Map;

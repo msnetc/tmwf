@@ -76,15 +76,7 @@ public class ActivitiConfiguration {
         return processEngineConfiguration;
     }
 
-    //流程引擎，与spring整合使用factoryBean
-    @Bean
-    public ProcessEngineFactoryBean processEngine(ProcessEngineConfiguration processEngineConfiguration){
-        ProcessEngineFactoryBean processEngineFactoryBean = new ProcessEngineFactoryBean();
-        processEngineFactoryBean.setProcessEngineConfiguration((ProcessEngineConfigurationImpl) processEngineConfiguration);
-        return processEngineFactoryBean;
-    }
-
-    //八大接口
+   //八大接口
     @Bean
     public RepositoryService repositoryService(ProcessEngine processEngine){
         return processEngine.getRepositoryService();
