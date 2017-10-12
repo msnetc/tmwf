@@ -3,7 +3,7 @@ package com.taimeitech.pass.entity.workflow;
 import io.swagger.annotations.ApiModelProperty;
 
 public class RollBackTask implements IReturn<RollBackTaskResponse> {
-    @ApiModelProperty(value = "要恢复的任务id，完成后请再调用QueryTask获取新生成的任务id")
+    @ApiModelProperty(value = "要恢复的历史任务id")
     private String taskId;
 
     public String getTaskId() {

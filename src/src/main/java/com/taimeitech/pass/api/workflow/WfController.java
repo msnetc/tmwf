@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricVariableInstance;
+import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
@@ -67,8 +68,19 @@ public class WfController {
             response.setSuccess(false);
             return response;
         }
-        Boolean ret = wfService.RollBackTask(data.getTaskId());
-        response.setSuccess(ret);
+        List<TaskEntity> tasks = wfService.RollBackTask(data.getTaskId());
+        List<tmTask> retData = new ArrayList<tmTask>();
+        if(tasks.size()>0){
+            for (Task t : tasks) {
+                tmTask task = new tmTask();
+                BeanUtils.copyProperties(t, task);
+                task.setTaskId(t.getId());
+                task.setAssignee(t.getAssignee());
+                retData.add(task);
+            }
+        }
+        response.setData(retData);
+        response.setSuccess(true);
         return response;
     }
 

@@ -9,7 +9,9 @@ import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricTaskInstanceQuery;
 import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.history.HistoricVariableInstanceQuery;
+import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
+import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.impl.pvm.ReadOnlyProcessDefinition;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.activiti.engine.runtime.ProcessInstance;
@@ -78,7 +80,9 @@ public class WfServiceImpl implements WfService {
     @Override
     @Transactional
     public boolean CompleteTask(CompleteTask data) {
-        taskService.setVariablesLocal(data.getTaskId(),data.getVariables());
+        if(data.getVariables().size() >0 ){
+            taskService.setVariablesLocal(data.getTaskId(),data.getVariables());
+        }
         taskService.complete(data.getTaskId(), data.getVariables());
         return true;
     }
@@ -93,7 +97,7 @@ public class WfServiceImpl implements WfService {
 
     @Override
     @Transactional
-    public boolean RollBackTask(String taskId) {
+    public   List<TaskEntity> RollBackTask(String taskId) {
         //根据要跳转的任务ID获取其任务
         HistoricTaskInstance hisTask = historyService
                 .createHistoricTaskInstanceQuery().taskId(taskId)
@@ -109,8 +113,14 @@ public class WfServiceImpl implements WfService {
         //获取历史任务的Activity
         ActivityImpl hisActivity = definition.findActivity(hisTask.getTaskDefinitionKey());
         //实现跳转
-        managementService.executeCommand(new JumpCmd(instance.getId(), hisActivity.getId()));
-        return true;
+        ExecutionEntity ee = managementService.executeCommand(new JumpCmd(instance.getId(), hisActivity.getId()));
+        List<TaskEntity> tasks = ee.getTasks();
+        List<TaskEntity>  ret= new ArrayList<>();
+        for (TaskEntity t : tasks) {
+            if(t.isDeleted()) continue;
+            ret.add(t);
+        }
+        return ret;
     }
 
     @Override
