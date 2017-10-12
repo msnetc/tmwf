@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.*;
 
 @Service
-@Transactional
+
 public class WfServiceImpl implements WfService {
 
     @Autowired
@@ -64,23 +64,52 @@ public class WfServiceImpl implements WfService {
     }
 
     @Override
+    @Transactional
     public ProcessInstance CreatePi(CreatePI data) {
         Map<String, Object> variables = data.getVariables();
         if(StringUtils.isNotBlank(data.getBusinessKey())){
-            ProcessInstanceQuery piQuery = runtimeService.createProcessInstanceQuery();
-            List<ProcessInstance> processInstances = piQuery.processInstanceBusinessKey(data.getBusinessKey()).list();
+//            ProcessInstanceQuery piQuery = runtimeService.createProcessInstanceQuery();
+//            List<ProcessInstance> processInstances = piQuery.processInstanceBusinessKey(data.getBusinessKey()).list();
         }
         ProcessInstance pi = runtimeService.startProcessInstanceByKeyAndTenantId(data.getProcessDefinitionKey(), data.getBusinessKey(), variables, data.getTenantId());
-
-//        TaimeiLogger.info(pi.getProcessDefinitionId());
         return pi;
     }
 
     @Override
+    @Transactional
     public boolean CompleteTask(CompleteTask data) {
         taskService.setVariablesLocal(data.getTaskId(),data.getVariables());
-        taskService.claim(data.getTaskId(), data.getUserId());
         taskService.complete(data.getTaskId(), data.getVariables());
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean AssignTask(String userId, String taskId) {
+        taskService.unclaim(taskId);
+        taskService.setAssignee(taskId, userId);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean RollBackTask(String taskId) {
+        //根据要跳转的任务ID获取其任务
+        HistoricTaskInstance hisTask = historyService
+                .createHistoricTaskInstanceQuery().taskId(taskId)
+                .singleResult();
+        //进而获取流程实例
+        ProcessInstance instance = runtimeService
+                .createProcessInstanceQuery()
+                .processInstanceId(hisTask.getProcessInstanceId())
+                .singleResult();
+
+        //取得流程定义
+        ProcessDefinitionEntity definition = (ProcessDefinitionEntity) repositoryServivce.getProcessDefinition(hisTask.getProcessDefinitionId());
+        //获取历史任务的Activity
+        ActivityImpl hisActivity = definition.findActivity(hisTask.getTaskDefinitionKey());
+        //实现跳转
+        managementService.executeCommand(new JumpCmd(instance.getId(), hisActivity.getId()));
         return true;
     }
 
@@ -118,24 +147,5 @@ public class WfServiceImpl implements WfService {
         return list;
     }
 
-    @Override
-    public boolean RollBackTask(String taskId) {
-        //根据要跳转的任务ID获取其任务
-        HistoricTaskInstance hisTask = historyService
-                .createHistoricTaskInstanceQuery().taskId(taskId)
-                .singleResult();
-        //进而获取流程实例
-        ProcessInstance instance = runtimeService
-                .createProcessInstanceQuery()
-                .processInstanceId(hisTask.getProcessInstanceId())
-                .singleResult();
 
-        //取得流程定义
-        ProcessDefinitionEntity definition = (ProcessDefinitionEntity) repositoryServivce.getProcessDefinition(hisTask.getProcessDefinitionId());
-        //获取历史任务的Activity
-        ActivityImpl hisActivity = definition.findActivity(hisTask.getTaskDefinitionKey());
-        //实现跳转
-        managementService.executeCommand(new JumpCmd(instance.getId(), hisActivity.getId()));
-        return true;
-    }
 }

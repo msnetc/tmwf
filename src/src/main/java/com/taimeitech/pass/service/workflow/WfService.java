@@ -29,4 +29,6 @@ public interface WfService {
     List<HistoricVariableInstance> GetHistoryVariables(GetHistoryVariables queryParam);
 
     boolean RollBackTask(String taskId);
+
+    boolean AssignTask(String userId, String taskId);
 }

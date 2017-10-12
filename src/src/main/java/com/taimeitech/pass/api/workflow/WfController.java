@@ -81,6 +81,15 @@ public class WfController {
         return response;
     }
 
+    @ApiOperation(value = "指派任务")
+    @RequestMapping(value = "task/assignTask", method = {RequestMethod.POST})
+    public AssignTaskResponse Post(@ApiParam("data") @RequestBody AssignTask data){
+        AssignTaskResponse response = new AssignTaskResponse();
+        Boolean result = wfService.AssignTask(data.getUserId(), data.getTaskId());
+        response.setSuccess(result);
+        return response;
+    }
+
     @ApiOperation(value = "获取某个角色/用户的历史任务")
     @RequestMapping(value = "historyTask/queryHistoryTask",method = {RequestMethod.POST})
     public GetHistoryTaskResponse Post(@ApiParam("data") @RequestBody GetHistoryTask data) {
@@ -116,6 +125,7 @@ public class WfController {
         response.setData(responseData);
         return response;
     }
+
 
 
 }

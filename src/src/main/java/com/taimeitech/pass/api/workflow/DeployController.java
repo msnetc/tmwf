@@ -39,7 +39,6 @@ public class DeployController {
 
         ActionResult response = new ActionResult();
         response.setSuccess(false);
-
         String filePath=deployParam.getFilePath();
         String fileName=FilenameUtils.getName(filePath);
         Path path = Paths.get(filePath);

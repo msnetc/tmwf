@@ -9,6 +9,7 @@ import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.repository.ProcessDefinitionQuery;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
@@ -30,6 +31,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.zip.ZipInputStream;
 
@@ -49,27 +51,10 @@ public class DeploymentController  {
         return mav;
     }
 
-    @RequestMapping(value = "/deployment/deploy", method = RequestMethod.POST)
-    public String deploy(@RequestParam(value = "file", required = true) MultipartFile file) {
-        // 获取上传的文件名
-        String fileName = file.getOriginalFilename();
-        try {
-            // 得到输入流（字节流）对象
-            InputStream fileInputStream = file.getInputStream();
-            String bpmnFile = InputStreamUtils.InputStreamTOString(fileInputStream);
-            DeploymentBuilder deployment = repositoryService.createDeployment();
-            deployment.addString(fileName, bpmnFile);
-            deployment.deploy();
-        } catch (Exception e) {
-            TaimeiLogger.error("error on deploy process, because of file input stream");
-        }
-        return "redirect:/activiti/processes";
-    }
-
     @RequestMapping(value="deployment/upload", method=RequestMethod.POST)
     @ResponseBody
-    public String upload(HttpServletRequest request) throws Exception
-    {
+    public ModelAndView deploy(HttpServletRequest request) throws Exception  {
+        ModelAndView mav = new ModelAndView("/activiti/processes");
         Part part = request.getPart("file");
         try {
             String talentId = request.getParameter("tenantId");
@@ -79,20 +64,20 @@ public class DeploymentController  {
             String extension=  FilenameUtils.getExtension(fileName);
             // zip或者bar类型的文件用ZipInputStream方式部署
             DeploymentBuilder deployment = repositoryService.createDeployment();
-            deployment.tenantId(talentId);
+            if (StringUtils.isNotBlank(talentId)) {
+                deployment.tenantId(talentId);
+            }
             if (extension.equals("zip") || extension.equals("bar")) {
                 ZipInputStream zip = new ZipInputStream(fileInputStream);
                 deployment.addZipInputStream(zip);
-            } else {
-                // 其他类型的文件直接部署
+            } else {// 其他类型的文件直接部署
                 deployment.addInputStream(fileName, fileInputStream);
             }
-            fileInputStream.close();
+            deployment.deploy();
         } catch (Exception e) {
-            TaimeiLogger.error("error on deploy process, because of file input stream");
             TaimeiLogger.error(e);
         }
-        return "redirect:activiti/processes";
+        return mav;
     }
 
     /**
@@ -106,10 +91,8 @@ public class DeploymentController  {
             throws Exception {
         ProcessDefinitionQuery pdq = repositoryService.createProcessDefinitionQuery();
         ProcessDefinition pd = pdq.processDefinitionId(processDefinitionId).singleResult();
-
         // 通过接口读取
         InputStream resourceAsStream = repositoryService.getResourceAsStream(pd.getDeploymentId(), resourceName);
-
         // 输出资源内容到相应对象
         byte[] b = new byte[1024];
         int len = -1;
@@ -117,18 +100,18 @@ public class DeploymentController  {
             response.getOutputStream().write(b, 0, len);
         }
     }
+
     /**
      * 删除部署的流程，级联删除流程实例
      *
      * @param deploymentId 流程部署ID
      */
     @RequestMapping(value = "/deployment/delete-deployment")
-    public String deleteProcessDefinition(@RequestParam("deploymentId") String deploymentId) {
+    public ModelAndView deleteProcessDefinition(@RequestParam("deploymentId") String deploymentId) {
+        ModelAndView mav = new ModelAndView("processes");
         repositoryService.deleteDeployment(deploymentId, true);
-        return "redirect:activiti/processes";
+        return mav;
     }
-
-
 
     @Bean
     MultipartConfigElement createMultipartConfigElement()

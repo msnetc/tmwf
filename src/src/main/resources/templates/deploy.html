@@ -12,9 +12,11 @@
     <legend>部署流程资源</legend>
     <span class="alert alert-info"><b>支持文件格式：</b>zip、bar、bpmn、bpmn20.xml</span>
     <form action= "/deployment/upload" method="post" enctype="multipart/form-data" style="margin-top:1em;">
-        <input type="file" name="file" />
-        <input type="input" id="tenantId" name="租户id" />
-        <input type="submit" value="Submit" class="btn" />
+        <table>
+            <tr><td>  <input type="file" name="file" /></td></tr>
+            <tr><td><label th:text="租户id"/></td><td>    <input type="input" id="tenantId" name="tenantId" /></td></tr>
+            <tr><td>   <input type="submit" value="Submit" class="btn" /></td></tr>
+        </table>
     </form>
 </div>
 </body>
