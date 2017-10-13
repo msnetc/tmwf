@@ -37,6 +37,7 @@
       </extensionElements>
 	</userTask>
     <userTask id="usertask2" name="医学评审">
+	<extensionElements>
 			<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.PvAssignmentHandler">
           <activiti:field name="talentId">
             <activiti:string><![CDATA[t123]]></activiti:string>
@@ -51,6 +52,7 @@
       </extensionElements>
 	</userTask>
     <userTask id="usertask3" name="复核审核">
+	<extensionElements>
 			<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.PvAssignmentHandler">
           <activiti:field name="talentId">
             <activiti:string><![CDATA[t123]]></activiti:string>
