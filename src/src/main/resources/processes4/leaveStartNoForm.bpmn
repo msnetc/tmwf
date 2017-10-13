@@ -9,18 +9,16 @@
         <activiti:formProperty id="user_deptLeaderUserId" name="部门经理" type="string" required="true"></activiti:formProperty>
         <activiti:formProperty id="users_hrUserId" name="人事经理" type="string" required="true"></activiti:formProperty>
         <activiti:formProperty id="startDate" name="请假开始日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
-        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty> 
-
-		<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.MyAssignmentHandler">
+        <activiti:formProperty id="endDate" name="请假结束日期" type="date" datePattern="yyyy-MM-dd" required="true"></activiti:formProperty>
+        <activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.MyAssignmentHandler">
           <activiti:field name="talentId">
             <activiti:string><![CDATA[t123]]></activiti:string>
           </activiti:field>
           <activiti:field name="auditorRoleId">
             <activiti:string><![CDATA[abc]]></activiti:string>
           </activiti:field>
-        </activiti:taskListener>		
+        </activiti:taskListener>
       </extensionElements>
-	  
     </userTask>
     <userTask id="deptLeaderAudit" name="部门领导审批" activiti:assignee="${user_deptLeaderUserId}">
       <extensionElements>
@@ -31,7 +29,6 @@
           <activiti:value id="true" name="同意"></activiti:value>
           <activiti:value id="false" name="拒绝"></activiti:value>
         </activiti:formProperty>
-        
       </extensionElements>
     </userTask>
     <exclusiveGateway id="exclusivegateway5" name="Exclusive Gateway"></exclusiveGateway>
@@ -131,7 +128,7 @@
         <omgdc:Bounds height="55.0" width="105.0" x="1011.0" y="133.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="1061.0" y="299.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="1046.0" y="295.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="exclusivegateway7" id="BPMNShape_exclusivegateway7">
         <omgdc:Bounds height="40.0" width="40.0" x="429.0" y="310.0"></omgdc:Bounds>
@@ -174,7 +171,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
         <omgdi:waypoint x="1063.0" y="188.0"></omgdi:waypoint>
-        <omgdi:waypoint x="1078.0" y="299.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1063.0" y="295.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="48.0" width="24.0" x="1063.0" y="188.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
@@ -200,7 +197,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
         <omgdi:waypoint x="469.0" y="330.0"></omgdi:waypoint>
-        <omgdi:waypoint x="1061.0" y="316.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1046.0" y="312.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="48.0" width="48.0" x="611.0" y="324.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
