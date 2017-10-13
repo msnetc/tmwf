@@ -162,7 +162,7 @@ public class WfServiceImpl implements WfService {
     }
 
     @Override
-    public List<tmTask> TasksToTmTasks(List<Task> tasks){
+    public List<tmTask> TasksToTmTasks(List<Task> tasks, Boolean getVariables){
         List<tmTask> ret = new ArrayList<tmTask>();
         if(tasks==null && tasks.size()==0) return ret;
         for(Task t:tasks) {
@@ -170,10 +170,10 @@ public class WfServiceImpl implements WfService {
             BeanUtils.copyProperties(t, item);
             item.setTaskId(t.getId());
             item.setAssignee(t.getAssignee());
-            Map<String, Object> variables =taskService.getVariables(t.getId());
-            Map<String, Object> variables2=  taskService.getVariablesLocal(t.getId());
-            TaimeiLogger.info(variables2);
-            item.setProcessVariables(variables);
+            if(getVariables) {
+                Map<String, Object> variables = taskService.getVariables(t.getId());
+                item.setProcessVariables(variables);
+            }
             ret.add(item);
         }
         return ret;

@@ -47,7 +47,7 @@ public class WfController {
     public GetTaskListResponse Post(@ApiParam("data") @RequestBody GetTaskList data) {
         List<Task> tasks = wfService.QueryTasks(data);
         GetTaskListResponse response = new GetTaskListResponse();
-        List<tmTask> responseData  = wfService.TasksToTmTasks(tasks);
+        List<tmTask> responseData  = wfService.TasksToTmTasks(tasks, false);
         response.setData(responseData);
         return response;
     }

@@ -33,7 +33,7 @@ public interface WfService {
 
     boolean AssignTask(String userId, String taskId);
 
-    List<tmTask> TasksToTmTasks(List<Task> tasks);
+    List<tmTask> TasksToTmTasks(List<Task> tasks, Boolean getVariables);
 
     tmTask TaskEntityToTmTasks(TaskEntity t);
 }
