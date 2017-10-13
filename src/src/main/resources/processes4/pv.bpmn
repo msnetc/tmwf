@@ -3,10 +3,67 @@
   <process id="myProcess" name="My process" isExecutable="true">
     <startEvent id="startevent1" name="开始"></startEvent>
     <endEvent id="endevent1" name="结束"></endEvent>
-    <userTask id="dataInput" name="数据录入"></userTask>
-    <userTask id="usertask1" name="质量审核"></userTask>
-    <userTask id="usertask2" name="医学评审"></userTask>
-    <userTask id="usertask3" name="复核审核"></userTask>
+    <userTask id="dataInput" name="数据录入">
+	<extensionElements>
+		<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.DataInputTaskAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[t123]]></activiti:string>
+          </activiti:field>
+		   <activiti:field name="softId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="currentTaskRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+		 <activiti:field name="nextTaskRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>		
+      </extensionElements>
+	</userTask>
+    <userTask id="usertask1" name="质量审核">
+	<extensionElements>
+		<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.PvAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[t123]]></activiti:string>
+          </activiti:field>
+		   <activiti:field name="softId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+		 <activiti:field name="nextTaskRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>		
+      </extensionElements>
+	</userTask>
+    <userTask id="usertask2" name="医学评审">
+			<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.PvAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[t123]]></activiti:string>
+          </activiti:field>
+		   <activiti:field name="softId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+		 <activiti:field name="nextTaskRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>		
+      </extensionElements>
+	</userTask>
+    <userTask id="usertask3" name="复核审核">
+			<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.PvAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[t123]]></activiti:string>
+          </activiti:field>
+		   <activiti:field name="softId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+		 <activiti:field name="nextTaskRoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>		
+      </extensionElements>
+	</userTask>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="dataInput"></sequenceFlow>
     <sequenceFlow id="flow6" name="录入后提交" sourceRef="dataInput" targetRef="usertask1"></sequenceFlow>
     <parallelGateway id="parallelgateway1" name="Parallel Gateway"></parallelGateway>
