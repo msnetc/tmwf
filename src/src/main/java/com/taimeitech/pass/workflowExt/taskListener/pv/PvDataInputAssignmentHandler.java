@@ -19,9 +19,10 @@ public class PvDataInputAssignmentHandler implements TaskListener {
     public void notify(DelegateTask delegateTask) {
         String eventName =delegateTask.getEventName();
         if(eventName == EVENTNAME_CREATE){
-            String dataInputUserId = delegateTask.getVariable("dataInputUserId").toString();
-            if(StringUtils.isNotBlank(dataInputUserId)){
-                delegateTask.setAssignee(dataInputUserId);
+            Object dataInputUserId = delegateTask.getVariable("dataInputUserId");
+            if(dataInputUserId != null){
+                String strDataInputUserId = dataInputUserId.toString();
+                delegateTask.setAssignee(strDataInputUserId);
             }
             else{
                 List<String> candidateUsers= GetCurrentCandidateUsers(delegateTask);
