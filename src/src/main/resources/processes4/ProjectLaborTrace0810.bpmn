@@ -2,33 +2,40 @@
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
   <process id="ProjectLaborTrace0810" name="项目人力跟踪流程" isExecutable="true">
     <startEvent id="startevent1" name="Start"></startEvent>
+	
     <userTask id="pmTask" name="项目经理审核" activiti:assignee="${pmUser}">
       <extensionElements>
         <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.finance.ProjectLaborTrace.PmTaskLIstener"></activiti:taskListener>
       </extensionElements>
-      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="pmUsers" activiti:elementVariable="pmUser"></multiInstanceLoopCharacteristics>
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="pmUsers" activiti:elementVariable="pmUser">
+	  </multiInstanceLoopCharacteristics>
     </userTask>
+	
     <userTask id="financeTask" name="财务人员审核" activiti:assignee="${financeUser}">
       <extensionElements>
         <activiti:taskListener event="complete" class="com.taimeitech.pass.workflowExt.Listener.finance.ProjectLaborTrace.FinanceTaskListener"></activiti:taskListener>
       </extensionElements>
       <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="financeUsers" activiti:elementVariable="financeUser"></multiInstanceLoopCharacteristics>
     </userTask>
+	
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="pmTask">
       <extensionElements>
         <activiti:executionListener event="take" expression="${execution.setVariable('approvedPmCounter', 0)}"></activiti:executionListener>
         <activiti:executionListener event="take" expression="${execution.setVariable('approvedFinanceUsersCounter', 0)}"></activiti:executionListener>
       </extensionElements>
     </sequenceFlow>
+	
     <sequenceFlow id="flow2" name="pm审核通过" sourceRef="pmTask" targetRef="financeTask">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedPmCounter == pmUsers.size()}]]></conditionExpression>
     </sequenceFlow>
+	
     <sequenceFlow id="flowFinal" name="财务主管审核通过" sourceRef="financeTask" targetRef="endevent1">
       <extensionElements>
         <activiti:executionListener event="take" class="com.taimeitech.pass.workflowExt.Listener.TaskEndListener"></activiti:executionListener>
       </extensionElements>
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approvedFinanceUsersCounter == financeUsers.size()}]]></conditionExpression>
     </sequenceFlow>
+	
     <endEvent id="endevent1" name="End"></endEvent>
     <endEvent id="endevent2" name="End"></endEvent>
     <sequenceFlow id="flow9" name="财务主管驳回" sourceRef="financeTask" targetRef="endevent2">
