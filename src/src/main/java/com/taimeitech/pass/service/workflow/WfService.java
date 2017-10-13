@@ -29,7 +29,11 @@ public interface WfService {
 
     List<HistoricVariableInstance> GetHistoryVariables(GetHistoryVariables queryParam);
 
-    List<TaskEntity> RollBackTask(String taskId);
+    TaskEntity RollBackTask(String taskId);
 
     boolean AssignTask(String userId, String taskId);
+
+    List<tmTask> TasksToTmTasks(List<Task> tasks);
+
+    tmTask TaskEntityToTmTasks(TaskEntity t);
 }

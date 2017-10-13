@@ -5,6 +5,7 @@ import com.taimeitech.pass.entity.workflow.*;
 import com.taimeitech.pass.service.workflow.WfService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.activiti.engine.TaskService;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.impl.persistence.entity.TaskEntity;
@@ -45,16 +46,8 @@ public class WfController {
     @RequestMapping(value = "task/queryTask", method = {RequestMethod.POST})
     public GetTaskListResponse Post(@ApiParam("data") @RequestBody GetTaskList data) {
         List<Task> tasks = wfService.QueryTasks(data);
-        List<tmTask> responseData = new ArrayList<tmTask>();
         GetTaskListResponse response = new GetTaskListResponse();
-        for (Task t : tasks) {
-            tmTask task = new tmTask();
-            BeanUtils.copyProperties(t, task);
-            task.setTaskId(t.getId());
-            task.setAssignee(t.getAssignee());
-
-            responseData.add(task);
-        }
+        List<tmTask> responseData  = wfService.TasksToTmTasks(tasks);
         response.setData(responseData);
         return response;
     }
@@ -68,17 +61,8 @@ public class WfController {
             response.setSuccess(false);
             return response;
         }
-        List<TaskEntity> tasks = wfService.RollBackTask(data.getTaskId());
-        List<tmTask> retData = new ArrayList<tmTask>();
-        if(tasks.size()>0){
-            for (Task t : tasks) {
-                tmTask task = new tmTask();
-                BeanUtils.copyProperties(t, task);
-                task.setTaskId(t.getId());
-                task.setAssignee(t.getAssignee());
-                retData.add(task);
-            }
-        }
+        TaskEntity task = wfService.RollBackTask(data.getTaskId());
+        tmTask retData = wfService.TaskEntityToTmTasks(task);
         response.setData(retData);
         response.setSuccess(true);
         return response;

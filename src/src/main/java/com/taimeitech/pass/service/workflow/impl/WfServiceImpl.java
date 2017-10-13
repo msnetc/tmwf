@@ -1,5 +1,6 @@
 package com.taimeitech.pass.service.workflow.impl;
 
+import com.taimeitech.framework.common.TaimeiLogger;
 import com.taimeitech.framework.util.StringUtil;
 import com.taimeitech.pass.entity.workflow.*;
 import com.taimeitech.pass.service.workflow.WfService;
@@ -19,6 +20,7 @@ import org.activiti.engine.runtime.ProcessInstanceQuery;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -65,6 +67,8 @@ public class WfServiceImpl implements WfService {
         return tasks;
     }
 
+
+
     @Override
     @Transactional
     public ProcessInstance CreatePi(CreatePI data) {
@@ -97,7 +101,7 @@ public class WfServiceImpl implements WfService {
 
     @Override
     @Transactional
-    public   List<TaskEntity> RollBackTask(String taskId) {
+    public  TaskEntity RollBackTask(String taskId) {
         //根据要跳转的任务ID获取其任务
         HistoricTaskInstance hisTask = historyService
                 .createHistoricTaskInstanceQuery().taskId(taskId)
@@ -120,7 +124,7 @@ public class WfServiceImpl implements WfService {
             if(t.isDeleted()) continue;
             ret.add(t);
         }
-        return ret;
+        return ret.get(0);
     }
 
     @Override
@@ -157,5 +161,32 @@ public class WfServiceImpl implements WfService {
         return list;
     }
 
+    @Override
+    public List<tmTask> TasksToTmTasks(List<Task> tasks){
+        List<tmTask> ret = new ArrayList<tmTask>();
+        if(tasks==null && tasks.size()==0) return ret;
+        for(Task t:tasks) {
+            tmTask item = new tmTask();
+            BeanUtils.copyProperties(t, item);
+            item.setTaskId(t.getId());
+            item.setAssignee(t.getAssignee());
+            Map<String, Object> variables =taskService.getVariables(t.getId());
+            Map<String, Object> variables2=  taskService.getVariablesLocal(t.getId());
+            TaimeiLogger.info(variables2);
+            item.setProcessVariables(variables);
+            ret.add(item);
+        }
+        return ret;
+    }
+
+    @Override
+    public tmTask TaskEntityToTmTasks(TaskEntity t){
+        if(t==null) return null;
+        tmTask item = new tmTask();
+        BeanUtils.copyProperties(t, item);
+        item.setTaskId(t.getId());
+        item.setAssignee(t.getAssignee());
+        return item;
+    }
 
 }

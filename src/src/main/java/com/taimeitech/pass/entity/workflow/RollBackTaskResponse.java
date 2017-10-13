@@ -3,22 +3,16 @@ package com.taimeitech.pass.entity.workflow;
 import com.taimeitech.framework.common.dto.ActionResult;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.List;
-
-/**
- * Created by yanjie.miao on 2017/10/9.
- */
 public class RollBackTaskResponse extends ActionResult {
 
+    @ApiModelProperty(value = "恢复生成的任务")
+    private tmTask task;
 
-    @ApiModelProperty(value = "恢复生成的任务列表")
-    private List<tmTask> tasks;
-
-    public List<tmTask> getTasks() {
-        return tasks;
+    public tmTask getTask() {
+        return task;
     }
 
-    public void setTasks(List<tmTask> tasks) {
-        this.tasks = tasks;
+    public void setTask(tmTask task) {
+        this.task = task;
     }
 }
