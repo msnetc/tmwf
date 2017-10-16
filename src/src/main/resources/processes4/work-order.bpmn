@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1505465990762" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <process id="sp_402882ac5e84bb12015e84bb2ac60000" isClosed="false" isExecutable="true" processType="None">
+    <startEvent activiti:initiator="startUser" id="_2" name="submit"/>
+    <userTask activiti:assignee="${userIds}" activiti:candidateGroups="deptLeader" activiti:candidateUsers="B" activiti:exclusive="true" id="approved" name="audit:30_6_20"/>
+    <endEvent id="_5" name="EndEvent"/>
+    <userTask activiti:assignee="#{startUser}" activiti:candidateGroups="leaderGroupId" activiti:candidateUsers="A" activiti:exclusive="true" id="resubmit" name="resubmit:10_20"/>
+    <sequenceFlow id="_4" sourceRef="approved" targetRef="_5">
+      <extensionElements>
+        <activiti:executionListener class="com.taimeitech.pass.workflowExt.Listener.TaskRejectionListener" event="take"/>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved==30}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_9" sourceRef="resubmit" targetRef="approved">
+      <extensionElements>
+        <activiti:executionListener class="com.taimeitech.pass.workflowExt.Listener.TaskRejectionListener" event="take"/>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved==10}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_6" sourceRef="approved" targetRef="resubmit">
+      <extensionElements>
+        <activiti:executionListener class="com.taimeitech.pass.workflowExt.Listener.TaskRejectionListener" event="take"/>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved==6}]]></conditionExpression>
+    </sequenceFlow>
+    <endEvent id="_7" name="EndEvent">
+      <terminateEventDefinition id="_7_ED_1"/>
+    </endEvent>
+    <sequenceFlow id="_8" sourceRef="resubmit" targetRef="_7">
+      <extensionElements>
+        <activiti:executionListener class="com.taimeitech.pass.workflowExt.Listener.TaskRejectionListener" event="take"/>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved==20}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_10" sourceRef="approved" targetRef="_7">
+      <extensionElements>
+        <activiti:executionListener class="com.taimeitech.pass.workflowExt.Listener.TaskRejectionListener" event="take"/>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved==20}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="_13" sourceRef="_2" targetRef="approved">
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
+    <bpmndi:BPMNPlane bpmnElement="sp_402882ac5e84bb12015e84bb2ac60000">
+      <bpmndi:BPMNShape bpmnElement="_2" id="Shape-_2">
+        <omgdc:Bounds height="32.0" width="32.0" x="505.0" y="-5.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="approved" id="Shape-approved">
+        <omgdc:Bounds height="55.0" width="85.0" x="455.0" y="120.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_5" id="Shape-_5">
+        <omgdc:Bounds height="32.0" width="32.0" x="745.0" y="125.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="resubmit" id="Shape-resubmit">
+        <omgdc:Bounds height="55.0" width="85.0" x="185.0" y="115.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_7" id="Shape-_7">
+        <omgdc:Bounds height="32.0" width="32.0" x="475.0" y="300.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_13" id="BPMNEdge__13" sourceElement="_2" targetElement="approved">
+        <omgdi:waypoint x="520.0" y="26.968719422671313"/>
+        <omgdi:waypoint x="520.0" y="80.0"/>
+        <omgdi:waypoint x="520.0" y="120.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_4" id="BPMNEdge__4" sourceElement="approved" targetElement="_5">
+        <omgdi:waypoint x="540.0" y="145.0"/>
+        <omgdi:waypoint x="595.0" y="145.0"/>
+        <omgdi:waypoint x="745.5080666151704" y="145.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_6" id="BPMNEdge__6" sourceElement="approved" targetElement="resubmit">
+        <omgdi:waypoint x="455.0" y="147.5"/>
+        <omgdi:waypoint x="270.0" y="142.5"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_8" id="BPMNEdge__8" sourceElement="resubmit" targetElement="_7">
+        <omgdi:waypoint x="215.0" y="170.0"/>
+        <omgdi:waypoint x="215.0" y="230.0"/>
+        <omgdi:waypoint x="475.0" y="316.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_9" id="BPMNEdge__9" sourceElement="resubmit" targetElement="approved">
+        <omgdi:waypoint x="227.5" y="115.0"/>
+        <omgdi:waypoint x="380.0" y="80.0"/>
+        <omgdi:waypoint x="497.5" y="120.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_10" id="BPMNEdge__10" sourceElement="approved" targetElement="_7">
+        <omgdi:waypoint x="491.0" y="175.0"/>
+        <omgdi:waypoint x="491.0" y="300.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
