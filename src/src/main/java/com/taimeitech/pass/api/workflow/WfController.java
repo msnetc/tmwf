@@ -1,17 +1,15 @@
 package com.taimeitech.pass.api.workflow;
 
-import com.taimeitech.framework.common.SystemContext;
 import com.taimeitech.pass.entity.workflow.*;
+import com.taimeitech.pass.service.workflow.RollBackService;
 import com.taimeitech.pass.service.workflow.WfService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.activiti.engine.TaskService;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
-import org.activiti.engine.task.TaskQuery;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +25,9 @@ import java.util.List;
 public class WfController {
     @Autowired
     private WfService wfService;
+
+    @Autowired
+    private RollBackService  rollBackService;
 
     @ApiOperation(value = "创建pi，启动工作流", notes = "一般是创建表单后启动任务，把表单对应的id传给工作流引擎")
     @RequestMapping(value = "pi/createPI", method = {RequestMethod.POST})
@@ -122,6 +123,13 @@ public class WfController {
         return response;
     }
 
-
-
+    @ApiOperation(value = "驳回任务")
+    @RequestMapping(value = "task/rejectTask", method = {RequestMethod.POST})
+    public RejectTaskResponse Post(@ApiParam("data") @RequestBody RejectTask data){
+        RejectTaskResponse response = new RejectTaskResponse();
+        String id = rollBackService.rollBackToAssignWorkFlow(data.getProcessInstanceId(), data.getDestTaskUserId(), data.getDestTaskKey());
+        response.setSuccess(true);
+        response.setData(id);
+        return response;
+    }
 }

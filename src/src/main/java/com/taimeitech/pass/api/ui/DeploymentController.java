@@ -45,7 +45,7 @@ public class DeploymentController  {
     @Autowired
     private  RepositoryService repositoryService;
 
-    @RequestMapping(value = "/deployment/index")
+    @RequestMapping(value = "/activiti/index")
     public ModelAndView Index() {
         ModelAndView mav = new ModelAndView("deploy");
         return mav;
@@ -54,7 +54,7 @@ public class DeploymentController  {
     @RequestMapping(value="deployment/upload", method=RequestMethod.POST)
     @ResponseBody
     public ModelAndView deploy(HttpServletRequest request) throws Exception  {
-        ModelAndView mav = new ModelAndView("/activiti/processes");
+        ModelAndView mav = new ModelAndView("/");
         Part part = request.getPart("file");
         try {
             String talentId = request.getParameter("tenantId");

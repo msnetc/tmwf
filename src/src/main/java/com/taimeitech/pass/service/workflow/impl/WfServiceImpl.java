@@ -121,7 +121,9 @@ public class WfServiceImpl implements WfService {
         List<TaskEntity> tasks = ee.getTasks();
         List<TaskEntity>  ret= new ArrayList<>();
         for (TaskEntity t : tasks) {
-            if(t.isDeleted()) continue;
+            if (t.isDeleted()){
+                continue;
+            }
             ret.add(t);
         }
         return ret.get(0);

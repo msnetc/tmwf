@@ -4,8 +4,6 @@ import com.taimeitech.pass.entity.workflow.tmTaskUser;
 import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.Expression;
 import org.activiti.engine.delegate.TaskListener;
-import org.apache.commons.lang.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +11,10 @@ public class PvDataInputAssignmentHandler implements TaskListener {
     private Expression talentId;
     private Expression softId;
     private Expression currentTaskRoleId;
-    private Expression nextTaskRoleId;
-
-    @Override
+    private  Expression QualityCheck_RoleId;
+    private  Expression MedicineCheck_RoleId;
+    private  Expression Recheck_RoleId;
+        @Override
     public void notify(DelegateTask delegateTask) {
         String eventName =delegateTask.getEventName();
         if(eventName == EVENTNAME_CREATE){

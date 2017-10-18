@@ -66,7 +66,12 @@
     <endEvent id="endevent1" name="End"></endEvent>
     <exclusiveGateway id="exclusivegateway7" name="Exclusive Gateway"></exclusiveGateway>
     <sequenceFlow id="flow2" sourceRef="startevent1" targetRef="usertaskStart"></sequenceFlow>
-    <sequenceFlow id="flow3" sourceRef="deptLeaderAudit" targetRef="exclusivegateway5"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="deptLeaderAudit" targetRef="exclusivegateway5">
+	  <extensionElements>
+        <activiti:executionListener event="take" expression="${execution.setVariable('previousTaskName', 0)}"></activiti:executionListener>
+		<activiti:executionListener event="take" expression="${execution.setVariable('previousTaskUserId', 0)}"></activiti:executionListener>
+	  </extensionElements>
+	</sequenceFlow>
     <sequenceFlow id="flow4" name="拒绝" sourceRef="exclusivegateway5" targetRef="modifyApply">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${deptLeaderApproved == 'false'}]]></conditionExpression>
     </sequenceFlow>

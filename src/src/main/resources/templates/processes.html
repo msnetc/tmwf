@@ -4,19 +4,23 @@
       layout:decorator="layout">
 <head>
     <title>流程定义列表</title>
+    <script   src="http://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <h1 layout:fragment="header">流程定义列表</h1>
 <div layout:fragment="content" class="container">
-    <form action= "/deployment/upload" method="post" enctype="multipart/form-data" style="margin-top:1em;">
+
+    <form action= "/activiti/upload" method="post" enctype="multipart/form-data" style="margin-top:1em;">
     <legend>部署流程资源</legend>
     <span class="alert alert-info"><b>支持文件格式：</b>zip、bar、bpmn、bpmn20.xml</span>
     <input type="file" name="file" />
     租户id:
     <input type="input" id="tenantId" name="tenantId" />
-
-    <input type="submit" value="Submit" class="btn" action= "/deployment/upload"/>
+    <input type="submit" value="Submit" class="btn"/>
     </form>
+
     <table class="table table-bordered table-striped">
         <thead>
         <tr>

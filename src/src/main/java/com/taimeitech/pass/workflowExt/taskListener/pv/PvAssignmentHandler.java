@@ -1,11 +1,10 @@
 package com.taimeitech.pass.workflowExt.taskListener.pv;
 
 import com.taimeitech.pass.entity.workflow.tmTaskUser;
-import org.activiti.engine.TaskService;
-import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.Expression;
 import org.activiti.engine.delegate.TaskListener;
+import org.apache.commons.lang.StringUtils;
 
 
 import java.util.ArrayList;
@@ -15,15 +14,25 @@ public class PvAssignmentHandler implements TaskListener {
     private Expression talentId;
     private Expression softId;
     private Expression currentTaskRoleId;
+
+    private  Expression QualityCheck_RoleId;
+    private  Expression MedicineCheck_RoleId;
+    private  Expression RecheckRole_Id;
+
     private Expression nextTaskRoleId;
+    private Expression ReCheck;
+
 
     @Override
     public void notify(DelegateTask delegateTask) {
         String eventName =delegateTask.getEventName();
         if(eventName == EVENTNAME_CREATE){
+            String assignee = delegateTask.getAssignee();
+            if(StringUtils.isNotBlank(assignee)){
+                return ;
+            }
             List<String> candidateUsers= GetCurrentCandidateUsers(delegateTask);
             delegateTask.addCandidateUsers(candidateUsers);
-
             List<tmTaskUser> nextUsers= GetNextTaskCandidateUsers();
             delegateTask.setVariableLocal("nextTaskUsers", nextUsers);
         }
@@ -32,6 +41,8 @@ public class PvAssignmentHandler implements TaskListener {
 
     // 获取当前任务候选用户列表
     private List<String> GetCurrentCandidateUsers(DelegateTask delegateTask){
+
+
         Object users2 = delegateTask.getVariable("taskCandidateUsers");
         List<String> users=new ArrayList<>();
         users.add("c1");
