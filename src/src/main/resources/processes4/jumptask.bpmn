@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="daling">  
   <process id="jump" name="jumptask" isExecutable="true">  
-    <userTask id="usertask2" name="usertask2" activiti:assignee="c"></userTask>  
+    <userTask id="usertask2" name="usertask2">
+	<extensionElements>
+	<activiti:taskListener event="create" class="com.taimeitech.pass.workflowExt.taskListener.pv.PvDataInputAssignmentHandler">
+          <activiti:field name="talentId">
+            <activiti:string><![CDATA[0aa37248968e11e7b8b5000c293c6da9]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="softId">
+            <activiti:string><![CDATA[eCollect]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="currentTaskRoleId">
+            <activiti:string><![CDATA[2d00ecb8825f11e7942b000c293c6da9]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="QualityCheck_RoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="MedicineCheck_RoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="Recheck_RoleId">
+            <activiti:string><![CDATA[abc]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>
+      </extensionElements>
+	</userTask>  
     <userTask id="usertask3" name="usertask3" ></userTask>  
     <sequenceFlow id="flow4" sourceRef="usertask2" targetRef="usertask3"></sequenceFlow>  
     <userTask id="usertask4" name="usertask4">
