@@ -127,7 +127,6 @@ public class ActivitiFormController {
         tmFp.setRequired(fp.isRequired());
         tmFp.setValue(fp.getValue());
         tmFp.setWritable(fp.isWritable());
-
         return tmFp;
     }
 

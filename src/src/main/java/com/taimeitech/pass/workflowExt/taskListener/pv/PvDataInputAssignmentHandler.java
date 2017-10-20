@@ -47,7 +47,7 @@ public class PvDataInputAssignmentHandler implements TaskListener {
         UserRolesResult users = userService.GetUsers(strTalentId, strSoftId,roleId);
         List<String> ret=new ArrayList<>();
         for(UserRole ur : users.getData().getData()) {
-            ret.add(ur.getId());
+            ret.add(ur.getUserId());
         }
         return ret;
     }
